@@ -1,0 +1,385 @@
+@charset "UTF-8";
+li {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 100%;
+  background-color: #ededef;
+  margin: 0; }
+
+/*主要内容显示主体 */
+section {
+  width: 944px;
+  margin: 30px auto 0; }
+  section main {
+    width: 674px;
+    float: left;
+    position: relative; }
+    section main div#publishbar {
+      width: 674px;
+      height: 114px;
+      background: #fff; }
+      section main div#publishbar a {
+        background: url(../img/homelogo.png);
+        position: relative;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 108px;
+        height: 110px; }
+      section main div#publishbar a:nth-of-type(1) {
+        background-position: 0 -374px; }
+      section main div#publishbar a:nth-of-type(2) {
+        background-position: -112px -133px; }
+      section main div#publishbar a:nth-of-type(3) {
+        background-position: -224px 0; }
+        section main div#publishbar a:nth-of-type(3):hover {
+          background-position: -224px -133px; }
+      section main div#publishbar a:nth-of-type(4) {
+        background-position: -336px 0; }
+        section main div#publishbar a:nth-of-type(4):hover {
+          background-position: -336px -133px; }
+      section main div#publishbar a:nth-of-type(5) {
+        background-position: -448px 0; }
+        section main div#publishbar a:nth-of-type(5):hover {
+          background-position: -448px -133px; }
+      section main div#publishbar a:nth-of-type(6) {
+        background-position: -560px 0; }
+        section main div#publishbar a:nth-of-type(6):hover {
+          background-position: -560px -133px; }
+    section main div.angle {
+      width: 585px;
+      height: 24px;
+      background: #fff;
+      margin-top: 20px;
+      position: absolute;
+      right: 0;
+      top: 119px;
+      z-index: 3;
+      box-shadow: 1px -1px 1px #bebebf; }
+      section main div.angle > div {
+        width: 0px;
+        height: 0px;
+        border-right: 12px #fff solid;
+        border-top: 12px #fff solid;
+        border-bottom: 12px #ededef solid;
+        border-left: 12px #ededef solid; }
+  section div.user-flow {
+    width: 674px;
+    margin-top: 24px;
+    position: relative;
+    margin-bottom: 46px; }
+    section div.user-flow > div.user-flex {
+      display: flex;
+      justify-content: space-between;
+      /*上方图片标题文字*/
+      /*左侧放头像的框*/
+      /*图片信息流大框*/ }
+      section div.user-flow > div.user-flex div.pinter_2 {
+        width: 540px;
+        height: 20px; }
+        section div.user-flow > div.user-flex div.pinter_2 a {
+          color: #929BA3; }
+      section div.user-flow > div.user-flex > div.head-img {
+        width: 64px;
+        height: 64px;
+        background: black; }
+      section div.user-flow > div.user-flex div.image-flow {
+        width: 584px;
+        color: #929BA3;
+        font-size: 14px;
+        padding: 8px 30px 0;
+        background: #fff;
+        border-left: 24px #ededef solid;
+        border-top: 24px #fff solid;
+        box-shadow: 1px 1px 1px #bebebf;
+        /*放图片流的框*/
+        /*右侧文字的框*/
+        /* 底部操作按钮框 */ }
+        section div.user-flow > div.user-flex div.image-flow div {
+          float: left; }
+        section div.user-flow > div.user-flex div.image-flow div:nth-of-type(1) p a {
+          position: relative;
+          display: inline-block; }
+        section div.user-flow > div.user-flex div.image-flow div.left_img {
+          width: 186px;
+          height: 400px;
+          margin-top: 16px;
+          overflow: hidden; }
+          section div.user-flow > div.user-flex div.image-flow div.left_img img.iimg {
+            width: 180px; }
+        section div.user-flow > div.user-flex div.image-flow div.imgbig > img {
+          width: 476px; }
+        section div.user-flow > div.user-flex div.image-flow div.right_text {
+          width: 240px;
+          margin-left: 30px; }
+          section div.user-flow > div.user-flex div.image-flow div.right_text a {
+            color: #929BA3; }
+        section div.user-flow > div.user-flex div.image-flow div.right_text-one {
+          display: none; }
+        section div.user-flow > div.user-flex div.image-flow div.bom-button {
+          width: 476px;
+          height: 20px;
+          margin-top: 11px;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: space-between;
+          /* 按钮的不变样式 */
+          /* 按钮需要根据不同状态被选择的样式 */ }
+          section div.user-flow > div.user-flex div.image-flow div.bom-button > div {
+            display: flex;
+            align-items: center; }
+            section div.user-flow > div.user-flex div.image-flow div.bom-button > div a {
+              position: relative;
+              line-height: 20px;
+              margin-left: 10px;
+              font-size: 12px;
+              color: #aaa; }
+          section div.user-flow > div.user-flex div.image-flow div.bom-button > div:nth-of-type(1) {
+            width: 200px;
+            text-align: left; }
+            section div.user-flow > div.user-flex div.image-flow div.bom-button > div:nth-of-type(1) > span {
+              display: inline-block;
+              width: 20px;
+              height: 18px;
+              background: url(../img/iconbig.png);
+              background-position: 0 -103px; }
+          section div.user-flow > div.user-flex div.image-flow div.bom-button button.heart {
+            display: inline-block;
+            width: 20px;
+            height: 18px;
+            border: 0;
+            outline: none;
+            margin-left: 10px;
+            background: url(../img/iconbig.png); }
+          section div.user-flow > div.user-flex div.image-flow div.bom-button button.like {
+            background-position: -80px -2790px; }
+          section div.user-flow > div.user-flex div.image-flow div.bom-button button.nlike {
+            background-position: -80px -2759px; }
+    section div.user-flow div.comment {
+      position: relative;
+      opacity: 0;
+      top: -144px;
+      overflow: hidden;
+      transition: all 0.3s linear;
+      background: #fafafa;
+      float: right;
+      box-shadow: 0px 0px 3px #bebebf;
+      font-size: 12px;
+      transition: all 0.3s linear;
+      z-index: -1; }
+      section div.user-flow div.comment div {
+        width: 560px; }
+      section div.user-flow div.comment div:nth-of-type(1) {
+        padding: 18px 15px 0px;
+        height: 58px;
+        text-align: center;
+        margin-bottom: 5px; }
+        section div.user-flow div.comment div:nth-of-type(1) input {
+          width: 390px;
+          height: 40px;
+          padding: 9px;
+          border: 1px #cececf solid; }
+        section div.user-flow div.comment div:nth-of-type(1) a {
+          display: inline-block;
+          width: 104px;
+          height: 40px;
+          color: #fff;
+          background-image: linear-gradient(to bottom, #84af00, #79a300);
+          border-radius: 3px;
+          text-align: center;
+          line-height: 40px; }
+          section div.user-flow div.comment div:nth-of-type(1) a:hover {
+            color: #fff;
+            background: #9cbf00; }
+      section div.user-flow div.comment div ~ div {
+        height: 44px;
+        padding: 10px 30px;
+        border-bottom: 1px #cececf solid;
+        position: relative; }
+        section div.user-flow div.comment div ~ div a {
+          color: #7594B3; }
+        section div.user-flow div.comment div ~ div a:last-child {
+          position: absolute;
+          right: 50px; }
+        section div.user-flow div.comment div ~ div span {
+          color: #444; }
+      section div.user-flow div.comment div:last-child {
+        height: 40px;
+        display: flex;
+        align-items: center; }
+        section div.user-flow div.comment div:last-child span:nth-of-type(1) {
+          font-size: 12px;
+          cursor: pointer;
+          color: #888; }
+          section div.user-flow div.comment div:last-child span:nth-of-type(1):hover {
+            color: #7594B3; }
+        section div.user-flow div.comment div:last-child span:nth-of-type(2) {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background: url(../img/icon24.png);
+          background-position: right -932px; }
+    section div.user-flow div.show {
+      top: 0;
+      opacity: 1; }
+
+ul.last-icon {
+  width: 560px;
+  transition: all 0.5s linear;
+  float: right;
+  padding: 0 0 0 29px;
+  background: #ffffff;
+  height: 113px;
+  position: relative;
+  opacity: 0;
+  top: -257px;
+  z-index: -1;
+  transition: all 0.3 linear;
+  box-shadow: 1px 1px 1px #bebebf; }
+  ul.last-icon > li {
+    width: 84px;
+    height: 80px;
+    padding: 0 12px;
+    text-align: center;
+    margin-top: 23px; }
+    ul.last-icon > li a {
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      background: url(../img/homepage/i24.png);
+      margin: 0 7px; }
+      ul.last-icon > li a > div {
+        width: 156px;
+        height: 180px;
+        position: relative;
+        top: -196px;
+        left: -64px;
+        background: #000;
+        display: none;
+        text-align: center;
+        padding-top: 30px;
+        float: left; }
+        ul.last-icon > li a > div p {
+          font-size: 14px;
+          color: #888;
+          margin-top: 4px; }
+    ul.last-icon > li span {
+      font-size: 12px;
+      color: #aaa; }
+  ul.last-icon li:nth-of-type(1) a {
+    background-position: 1px 1px; }
+    ul.last-icon li:nth-of-type(1) a:hover > div {
+      display: block; }
+  ul.last-icon li:nth-of-type(2) a {
+    background-position: -99px 1px; }
+    ul.last-icon li:nth-of-type(2) a:hover > div {
+      display: block; }
+  ul.last-icon li:nth-of-type(3) a {
+    background-position: -199px -86px; }
+  ul.last-icon li:nth-of-type(4) a {
+    background-position: -299px 1px; }
+  ul.last-icon li:nth-of-type(5) a {
+    background-position: -498px 2px; }
+  ul.last-icon li:nth-of-type(6) a {
+    background-position: -399px 1px; }
+
+ul.show {
+  top: -144px;
+  opacity: 1; }
+
+aside {
+  width: 240px;
+  /*height: 356px;*/
+  margin-left: 28px;
+  float: left; }
+  aside div {
+    margin-bottom: 24px; }
+  aside ul.ul_one li {
+    width: 226px;
+    height: 40px;
+    clear: both;
+    border: solid  #b2b2b2 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f3f3f3; }
+  aside ul.ul_one li:nth-of-type(2) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside ul.ul_one li:nth-of-type(3) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside ul.ul_one li:nth-of-type(4) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside ul.ul_one li:nth-of-type(5) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside ul.ul_one li:nth-of-type(6) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside ul.ul_one li:nth-of-type(7) > a > span:nth-of-type(1) {
+    background-position: 0 -1688px; }
+  aside .ul_icon {
+    background: url(icon4.png);
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 18px;
+    margin-right: 2px;
+    margin-left: 14px; }
+  aside span.ul_a {
+    height: 18px;
+    width: 140px;
+    font-size: 14px;
+    color: #999999; }
+  aside div.inset_img img {
+    width: 226px; }
+  aside div.aside-three {
+    width: 226px;
+    border: solid  #b2b2b2 1px; }
+  aside div.aside-three img {
+    width: 226px; }
+  aside div.aside-three > a:nth-of-type(1) {
+    display: block;
+    width: 230px;
+    height: 98px; }
+  aside div.aside-three > a:nth-of-type(2) {
+    display: block;
+    width: 230px;
+    height: 34px;
+    background: #e7e7e7; }
+  aside div.aside-four {
+    width: 226px;
+    height: 316px;
+    background: #fff; }
+
+div.lable-one {
+  width: 430px;
+  height: 170px;
+  opacity: 0;
+  overflow: hidden;
+  background: #191919;
+  position: absolute;
+  top: -200px;
+  left: -100px;
+  transition: all 0.2s linear; }
+  div.lable-one > div > img {
+    width: 125px; }
+  div.lable-one div:first-child {
+    padding: 20px; }
+  div.lable-one div:last-child {
+    width: 430px;
+    border-top: 2px #0c0c0c solid;
+    padding: 10px;
+    display: flex;
+    align-items: center; }
+    div.lable-one div:last-child span:nth-child(1) {
+      display: inline-block;
+      width: 20px;
+      height: 18px;
+      background: url(../img/iconbig.png);
+      background-position: 0 -103px; }
+    div.lable-one div:last-child span:nth-child(2) {
+      color: #ccccc1; }
+
+div.lable-a {
+  opacity: 1;
+  top: -184px; }

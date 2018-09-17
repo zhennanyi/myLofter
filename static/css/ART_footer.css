@@ -1,0 +1,43 @@
+footer{
+  width: 1200px;
+  margin:0 auto;
+  height: 183px;
+  display: flex;
+  align-items: center;
+  border-top:1px solid #ededef;
+}
+.art-footer{
+  margin: 0 auto;
+  color: #74808b;
+  font-size:.8rem; 
+  text-align: center;
+}
+.art-footer>p>a{
+  margin-right: .4rem;
+  margin-left: .4rem;
+  color: #74808b;
+}
+.art-footer>p>a:hover{
+  text-decoration: none;
+}
+div.copyright{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+div.copyright>p{
+  margin: 0;
+}
+div.copyright>a:nth-of-type(1){
+  display: inline-block;
+  height: 16px;
+  width:14px; 
+  background: url(../img/box-drawing/icon-police.png) no-repeat;
+}
+div.copyright>a:nth-of-type(2){
+  color: #74808b;
+}
+div.copyright>a:nth-of-type(2):hover{
+  text-decoration: none;
+}
+

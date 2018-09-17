@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+  background: #ededef;
+}
+section{
+  width: 2222px;
+  height: 3600px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+section>div{
+  width: 300px;
+  height: 3600px;
+  margin-right: 20px;
+  float: left;
+}
+section>div:last-child{
+  margin: 0;
+}
+/* 第一列内容 */
+/* 所有div的通用样式 */
+div.list>div{
+  width: 300px;
+  background: #fdfdfd;
+  margin-bottom: 20px;
+  border-radius:5px; 
+}
+/* 所有动态的第一栏 */
+div.list>div.state-one>div:nth-of-type(1){
+  padding: 15px;
+  height: 60px;
+  border-bottom: 1px #ededef solid;
+}
+/* 所有用户图像的共有宽度 */
+div.list>div.state-one>div:nth-of-type(1)>img{
+  width: 30px;
+}
+/* 所有的用户名称样式 */
+div.list>div.state-one>div:nth-of-type(1)>a{
+  font-size: 14px;
+  color: #333;
+}
+/* 所有的关注按钮 */
+div.list>div.state-one>div:nth-of-type(1)>span{
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+  border-radius:2px;
+  border: 1px  #95cb00 solid;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  color:#9ac600;
+  float: right;
+}
+/* 所有图片的共有宽度 */
+div.list>div.state-one>div:nth-of-type(2)>img{
+  width: 300px;
+}
+/* 图片下方标题样式 */
+div.state-one>div:nth-of-type(3){
+  height: 78px;
+  width: 270px;
+  margin: 0 auto;
+  font-size:14px; 
+  color: #666;
+}
+/* 具体动态p的样式 */
+div.state-one>div:nth-of-type(3)>p{
+  margin:20px 0 18px 0;
+}
+/* 当前动态的喜欢数 */
+div.state-one>div:last-child{
+  height: 55px;
+  padding: 15px;
+  color: #aaa;
+  font-size: 14px;
+  border-top: 1px #ededef solid;
+  display: flex;
+  align-items: center;
+}
+/* 红心按钮 */
+div.state-one>div:last-child>span:nth-of-type(1){
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/browserpage/icon24.png);
+  background-position: -4px -476px;
+  margin-right: 10px;
+}
+

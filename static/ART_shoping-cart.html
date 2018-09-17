@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="day">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lofter</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/ART_header.css" rel="stylesheet">
+	<link href="css/ART_footer.css" rel="stylesheet">
+	<link href="css/ART_shoping-cart.css" rel="stylesheet">
+	<link href="css/public.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<section>
+		<main>
+			<!-- 上方购物车标题 -->
+			<div class="cart-title">
+				<span>购物车</span>
+			</div>
+			<!-- 购物车的主体内容 -->
+			<div class="product-cart" id="cart">
+				<!-- 商品的导航信息 -->
+				<ul class="list-unstyled product-cart-list ul-public">
+					<li class="checkparent"><input type="checkbox">全选</li>
+					<li>作品</li>
+					<li>商品信息</li>
+					<li>单价</li>
+					<li>数量</li>
+					<li>操作</li>
+				</ul>
+				<!--购物车内商品列表-->
+				<div class="product-box">
+					<ul class="list-unstyled product-describe ul-public">
+						<li class="checks">
+							<input type="checkbox"><a href="ART_productdetails.html"><img src="./img/ART/cart01.jpg" alt=""></a>
+						</li>
+						<li class="product-name">
+							<p>《情绪集》</p>
+							<p>倮生</p>
+						</li>
+						<li>明信片（8张）</li>
+						<li>20</li>
+						<li class="amend"><button></button>
+							<span data-toggle="count">1</span>
+							<button></button></li>
+						<li><span class="delete">删除</span></li>
+					</ul>
+
+					<!-- 下方为重复内容测试 -->
+
+					<ul class="list-unstyled product-describe ul-public">
+						<li class="checks">
+							<input type="checkbox"><a href="ART_productdetails.html"><img src="./img/ART/cart01.jpg" alt=""></a>
+						</li>
+						<li class="product-name">
+							<p>《情绪集》</p>
+							<p>倮生</p>
+						</li>
+						<li>明信片（8张）</li>
+						<li>20</li>
+						<li class="amend"><button></button>
+							<span data-toggle="count">1</span>
+							<button></button></li>
+						<li><span class="delete">删除</span></li>
+					</ul>
+
+					<ul class="list-unstyled product-describe ul-public">
+						<li class="checks">
+							<input type="checkbox"><a href="ART_productdetails.html"><img src="./img/ART/cart01.jpg" alt=""></a>
+						</li>
+						<li class="product-name">
+							<p>《情绪集》</p>
+							<p>倮生</p>
+						</li>
+						<li>明信片（8张）</li>
+						<li>20</li>
+						<li class="amend"><button></button>
+							<span data-toggle="count">1</span>
+							<button></button></li>
+						<li><span class="delete">删除</span></li>
+					</ul>
+				</div>
+
+				<!-- 下方结算金额块 -->
+				<div class="settle-accounts">
+					已选商品 <span>1</span>件 <span>合计：</span><span>￥20</span> <a href="">结算</a>
+				</div>
+			</div>
+		</main>
+
+
+		<div id="footer"></div>
+	</section>
+	<script src="./js/common.js"></script>
+	<script src="./js/shoping-cart.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+// 引入其他的页面模块
+$.ajax({
+    url: './ART_header.html',
+    type: 'get',
+    success: function (res) {
+        $('#header').html(res)
+    }
+}); $.ajax({
+    url: './ART_footer.html',
+    type: 'get',
+    success: function (res) {
+        $('#footer').html(res)
+    }
+});
+	</script>
+</body>

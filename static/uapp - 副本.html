@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="day">
+<head>
+	<meta charset="UTF-8">
+	<title>Lofter</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<style>
+		div{
+			border: 1px red solid;
+		}
+		#d1{
+			width: 1500px;
+		}
+	</style>
+</head>
+<body>
+
+	<section>
+		<main>
+			<div id="d1">
+				<div class="row">
+					<div class="col-sm-4">154654654</div>
+					<div class="col-sm-4">554343543</div>
+					<div class="col-sm-4">254534553</div>
+				</div>
+			</div>
+
+		</main>
+	</section>
+
+<script>
+    $.ajax({
+        url:'./module_header.html',
+        type:'get',
+        success:function (res) {
+            $('#header').html(res)
+        }
+    });
+    $.ajax({
+        url:'./module_footer.html',
+        type:'get',
+        success:function (res) {
+            $('#footer').html(res)
+        }
+    });
+    $.ajax({
+        url:'./module_browse.html',
+        type:'get',
+        success:function (res) {
+            $('#browse').html(res)
+        }
+    });
+</script>
+</body>

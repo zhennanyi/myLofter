@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+li{
+	float: left;
+	list-style: none;
+}
+
+footer{
+	width:100%;
+	height: 100px;
+	background-color:#f4f4f4;
+	text-align: center;
+	padding-top: 40px;
+	}
+footer a{
+	font-size: 16px;
+	color:#929ba3;	
+	margin-right: 6px;
+	margin-top: 10px;
+}
