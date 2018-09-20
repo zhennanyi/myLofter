@@ -1,0 +1,302 @@
+body{
+    background: #ededef;
+}
+// 上方轮播图
+div.banner-area{
+    width: 100%;
+    background-image:linear-gradient(to bottom,#fbfbfb,#e7e7e7);
+    position: relative;
+    height: 562px;
+    overflow: hidden;
+    &:hover div.bigbox>span{
+        opacity: 1;
+    }
+    >div.bigbox{
+        width: 1200px;
+        height: 568px;
+        margin: 0 auto;
+        position: relative;
+        // 设置两个切换按钮样式
+        >span{
+            display: inline-block;
+            width: 50px;
+            height: 100px;
+             background: url(../img/ART/btn.png);
+            background-color: #f7f7f7;
+            position: absolute;
+            top: 40%;
+            border-radius:3px; 
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.2s linear;
+            &:hover{
+                 background-color: #fff;
+            }
+        }
+          >span:nth-of-type(1){
+             left: -50px;
+            background-position: -5px -119px;
+          }
+        >span:nth-of-type(2){
+            right: -50px;
+          background-position: -5px -213px;
+          z-index: 3;
+        }
+        // 三个小导航点
+        div.dots{
+            width: 80px;
+            position: absolute;
+            bottom: 2%;
+            left: 47%;
+            z-index: 5;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            a{
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                background: url(../img/ART/btn.png);
+                background-position: -20px -32px;
+            }
+            a.active{
+                background-position: -20px -72px;
+            }
+        }
+        // 此框需要三个进行渐变轮播
+        div.art-banner{
+            margin: 0;
+            position: absolute;
+            width: 1200px;
+            height: 568px;
+            text-align: center;
+            z-index: -1;
+            opacity: 0;
+            // 将过渡效果仅设置为opacity，可以得到预期效果
+            transition: opacity 2s linear;
+            // 轮播作品标题
+                div.banner-text{
+                    position: relative;
+                    left: 110px;
+                    top: 90px;
+                    z-index: 2;
+                    >p{
+                    font-size: 18px;
+                    color: #999999;
+                    }
+                    >a{
+                    margin-top:.6rem; 
+                    }
+                    a.mb-4{
+                        &:hover{
+                        color: #b37575;
+                        text-decoration: none;
+                        }
+                    }
+                    a.author{
+                    display: block;
+                    color:#999999;
+                    &:hover{
+                    text-decoration: none;
+                }
+                    }
+                }
+            // 画中画
+            div.pip{
+                position: relative;
+                img.pip-small{
+                    position: absolute;
+                    left: 249px;
+                    top: 134px;
+                    width: 49.6%;
+                }
+            }
+        }
+        // 设置显示样式
+        div.active{
+            // visibility: visible;
+            z-index: 3;
+            opacity: 1;
+        }
+    }
+
+    
+}
+
+
+
+// 下方商品页面
+section{
+    width: 100%;
+    background: #ededef;
+    div.box_drawing{
+        width: 1200px;
+        margin: 0 auto;
+        background: #fff;
+   
+    }
+}
+
+// 引入两个边框动画
+@keyframes change {
+    0% {
+        outline: 10px #fff solid;
+    }
+    100% {
+        outline: 10px black solid;
+    }
+}
+@keyframes change_1 {
+    0% {
+        outline: 10px black solid;
+
+    }
+    100% {
+        outline: 10px #fff solid;
+    }
+}
+
+.col-sm-3{
+    >p{
+    margin-left: 1rem;
+    margin-bottom: 0;
+    width: 120px;
+    display: inline-block;
+    font-size: 0.8rem;
+        >a{
+            text-decoration: none;
+            color: #444444;
+            &:hover{
+                    color: #7594b3;
+                }
+            }
+    }
+}
+
+div.col-sm-12{
+    >a{
+    display: block;
+    width: 1164px;
+    height: 60px;
+    background: #f6f6f6;
+    font-size: 1.2rem;
+    text-decoration: none;
+    line-height: 60px;
+    color: #6b6666;
+    text-align: center;
+    margin: 0 auto;
+    &:hover{
+    opacity: 0.5;
+}
+    }
+}
+
+
+div.img_box{
+    width: 262px;
+    height: 262px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: change_1 700ms ease;
+    img{
+    width: 262px;
+    transition:all 700ms ease-in-out;
+    }
+    &:hover{
+        outline: 10px black solid;
+        animation: change 700ms ease  alternate;
+        >img{
+             width:85%; 
+        }
+    }
+
+}
+
+
+// 下方明信片
+div.postcard-box{
+    position: relative;
+    div{
+    position: absolute;
+    width: 262px;
+    height: 176px;
+    background: #fff;
+    transition: all .3s ease;
+    border: 1px #e0e0e0 solid;
+    }
+    div.postcard{
+        img{
+            width: 262px;
+        }
+ 
+    }
+    // 下面的透明div
+    div:nth-child(1){
+    border:0;
+    left: 3px;
+    top: 5px;
+    z-index: 5;
+    }
+    div:nth-child(2){
+    left: 3px;
+    top: 5px;
+    z-index: 4;
+    }
+    div:nth-child(3){
+        left: 5px;
+        top: 7px;
+        z-index: 3;
+    }
+    div:nth-child(4){
+        left: 7px;
+        top: 9px;
+        z-index: 2;
+    }
+    div:nth-child(5){
+        left: 9px;
+        top: 12px;
+        z-index: 1;
+    }
+    &:hover{
+        div:nth-child(1){
+    transform: rotate(-1deg);
+}
+div:nth-child(2){
+    transform: rotate(-4deg);
+}
+div:nth-child(3){
+    transform: rotate(.5deg);
+}div:nth-child(4){
+    transform: rotate(2deg);
+}
+div:nth-child(5){
+    transform: rotate(5deg);
+}
+    }
+}
+// 盒子宽度，暂定
+.postcard-main>.col-sm-3{
+    height: 238px;
+}
+
+/* 设置明信片下方标题 */
+.postcard-main .postcard-titlt{
+    width: 262px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top:200px;
+    left: 10px;
+   a{
+    color: #444;
+    font-size: .8rem;
+    &:hover{
+    color:#7594b3;
+    text-decoration: none;
+}
+}
+}
+
+

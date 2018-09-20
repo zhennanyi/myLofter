@@ -38,9 +38,11 @@ $("[data-toggle=haha]").click(function(){
     // 查找模态框位置
     $("div.modal").addClass("modal-on")
 //    给整个网页加上浅灰背景
-    // $("section").addClass("op")
+    $(".shade").show();
+
 })
 // 隐藏模态框
 $("[data-dismiss=modal]").click(function(){
     $("div.modal").removeClass("modal-on")
+    $(".shade").hide();
 })

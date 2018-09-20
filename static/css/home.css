@@ -13,232 +13,264 @@ body {
 /*主要内容显示主体 */
 section {
   width: 944px;
-  margin: 30px auto 0; }
+  margin: 30px auto 0;
+  overflow: hidden; }
   section main {
     width: 674px;
     float: left;
     position: relative; }
-    section main div#publishbar {
+    section main div.publishbar {
       width: 674px;
       height: 114px;
-      background: #fff; }
-      section main div#publishbar a {
+      background: #fff;
+      z-index: 10;
+      position: relative;
+      padding-left: 110px; }
+      section main div.publishbar a + a {
         background: url(../img/homelogo.png);
         position: relative;
         background-repeat: no-repeat;
         display: inline-block;
         width: 108px;
         height: 110px; }
-      section main div#publishbar a:nth-of-type(1) {
-        background-position: 0 -374px; }
-      section main div#publishbar a:nth-of-type(2) {
+      section main div.publishbar a:nth-of-type(1) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.5s linear; }
+        section main div.publishbar a:nth-of-type(1) img {
+          width: 110px;
+          vertical-align: top;
+          transition: all 0.2s linear; }
+      section main div.publishbar a:nth-of-type(2) {
         background-position: -112px -133px; }
-      section main div#publishbar a:nth-of-type(3) {
+      section main div.publishbar a:nth-of-type(3) {
         background-position: -224px 0; }
-        section main div#publishbar a:nth-of-type(3):hover {
+        section main div.publishbar a:nth-of-type(3):hover {
           background-position: -224px -133px; }
-      section main div#publishbar a:nth-of-type(4) {
+      section main div.publishbar a:nth-of-type(4) {
         background-position: -336px 0; }
-        section main div#publishbar a:nth-of-type(4):hover {
+        section main div.publishbar a:nth-of-type(4):hover {
           background-position: -336px -133px; }
-      section main div#publishbar a:nth-of-type(5) {
+      section main div.publishbar a:nth-of-type(5) {
         background-position: -448px 0; }
-        section main div#publishbar a:nth-of-type(5):hover {
+        section main div.publishbar a:nth-of-type(5):hover {
           background-position: -448px -133px; }
-      section main div#publishbar a:nth-of-type(6) {
+      section main div.publishbar a:nth-of-type(6) {
         background-position: -560px 0; }
-        section main div#publishbar a:nth-of-type(6):hover {
+        section main div.publishbar a:nth-of-type(6):hover {
           background-position: -560px -133px; }
-    section main div.angle {
-      width: 585px;
-      height: 24px;
-      background: #fff;
-      margin-top: 20px;
-      position: absolute;
-      right: 0;
-      top: 119px;
-      z-index: 3;
-      box-shadow: 1px -1px 1px #bebebf; }
-      section main div.angle > div {
-        width: 0px;
-        height: 0px;
-        border-right: 12px #fff solid;
-        border-top: 12px #fff solid;
-        border-bottom: 12px #ededef solid;
-        border-left: 12px #ededef solid; }
   section div.user-flow {
+    height: auto;
     width: 674px;
     margin-top: 24px;
     position: relative;
-    margin-bottom: 46px; }
-    section div.user-flow > div.user-flex {
-      display: flex;
-      justify-content: space-between;
+    margin-bottom: 46px;
+    /*左侧放头像的框*/
+    /*图片信息流大框*/ }
+    section div.user-flow:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both; }
+    section div.user-flow > div.head-img {
+      width: 64px;
+      height: 64px;
+      float: left; }
+    section div.user-flow div.angle {
+      width: 585px;
+      height: 24px;
+      background: url(../img/homepage/angle.png);
+      background-position: 2px 0;
+      overflow: hidden;
+      float: right;
+      position: relative;
+      top: 2px; }
+      section div.user-flow div.angle div {
+        width: 21px;
+        height: 21px;
+        float: right;
+        background: url(../img/homepage/angle.png);
+        background-position: -668px 0; }
+      section div.user-flow div.angle div.angle-a {
+        background-position: -786px 0; }
+    section div.user-flow div.image-flow {
+      box-shadow: 0px 3px 5px #d8d8da;
+      width: 560px;
+      color: #929BA3;
+      font-size: 14px;
+      padding: 8px 30px 0;
+      background: #fff;
+      float: right;
       /*上方图片标题文字*/
-      /*左侧放头像的框*/
-      /*图片信息流大框*/ }
-      section div.user-flow > div.user-flex div.pinter_2 {
+      /*放图片流的框*/
+      /*右侧文字的框*/
+      /* 底部操作按钮框 */ }
+      section div.user-flow div.image-flow div {
+        float: left; }
+      section div.user-flow div.image-flow div.pinter_2 {
         width: 540px;
         height: 20px; }
-        section div.user-flow > div.user-flex div.pinter_2 a {
+        section div.user-flow div.image-flow div.pinter_2 a {
           color: #929BA3; }
-      section div.user-flow > div.user-flex > div.head-img {
-        width: 64px;
-        height: 64px;
-        background: black; }
-      section div.user-flow > div.user-flex div.image-flow {
-        width: 584px;
-        color: #929BA3;
-        font-size: 14px;
-        padding: 8px 30px 0;
-        background: #fff;
-        border-left: 24px #ededef solid;
-        border-top: 24px #fff solid;
-        box-shadow: 1px 1px 1px #bebebf;
-        /*放图片流的框*/
-        /*右侧文字的框*/
-        /* 底部操作按钮框 */ }
-        section div.user-flow > div.user-flex div.image-flow div {
-          float: left; }
-        section div.user-flow > div.user-flex div.image-flow div:nth-of-type(1) p a {
-          position: relative;
-          display: inline-block; }
-        section div.user-flow > div.user-flex div.image-flow div.left_img {
-          width: 186px;
-          height: 400px;
-          margin-top: 16px;
-          overflow: hidden; }
-          section div.user-flow > div.user-flex div.image-flow div.left_img img.iimg {
-            width: 180px; }
-        section div.user-flow > div.user-flex div.image-flow div.imgbig > img {
-          width: 476px; }
-        section div.user-flow > div.user-flex div.image-flow div.right_text {
-          width: 240px;
-          margin-left: 30px; }
-          section div.user-flow > div.user-flex div.image-flow div.right_text a {
-            color: #929BA3; }
-        section div.user-flow > div.user-flex div.image-flow div.right_text-one {
+      section div.user-flow div.image-flow div:nth-of-type(1) p a {
+        position: relative;
+        display: inline-block; }
+      section div.user-flow div.image-flow div.left_img {
+        width: 186px;
+        height: 400px;
+        margin-top: 16px;
+        overflow: hidden; }
+        section div.user-flow div.image-flow div.left_img img ~ img {
           display: none; }
-        section div.user-flow > div.user-flex div.image-flow div.bom-button {
-          width: 476px;
-          height: 20px;
-          margin-top: 11px;
-          margin-bottom: 20px;
+        section div.user-flow div.image-flow div.left_img span ~ span {
+          display: none; }
+        section div.user-flow div.image-flow div.left_img img.iimg {
+          width: 180px; }
+      section div.user-flow div.image-flow div.imgbig span {
+        display: inline-block;
+        width: 65px;
+        height: 15px;
+        background: url(../img/homepage/icon8.png);
+        background-position: 0 -1016px;
+        padding-left: 15px;
+        font-size: 12px;
+        cursor: pointer; }
+      section div.user-flow div.image-flow div.imgbig > img {
+        width: 476px; }
+      section div.user-flow div.image-flow div.right_text {
+        width: 240px;
+        margin-left: 30px; }
+        section div.user-flow div.image-flow div.right_text a {
+          color: #929BA3; }
+      section div.user-flow div.image-flow div.right_text-one {
+        clear: both;
+        margin-left: 8px; }
+      section div.user-flow div.image-flow div.bom-button {
+        width: 498px;
+        height: 20px;
+        margin-top: 11px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        /* 按钮的不变样式 */
+        /* 按钮需要根据不同状态被选择的样式 */ }
+        section div.user-flow div.image-flow div.bom-button > div {
           display: flex;
-          justify-content: space-between;
-          /* 按钮的不变样式 */
-          /* 按钮需要根据不同状态被选择的样式 */ }
-          section div.user-flow > div.user-flex div.image-flow div.bom-button > div {
-            display: flex;
-            align-items: center; }
-            section div.user-flow > div.user-flex div.image-flow div.bom-button > div a {
-              position: relative;
-              line-height: 20px;
-              margin-left: 10px;
-              font-size: 12px;
-              color: #aaa; }
-          section div.user-flow > div.user-flex div.image-flow div.bom-button > div:nth-of-type(1) {
-            width: 200px;
-            text-align: left; }
-            section div.user-flow > div.user-flex div.image-flow div.bom-button > div:nth-of-type(1) > span {
-              display: inline-block;
-              width: 20px;
-              height: 18px;
-              background: url(../img/iconbig.png);
-              background-position: 0 -103px; }
-          section div.user-flow > div.user-flex div.image-flow div.bom-button button.heart {
+          align-items: center; }
+          section div.user-flow div.image-flow div.bom-button > div a {
+            position: relative;
+            line-height: 20px;
+            margin-left: 10px;
+            font-size: 12px;
+            color: #aaa; }
+        section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) {
+          width: 200px;
+          text-align: left; }
+          section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) > span {
             display: inline-block;
             width: 20px;
             height: 18px;
-            border: 0;
-            outline: none;
-            margin-left: 10px;
-            background: url(../img/iconbig.png); }
-          section div.user-flow > div.user-flex div.image-flow div.bom-button button.like {
-            background-position: -80px -2790px; }
-          section div.user-flow > div.user-flex div.image-flow div.bom-button button.nlike {
-            background-position: -80px -2759px; }
-    section div.user-flow div.comment {
-      position: relative;
-      opacity: 0;
-      top: -144px;
-      overflow: hidden;
-      transition: all 0.3s linear;
-      background: #fafafa;
-      float: right;
-      box-shadow: 0px 0px 3px #bebebf;
+            background: url(../img/iconbig.png);
+            background-position: 0 -103px; }
+        section div.user-flow div.image-flow div.bom-button button.heart {
+          display: inline-block;
+          width: 20px;
+          height: 18px;
+          border: 0;
+          outline: none;
+          margin-left: 10px;
+          background: url(../img/iconbig.png); }
+        section div.user-flow div.image-flow div.bom-button button.like {
+          background-position: -80px -2790px; }
+        section div.user-flow div.image-flow div.bom-button button.nlike {
+          background-position: -80px -2759px; }
+
+div.comment {
+  position: relative;
+  margin-top: -150px;
+  width: 560px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  background: #fafafa;
+  float: right;
+  box-shadow: 0px -3px 0px #c8c8c8;
+  font-size: 12px;
+  transition: all 0.3s linear;
+  z-index: -1;
+  opacity: 0; }
+  div.comment div {
+    width: 560px; }
+  div.comment div:nth-of-type(1) {
+    padding: 18px 15px 0px;
+    height: 58px;
+    text-align: center;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center; }
+    div.comment div:nth-of-type(1) input {
+      width: 390px;
+      height: 40px;
+      padding: 9px;
+      border: 1px #cececf solid; }
+    div.comment div:nth-of-type(1) a {
+      display: inline-block;
+      width: 104px;
+      height: 40px;
+      background-image: linear-gradient(to bottom, #84af00, #79a300);
+      border-radius: 3px;
+      text-align: center;
+      line-height: 40px;
+      color: #fff; }
+      div.comment div:nth-of-type(1) a:hover {
+        color: #fff;
+        background: #9cbf00; }
+  div.comment div ~ div {
+    height: 44px;
+    padding: 10px 30px;
+    border-bottom: 1px #cececf solid;
+    position: relative; }
+    div.comment div ~ div a {
+      color: #7594B3; }
+    div.comment div ~ div a:last-child {
+      position: absolute;
+      right: 50px; }
+    div.comment div ~ div span {
+      color: #444; }
+  div.comment div:last-child {
+    height: 40px;
+    display: flex;
+    align-items: center; }
+    div.comment div:last-child span:nth-of-type(1) {
       font-size: 12px;
-      transition: all 0.3s linear;
-      z-index: -1; }
-      section div.user-flow div.comment div {
-        width: 560px; }
-      section div.user-flow div.comment div:nth-of-type(1) {
-        padding: 18px 15px 0px;
-        height: 58px;
-        text-align: center;
-        margin-bottom: 5px; }
-        section div.user-flow div.comment div:nth-of-type(1) input {
-          width: 390px;
-          height: 40px;
-          padding: 9px;
-          border: 1px #cececf solid; }
-        section div.user-flow div.comment div:nth-of-type(1) a {
-          display: inline-block;
-          width: 104px;
-          height: 40px;
-          color: #fff;
-          background-image: linear-gradient(to bottom, #84af00, #79a300);
-          border-radius: 3px;
-          text-align: center;
-          line-height: 40px; }
-          section div.user-flow div.comment div:nth-of-type(1) a:hover {
-            color: #fff;
-            background: #9cbf00; }
-      section div.user-flow div.comment div ~ div {
-        height: 44px;
-        padding: 10px 30px;
-        border-bottom: 1px #cececf solid;
-        position: relative; }
-        section div.user-flow div.comment div ~ div a {
-          color: #7594B3; }
-        section div.user-flow div.comment div ~ div a:last-child {
-          position: absolute;
-          right: 50px; }
-        section div.user-flow div.comment div ~ div span {
-          color: #444; }
-      section div.user-flow div.comment div:last-child {
-        height: 40px;
-        display: flex;
-        align-items: center; }
-        section div.user-flow div.comment div:last-child span:nth-of-type(1) {
-          font-size: 12px;
-          cursor: pointer;
-          color: #888; }
-          section div.user-flow div.comment div:last-child span:nth-of-type(1):hover {
-            color: #7594B3; }
-        section div.user-flow div.comment div:last-child span:nth-of-type(2) {
-          display: inline-block;
-          width: 15px;
-          height: 15px;
-          background: url(../img/icon24.png);
-          background-position: right -932px; }
-    section div.user-flow div.show {
-      top: 0;
-      opacity: 1; }
+      cursor: pointer;
+      color: #888; }
+      div.comment div:last-child span:nth-of-type(1):hover {
+        color: #7594B3; }
+    div.comment div:last-child span:nth-of-type(2) {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: url(../img/icon24.png);
+      background-position: right -932px; }
+
+div.user-flow div.show {
+  opacity: 1;
+  margin-top: 2px; }
 
 ul.last-icon {
   width: 560px;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
+  box-shadow: 0px -3px 0px #c8c8c8;
   float: right;
   padding: 0 0 0 29px;
-  background: #ffffff;
+  background: #fff;
   height: 113px;
   position: relative;
   opacity: 0;
-  top: -257px;
-  z-index: -1;
-  transition: all 0.3 linear;
-  box-shadow: 1px 1px 1px #bebebf; }
+  z-index: -2;
+  margin-top: -150px;
+  margin-bottom: 0; }
   ul.last-icon > li {
     width: 84px;
     height: 80px;
@@ -286,8 +318,8 @@ ul.last-icon {
   ul.last-icon li:nth-of-type(6) a {
     background-position: -399px 1px; }
 
-ul.show {
-  top: -144px;
+div.user-flow ul.show {
+  margin-top: 2px;
   opacity: 1; }
 
 aside {
@@ -383,3 +415,142 @@ div.lable-one {
 div.lable-a {
   opacity: 1;
   top: -184px; }
+
+div.picture {
+  position: relative;
+  z-index: -1;
+  height: 110px;
+  margin-top: -110px;
+  overflow: hidden;
+  width: 674px;
+  opacity: 0;
+  transition: all 0.4s linear; }
+  div.picture:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  div.picture > div.head-img {
+    width: 64px;
+    height: 64px;
+    float: left; }
+    div.picture > div.head-img img {
+      width: 64px; }
+  div.picture div.angle {
+    width: 585px;
+    height: 24px;
+    background: url(../img/homepage/angle.png);
+    background-position: 2px 0;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    top: 2px; }
+    div.picture div.angle div {
+      width: 21px;
+      height: 21px;
+      float: right;
+      background: url(../img/homepage/angle.png);
+      background-position: -668px 0; }
+    div.picture div.angle div.angle-a {
+      background-position: -786px 0; }
+  div.picture .picture-box {
+    width: 560px;
+    color: #929BA3;
+    font-size: 14px;
+    padding: 8px 30px 0;
+    background: #fff;
+    float: right; }
+    div.picture .picture-box div.pinter_2 {
+      width: 540px;
+      height: 20px; }
+      div.picture .picture-box div.pinter_2 a {
+        color: #929BA3; }
+  div.picture div.dashed {
+    width: 500px;
+    height: 312px;
+    border: 1px dashed #dfdfdf;
+    margin-top: 16px; }
+    div.picture div.dashed textarea {
+      width: 498px;
+      height: 310px;
+      border: 0;
+      outline: none; }
+  div.picture div.three-btn {
+    width: 500px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between; }
+    div.picture div.three-btn button {
+      width: 100px;
+      height: 36px;
+      color: #888;
+      text-align: center;
+      border: 0;
+      border-radius: 2px;
+      letter-spacing: 10px;
+      padding-left: 6px;
+      background: url(../img/homepage/icon.png);
+      outline: none;
+      cursor: pointer; }
+      div.picture div.three-btn button:hover {
+        opacity: 0.7; }
+    div.picture div.three-btn button:nth-of-type(2) {
+      position: relative;
+      left: 70px; }
+    div.picture div.three-btn button:nth-of-type(3) {
+      background-position: 0px -383px;
+      position: relative;
+      left: 56px;
+      color: #fff; }
+    div.picture div.three-btn button:nth-of-type(4) {
+      background-position: -109px -383px;
+      width: 31px;
+      border-left: 1px #fff solid;
+      opacity: 0.7; }
+      div.picture div.three-btn button:nth-of-type(4) select {
+        width: 21px; }
+
+main > div.picture-on {
+  height: 456px;
+  opacity: 1;
+  z-index: 5;
+  margin-top: 0px; }
+
+/* 设置全屏遮罩层效果 */
+div.shade {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -4;
+  transition: all 0.2s linear; }
+
+div.off {
+  opacity: 0.75;
+  z-index: 4; }
+
+section main div.wirte {
+  height: 110px;
+  position: absolute;
+  background: transparent; }
+  section main div.wirte a:nth-of-type(1) {
+    width: 110px;
+    background: transparent; }
+    section main div.wirte a:nth-of-type(1) img {
+      width: 64px; }
+  section main div.wirte a ~ a {
+    opacity: 0; }
+
+section main div.wirte-one {
+  background: #fff; }
+  section main div.wirte-one a + a {
+    background: #fff; }
+
+@keyframes change {
+  50% {
+    width: 110px; }
+  100% {
+    width: 64px; } }

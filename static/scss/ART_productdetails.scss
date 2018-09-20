@@ -3,7 +3,7 @@
 body {
 	width: 100%;
 	height: 3400px;
-	background: #ededef;
+  background: #ededef;
 }
   /* 白色背景 */
 section {
@@ -11,6 +11,7 @@ section {
 	height: 3400px;
 	margin: 60px auto 0;
   background: #fff;
+
   div.g-box{
     height: 3240px;
   }
@@ -296,17 +297,16 @@ a.last-button{
 
 
 div.modal-off{
-    position: absolute;
-    top: 50%;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  // margin-left:0px;
-  // margin-top: 0px; 
   overflow: hidden;
   width: 0;
   height: 0;
+  opacity: 0;
   transition: all 0.4s ease-out;
   background: #fff;
-  opacity: 0;
+  
     div.modal-header{
       width: 580px;
       height: 53px;
@@ -380,4 +380,18 @@ div.modal-on{
   border: 0;
   margin-left: 50px;
   margin-right: 10px;
+}
+
+
+/* 设置全屏遮罩层效果 */
+ // 高度应为整个网页的宽度，通过js设置
+div.shade{
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: black;
+  opacity: 0.25;
+  position: fixed;
+  left: 0;
+  top: 0;
 }

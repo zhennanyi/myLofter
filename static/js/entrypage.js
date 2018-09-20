@@ -1,11 +1,11 @@
 // 请求其他的页面模块
-// $.ajax({
-//   url: './module_footer.html',
-//   type: 'get',
-//   success: function (res) {
-//     $('#footer').html(res)
-//   }
-// });	
+$.ajax({
+  url: './module_footer.html',
+  type: 'get',
+  success: function (res) {
+    $('#footer').html(res)
+  }
+});	
 //使用ajax封装来实现异步请求
 // 因为ajax封装中已经直接用了promise对象，所以必须用.then或者async自调用获取直接结果
 
@@ -66,42 +66,72 @@ function login() {
   })
 }
 
-//轮播图测试
-var wrap = document.querySelector(".wrap");
-var next = document.querySelector(".arrow_right");
-var prev = document.querySelector(".arrow_left");
-var arr = $('div.wrap img');
-console.log(arr);
-var index = 0;
+// clearInterval(timer);  //清除周期性定时器
 
-next.onclick = function () {
-  next_pic();
-}
-prev.onclick = function () {
-  prev_pic();
-}
-function prev_pic() {
-  index--;
-  if (index < 0) {
-    index = 4;
+
+// 自写轮播图
+// 定义轮播图函数，judeg为当前按钮，test为判断条件，number为图片总数-1
+function banner(judeg,test,number) {
+  if (test == "prev") {
+    if (c > 0) {
+      c--;
+      judeg.parent().prev().css("left", -2560 * c);
+    } else {
+      c = number;
+      judeg.parent().prev().css("left", -2560 * c);
+    }
+  } else {
+    if (c < number) {
+      c++;
+      judeg.parent().prev().css("left", -2560 * c);
+    } else {
+      c = 0;
+      judeg.parent().prev().css("left", -2560 * c);
+
+    }
   }
-  console.log(index);
-  console.log(arr.eq(index));
-  arr.eq(index).css('zIndex', 10).siblings().css('zIndex', 0);
 }
-function next_pic() {
-  index++;
-  if (index > 4) {
-    index = 0;
-  }
-  console.log(index);
-  console.log(arr.eq(index));
-  arr.eq(index).css('zIndex', 10).siblings().css('zIndex', 0);
-}
-//周期性定时器
-// setInterval(func,delay);
+// 预先定义好一个计数
+var c = 0;
+// 获取轮播图框的图片总数
+var a = $(".wrap").children().length - 1;
+
+// 通过传入不同的参数，实现不同的调用效果
+$(".arrow_left").click(function () {
+  var $prev = $(this);
+  banner($prev,"prev",a)
+
+})
+$(".arrow_right").click(function () {
+  var $next = $(this);
+  banner($next,"next",a)
+})
+
+// 设置鼠标悬停时清除定时器
 var timer = null;
-timer = setInterval(() => {
-  next_pic()
-}, 3000);
-clearInterval(timer);  //清除周期性定时器
+$("nav").hover(
+  function () {
+    clearInterval(timer);  //清除周期性定时器
+  },
+  function () {
+    timer = setInterval(function () {
+      $(".arrow_right").click()
+    }, 2000);
+  }
+)
+
+
+
+// 设置登录胶囊导航状态的实现
+
+// 设置底部导航栏根据页面高度显示和隐藏
+$(window).scroll(function(){
+  // a为当前页面的总高度,
+  //注意，不要用简单的变量，容易冲突 
+  height = document.body.scrollHeight
+  if ($(window).scrollTop() > 1100 && $(window).scrollTop() < height-1200){
+      $(".suspend").addClass("show-strip");
+  }else{
+    $(".suspend").removeClass("show-strip")
+  }
+})

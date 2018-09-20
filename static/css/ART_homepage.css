@@ -1,12 +1,12 @@
-body{
+/* body{
     background: #ededef;
 }
 .box_drawing{
     width: 1200px;
     margin: 0 auto;
     background: #fff;
-}
-div.banner-area{
+} */
+/* div.banner-area{
     width: 100%;
     background-image:linear-gradient(to bottom,#fbfbfb,#e7e7e7);
 }
@@ -19,11 +19,11 @@ div.art-banner{
     height: 568px;
     text-align: center;
     margin: 0 auto;
-}
-div.row{
+} */
+/* div.row{
     width: 1170px;
-}
-@keyframes change {
+} */
+/* @keyframes change {
     0% {
         outline: 10px #fff solid;
     }
@@ -39,8 +39,8 @@ div.row{
     100% {
         outline: 10px #fff solid;
     }
-}
-.aa{
+} */
+/* .aa{
     width: 262px;
     height: 262px;
     margin: 20px auto;
@@ -48,19 +48,19 @@ div.row{
     justify-content: space-around;
     align-items: center;
     animation: change_1 700ms ease;
-}
-.img_box img{
+} */
+/* .img_box img{
     width: 262px;
     transition:all 700ms ease-in-out;
-}
-.aa:hover{
+} */
+/* .aa:hover{
     outline: 10px black solid;
     animation: change 700ms ease  alternate;
-}
-.aa:hover img{
+} */
+/* .aa:hover img{
     width:85%;
-}
-.col-sm-3>p{
+} */
+/* .col-sm-3>p{
     margin-left: 1rem;
     margin-bottom: 0;
     width: 120px;
@@ -73,9 +73,9 @@ div.row{
 }
 .col-sm-3>p>a:hover{
     color: #7594b3;
-}
+} */
 
-div.col-sm-12>a{
+/* div.col-sm-12>a{
     display: block;
     width: 1164px;
     height: 60px;
@@ -89,10 +89,10 @@ div.col-sm-12>a{
 }
 div.col-sm-12>a:hover{
     opacity: 0.5;
-}
+} */
 
 /* 画中画图片样式 */
-.pip{
+/* .pip{
     position: relative;
     left: 1.2rem;
 }
@@ -101,9 +101,9 @@ div.col-sm-12>a:hover{
     left: 251px;
     top: 134px;
     width: 49.6%;
-}
+} */
 /* 轮播作品标题 */
-div.banner-text{
+/* div.banner-text{
     position: relative;
     left: 110px;
     top: 90px;
@@ -119,19 +119,19 @@ div.banner-text>a{
 a.mb-4:hover{
     color: #7594b3;
     text-decoration: none;
-}
-a.author{
+} */
+/* a.author{
     display: block;
     color:#999999;
 }
 a.author:hover{
     text-decoration: none;
-}
+} */
 /* 明信片效果 */
 div.postcard-main{
     /* height: 900px; */
 }
-div.postcard-box{
+/* div.postcard-box{
     position: relative;
 }
 div.postcard-box div{
@@ -143,8 +143,8 @@ div.postcard-box div{
     border: 1px #e0e0e0 solid;
 }
 div.postcard img{
-    width: 262px;
-}
+    width: 262px; */
+/* } */
 div.postcard-box>div:nth-child(1){
     border:0;
     left: 3px;

@@ -8,19 +8,27 @@
 	<link href="css/entry.css" rel="stylesheet">
 	<link href="css/module_footer.css" rel="stylesheet">
 	<link href="css/public.css" rel="stylesheet">
+
 </head>
 
 <body>
 	<!-- 网页登录主页面 -->
 	<nav>
 		<!-- 背景轮播图模块 -->
-		<div class="wrap">
-			<img src="./img/entrypage/5.jpg" alt="">
-			<img src="./img/entrypage/1.jpg" alt="">
+		<div class="wrap" id="aa">
 			<img src="./img/entrypage/2.jpg" alt="">
-			<img src="./img/entrypage/3.jpg" alt="">
+			<img src="./img/entrypage/9.jpg" alt="">
+			<img src="./img/entrypage/1.jpg" alt="">
+			<img src="./img/entrypage/7.jpg" alt="">
 			<img src="./img/entrypage/4.jpg" alt="">
+
 		</div>
+		<div class="low-right">
+			<a href="">背景作品来自：oneDay</a>
+			<a class="arrow arrow_left" data-toggle="banner"></a>
+			<a class="arrow arrow_right" data-toggle="banner"></a>
+		</div>
+
 		<!-- 主内容模块 -->
 		<div id="center1">
 			<!-- 大logo -->
@@ -32,6 +40,7 @@
 			<!--创建一个胶囊导航-->
 			<ul class="nav nav-pills inp_text list-unstyled">
 				<li class="nav-item "><a href="#login_left" class="nav-link" data-toggle="pill">注册</a></li>
+				<!-- 通过a标签上的href上的id名，在点击时查找到对应的元素，修改其index值，达到显示的目的，并同时给当前标签加上active-->
 				<li class="nav-item "><a href="#login_center" class="nav-link active" data-toggle="pill">登录</a></li>
 				<li class="nav-item "><a href="#login_right" class="nav-link" data-toggle="pill">下载APP</a></li>
 			</ul>
@@ -128,8 +137,7 @@
 				</div>
 			</div>
 		</div>
-		<a href="javascript:;" class="arrow arrow_left">&lt;</a>
-		<a href="javascript:;" class="arrow arrow_right">&gt;</a>
+
 	</nav>
 	<div id="sec">
 		<h2 class="htwo">随性的记录方式</h2>
@@ -185,7 +193,7 @@
 		<div>
 			<img src="./img/entrypage/blog-1.jpg">
 			<img src="./img/entrypage/blog-2.jpg">
-			<!--<img src="./img/entrypage/blog-3.jpg">-->
+			<img src="./img/entrypage/blog-5.jpg">
 		</div>
 	</div>
 	<div id="d5">
@@ -212,7 +220,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="bottom_strip">
+	<div class="bottom_strip">
 		<h2>LOFTER - 让兴趣，更有趣</h2>
 		<div class="d6_img">
 			<p>
@@ -223,7 +231,18 @@
 			</p>
 		</div>
 	</div>
-	<footer id="footer"></footer>
+
+		<div class="bottom_strip suspend">
+				<p>
+					<a href="#" >手机注册</a>
+					<a href="#" >新浪微博注册</a>
+					<a href="#" >腾讯QQ注册</a>
+					<a href="#" >微信注册</a>
+				</p>
+		
+		</div>
+		<footer id="footer"></footer>
+
 </body>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.min.js"></script>
@@ -231,4 +250,3 @@
 <script src="./js/jquery.js"></script>
 <script src="./js/ajax.js"></script>
 <script src="./js/entrypage.js"></script>
-<script src="./js/common.js"></script>

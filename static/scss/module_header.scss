@@ -8,9 +8,8 @@ nav{
     }
   //文字和图片内容
   .logo{
-      border: 1px red solid;
     height: 82px;
-    width: 940px;
+    width: 944px;
     margin: 0 auto;
     display: flex;
     //logo样式设置
@@ -27,9 +26,10 @@ nav{
     ul{
       margin: 16px 0 0;
       width:500px;
-      border: 1px red solid;
+      // border: 1px red solid;
       li{
         float: left;
+        position: relative;
       }
     }
 
@@ -41,21 +41,23 @@ nav{
     .input{
       width: 220px;
       height: 30px;
-      border: 1px red solid;
-      // align-self: center;
+      // border: 1px red solid;
+      align-self: center;
       border-radius:16px;
-      // margin-top: 22px;
-      // margin-left: 30px;
-      // padding-left: 20px;
       background: #000;
+      margin-top: 16px;
       display: flex;
-      // align-items: center;
+      position: relative;
+      align-items: center;
+      padding-left: 10px;
       input{
         background:transparent;
         border:0;
         outline:none;
         width: 150px;
         height: 24px;
+        // padding-left:16px; 
+        font-size: 12px;
       }
       .icon1{
         display: inline-block;
@@ -69,6 +71,19 @@ nav{
           &:hover{
           background-position: -62px;
         }
+      }
+           .icon2{
+        display: inline-block;
+        background:url("../img/homepage/icon1.png");
+           background-position: 0 -41px;
+        width:28px;
+        height: 24px;
+        padding: 0;
+        margin-left: 6px;
+        margin-right: 6px;
+        //   &:hover{
+        //   background-position: -62px;
+        // }
       }
     }
   }
@@ -91,12 +106,10 @@ a.text1{
 .dropdown {
   background: #191919;
   width: 227px;
-  height: 0;
-  opacity: 0;
   overflow: hidden;
   position: absolute;
-  top: 72px;
-  left: 1000px;
+  top: 58px;
+  left: -40px;
   cursor: pointer;
   transition: all 0.2s linear;
   z-index: 30;
@@ -108,33 +121,104 @@ a.text1{
         width: 227px;
         height: 40px;
         padding: 0 40px 0 20px;
-        font-size: 12px;
-        color: #bcbcbc;
         display: flex;
         align-items: center;
-                 &:hover{
-          color: #fff;
+        color: #bcbcbc;
+        // 伪类下可以连接子元素的其他伪类
+           &:hover{
+              a:nth-of-type(2){
+                   &:visited{
+                 color: #fff;
+            }
+              }
         }
-          a{
-        text-decoration: none;
+        a:nth-of-type(1){
         display: inline-block;
         background: url("../img/icon4-24.png");
-         background-position: 0px -307px;
+        background-position: 0px -307px;
         width: 20px;
         height: 25px;
         padding-left: 20px;
         line-height: 25px;
-      
+        }
+           a:nth-of-type(2){
+               font-size: 12px;
+            &:visited{
+                 color: #bcbcbc;
+
+            }
+ 
       }
       }
     
     }
 }
-// 设置下拉框的显示样式
-nav>div>div.show{
+// 搜索栏处下拉框
+div.search-box{
+    color: #bcbcbc;
+    font-size: 14px;
+      top: 38px;
+      left: -10px;
+  >p{
+    width: 227px;
+    padding: 5px 9px 5px 17px;
+    margin: 0;
+  }
+  >div{
+    position: relative;
+    float: left;
+    width: 227px;
+    border: 1px black solid; 
+    padding: 7px 0 9px 42px;
+                &:hover{
+          color: #fff;
+           background: #333333; 
+        }
+          span{
+            display: inline-block;
+            position: absolute;
+            left: 15px;
+            width: 18px;
+            height: 18px;
+                background: url("../img/icon4-24.png");
+          background-position: 0px -111px;
+        }
+    div:nth-of-type(1){
+      height: 40px;
+      width: 100px;
+      border: 0;
+      p{
+        margin: 0;
+        width: 100px;
+        float: left;
+      }
+    }
+    img{
+      width: 34px;
+          position: absolute;
+            right:8px;
+            top: 8px;
+    }
+  }
+}
+
+// 待解决
+.hide{
+ height: 0;
+  opacity: 0;
+}
+// 第一个下拉栏需要显示时候的样式
+// 避免影响到其他元素
+div.logo div.show{
    height: 320px;
    opacity: 1;
 }
+// 第二个标签下拉栏需要显示的样式
+div.input>div.show{
+  height: 553px;
+   opacity: 1;
+}
+
 //下拉框的悬停样式和背景图标
 .pull_list a:nth-child(1){
   background-position: 0px -307px;

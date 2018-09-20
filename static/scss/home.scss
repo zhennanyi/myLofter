@@ -14,130 +14,143 @@ body{
 /*主要内容显示主体 */
 section{
 	width: 944px;
-	// height: 1800px;
     margin: 30px auto 0;
+    overflow: hidden;
     main{
 	width: 674px;
-	// height: 1800px;
     float: left;
     position: relative;
-    div#publishbar{
-	width: 674px;
-	height: 114px;
-    background:#fff;
-    a{
-	background:url(../img/homelogo.png);
-	position: relative;
-	background-repeat:no-repeat;
-	display:inline-block;
-	width: 108px;
-	height: 110px;
-        }
-            a:nth-of-type(1){
-            background-position: 0 -374px;
-            &:hover{
-            // background-position: -112px -133px;
+        div.publishbar{
+        width: 674px;
+        height: 114px;
+        background:#fff;
+        z-index: 10;
+        position: relative;
+        padding-left:110px; 
+        // opacity: 1;
+     
+        a+a{
+        background:url(../img/homelogo.png);
+        position: relative;
+        background-repeat:no-repeat;
+        display:inline-block;
+        width: 108px;
+        height: 110px;
+            }
+                a:nth-of-type(1){
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                            transition: all 0.5s linear;
+                    img{
+                 
+                        width: 110px;
+                        vertical-align: top;
+                           transition: all 0.2s linear;
+                    }
                 }
-            }
-            a:nth-of-type(2){
-              background-position: -112px -133px;
-            }
-            a:nth-of-type(3){
-                background-position:-224px 0;
-                   &:hover{
-               background-position: -224px -133px;
+                a:nth-of-type(2){
+                background-position: -112px -133px;
                 }
-            }
-            a:nth-of-type(4){
-                background-position:-336px 0;
-                   &:hover{
-              background-position: -336px -133px;
+                a:nth-of-type(3){
+                    background-position:-224px 0;
+                    &:hover{
+                background-position: -224px -133px;
+                    }
                 }
-            }
-            a:nth-of-type(5){
-                background-position:-448px 0;
-                   &:hover{
-            background-position: -448px -133px;
+                a:nth-of-type(4){
+                    background-position:-336px 0;
+                    &:hover{
+                background-position: -336px -133px;
+                    }
                 }
-            }
-            a:nth-of-type(6){
-                background-position:-560px 0;
-                   &:hover{
-           background-position: -560px -133px;
+                a:nth-of-type(5){
+                    background-position:-448px 0;
+                    &:hover{
+                background-position: -448px -133px;
+                    }
                 }
-            }
- 
-            }
-            // 顶部半角条
-            div.angle{
-                width: 585px;
-                height: 24px;
-            //    border: 1px black solid;
-               background: #fff;
-               margin-top:20px; 
-               position: absolute;
-               right:0;
-               top: 119px;
-               z-index: 3;
-                box-shadow: 1px -1px 1px #bebebf;
-
-                >div{
-              
-                    width: 0px;
-                    height: 0px;
-                    border-right: 12px #fff solid;
-                    border-top: 12px #fff solid;
-                     border-bottom: 12px #ededef solid;
-                          border-left: 12px #ededef solid;
-                    //  background: red;
+                a:nth-of-type(6){
+                    background-position:-560px 0;
+                    &:hover{
+            background-position: -560px -133px;
+                    }
                 }
-            }
-
+    
+                }
+       
         }
 
         // 每个用户单独的盒子
+    
         div.user-flow{
+            // overflow: hidden;
+            height: auto;
             width: 674px;
-            // 信息流类box，都不设置宽度，根据内容来决定
+            // 信息流类box，都不设置高度，根据内容来决定
             margin-top: 24px;
-         position: relative;
+            position: relative;
             margin-bottom: 46px;
-            >div.user-flex{
-            display: flex;
-       
-            justify-content: space-between;
-         
-            /*上方图片标题文字*/
-            div.pinter_2{
-                width: 540px;
-                height: 20px;
-                a{
-                    color: #929BA3;
-                }
+            // 动态插入元素清除浮动
+            &:after{
+                content:""; 
+                display:block; 
+                // visibility，仍然占据空间，只是不可见，DOM树仍然会渲染
+                visibility:hidden;
+                clear:both;
             }
             /*左侧放头像的框*/
             >div.head-img{
                 width: 64px;
                 height: 64px;
-                background: black;
+                // background: black;
+                float: left;
             }
             /*图片信息流大框*/
-            div.image-flow{
-                // position: relative;
-                // top: 24px;
-                width: 584px;
-                color: #929BA3;
-                font-size: 14px;
-                padding: 8px 30px 0;
-                background:#fff;
-                // border-left: 24px #ededef solid;
-                    border-left: 24px #ededef solid;
-                border-top: 24px #fff solid;
-                // box-shadow:0px 1px 3px #999;
-                 box-shadow: 1px 1px 1px #bebebf;
-                 div{
-                    float: left;
+            // 顶部半角条
+                    div.angle{
+                        width: 585px;
+                        height: 24px;
+                        background: url(../img/homepage/angle.png);
+                        background-position: 2px 0;
+                        overflow: hidden;
+                        float: right;
+                        position: relative;
+                        top: 2px;
+                        div{
+                            width: 21px;
+                            height: 21px;
+                            float: right;
+                            background: url(../img/homepage/angle.png);
+                            background-position: -668px 0;
+                        } 
+                           div.angle-a{
+                            background-position: -786px 0;
+                        }
+                    }
+                    // 悬停样式
+                 
+                div.image-flow{
+                         //暂时存在问题：用overflow: hidden设置溢出隐藏会导致边框阴影不可见
+                        box-shadow: 0px 3px 5px #d8d8da;
+                        width: 560px;
+                        color: #929BA3;
+                        font-size: 14px;
+                        padding: 8px 30px 0;
+                        background:#fff;
+                        float: right;
+                     
+                        div{
+                            float: left;
+                        }
+                         /*上方图片标题文字*/
+                     div.pinter_2{
+                    width: 540px;
+                    height: 20px;
+                a{
+                    color: #929BA3;
                 }
+            }
                 div:nth-of-type(1){
                     p{
                         a{
@@ -152,12 +165,28 @@ section{
                     height: 400px;
                     margin-top: 16px;
                     overflow: hidden;
+                    img~img{
+                        display: none;
+                    }
+                    span~span{
+                        display: none;
+                    }
                     img.iimg{
                         width: 180px;
                     }
                 }
                 //图片放大后的样式
-                div.imgbig{     
+                div.imgbig{ 
+                    span{
+                        display: inline-block;
+                        width: 65px;
+                        height: 15px;
+                        background: url(../img/homepage/icon8.png);
+                        background-position: 0 -1016px;
+                        padding-left: 15px;
+                        font-size: 12px;
+                        cursor: pointer;
+                    }    
                     >img{     
                       width: 476px;
                     }
@@ -172,12 +201,13 @@ section{
                 }
                 // 右侧文字第二种样式，设定图片展开后隐藏
                   div.right_text-one{
-                      display: none;
+                    clear: both;
+                    margin-left:8px; 
                   }
 
                 /* 底部操作按钮框 */
                 div.bom-button{
-                    width:476px;
+                    width:498px;
                     height: 20px;
                     margin-top: 11px;
                     margin-bottom: 20px;
@@ -205,6 +235,7 @@ section{
                             background-position: 0 -103px;
                         }
                     }
+            
                     /* 按钮的不变样式 */
                     button.heart{
                         display: inline-block;
@@ -224,23 +255,23 @@ section{
                     }
                 }
             }
-
+// main  sec括号
         }
-
-
+    }
     // 设定用户评论隐藏框样式
     div.comment{
         position: relative;
-        opacity: 0;
-        top: -144px;
+        margin-top:-150px; 
+        width: 560px;
         overflow: hidden;
         transition: all 0.3s linear;
         background: #fafafa;
         float: right;
-        box-shadow: 0px 0px 3px #bebebf;
+        box-shadow: 0px -3px 0px #c8c8c8;
         font-size: 12px;
         transition: all 0.3s linear;
         z-index: -1;
+           opacity: 0;
         div{
           width: 560px;
         }
@@ -249,6 +280,8 @@ section{
             height: 58px;
             text-align:center;
             margin-bottom: 5px;
+            display: flex;
+            align-items: center;
             input{
                 width: 390px;
                 height: 40px;
@@ -256,14 +289,15 @@ section{
                 border:1px #cececf solid;
             }
             a{
+                //按钮样式
             display: inline-block;
             width: 104px;
             height: 40px;
-            color: #fff;
             background-image:linear-gradient(to bottom,#84af00,#79a300);
             border-radius: 3px;
             text-align: center;
             line-height: 40px;
+            color: #fff;
             &:hover{
                     color: #fff;
                     background: #9cbf00;
@@ -276,15 +310,14 @@ section{
            border-bottom:1px #cececf solid;
            position: relative;
             a{
-                    color: #7594B3;
+                color: #7594B3;
             }
             a:last-child{
                 position: absolute;
                 right: 50px;
             }
             span{
-        
-                        color: #444;
+                color: #444;
             }
         }
         div:last-child{
@@ -305,37 +338,27 @@ section{
                 height: 15px;
                 background: url(../img/icon24.png);
                 background-position: right -932px;
-          
-          
             }
-
-      
         }
     }
-    div.show{
-            top: 0;
+    div.user-flow div.show{
             opacity: 1;
-    }
-
-
-// main  sec括号
-   }
+                margin-top:2px; 
     }
 // 用户分享模块
 ul.last-icon{
     width: 560px;
-      transition: all 0.5s linear;
-      float: right;
+    transition: all 0.3s linear;
+    box-shadow: 0px -3px 0px #c8c8c8;
+    float: right;
     padding: 0 0 0 29px;
-      background: #ffffff;
-      height: 113px;
+    background: #fff;
+    height: 113px;
     position: relative;
     opacity: 0;
-    top: -257px;
-    z-index: -1;
-        // overflow: hidden;
-         transition: all 0.3 linear;
-          box-shadow: 1px 1px 1px #bebebf;
+    z-index: -2;
+    margin-top:-150px; 
+    margin-bottom: 0;
     >li{
         width: 84px;
         height: 80px;
@@ -412,9 +435,9 @@ a{
 }
 }
 // 设定显示隐藏样式
- ul.show{
-           top: -144px;
-            opacity: 1;
+ div.user-flow ul.show{
+            margin-top: 2px;
+               opacity: 1;
     }
 
      
@@ -518,12 +541,9 @@ div.lable-one{
     left: -100px;
     transition: all 0.2s linear;
     >div{
-        // border: 1px red solid;
-    
-        //  height: 100px;
-    >img{
-        width: 125px;
-    }
+        >img{
+            width: 125px;
+        }
     }
     div:first-child{
         padding: 20px
@@ -544,26 +564,211 @@ div.lable-one{
         span:nth-child(2){
             color: #ccccc1;
         }
+    }
+}
 
-}
-   
-}
 // 设置显示和隐藏
 div.lable-a{
 opacity: 1;
  top:-184px;
 }
 
+// 设置图片发布框样式
+div.picture{
+        position: relative;
+         z-index: -1;
+         height: 110px;
+         margin-top: -110px;
+        // top: 0;
+        // left: 0;
+        overflow: hidden;
+         width: 674px;
+        opacity: 0;
+        transition: all 0.4s linear;
+              &:after{
+                content:""; 
+                display:block; 
+                // visibility，仍然占据空间，只是不可见，DOM树仍然会渲染
+                visibility:hidden;
+                clear:both;
+            }
+                     >div.head-img{
+                width: 64px;
+                height: 64px;
+                // background: black;
+                float: left;
+                img{
+                    width: 64px;
+                }
+            }
+                      div.angle{
+                        width: 585px;
+                        height: 24px;
+                        background: url(../img/homepage/angle.png);
+                        background-position: 2px 0;
+                        overflow: hidden;
+                        float: right;
+                        position: relative;
+                        top: 2px;
+                        div{
+                            width: 21px;
+                            height: 21px;
+                            float: right;
+                            background: url(../img/homepage/angle.png);
+                            background-position: -668px 0;
+                        } 
+                           div.angle-a{
+                            background-position: -786px 0;
+                        }
+                    }
+                    // 中间盒子样式
+                    .picture-box{
+                                  width: 560px;
+                        color: #929BA3;
+                        font-size: 14px;
+                        padding: 8px 30px 0;
+                        background:#fff;
+                        float: right;
+                                         div.pinter_2{
+                    width: 540px;
+                    height: 20px;
+                        a{
+                            color: #929BA3;
+                        }
+                        }
+
+                    }
+                    // 悬停样式
+    div.dashed{
+        width: 500px;
+        height: 312px;
+        border: 1px dashed #dfdfdf;
+        margin-top: 16px;
+        textarea{
+            width: 498px;
+            height: 310px;
+            border: 0;
+            outline: none;
+        }
+    }
+    div.three-btn{
+        width: 500px;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        button{
+            width: 100px;
+            height: 36px;
+            color: #888;
+            text-align: center;
+            border: 0;
+            border-radius:2px; 
+            letter-spacing: 10px;
+            padding-left: 6px;
+            background: url(../img/homepage/icon.png);
+            outline:none;
+            cursor: pointer;
+            &:hover{
+                     opacity: 0.7;
+            }
+        }
+        button:nth-of-type(2){
+        
+            position: relative;
+            left: 70px;
+        }
+         button:nth-of-type(3){
+              background-position: 0px -383px;
+                         position: relative;
+            left: 56px;
+            color: #fff;
+        }
+              button:nth-of-type(4){
+           background-position: -109px -383px;
+                    width: 31px;
+                    border-left:1px #fff solid; 
+                    opacity: 0.7;
+                    select{
+                        width: 21px;
+                    }
+                 
+              }
+    }
+}
+//设置模态框打开的样式
+main>div.picture-on{
+    height: 456px;
+    opacity: 1;
+    z-index: 5;
+    margin-top: 0px;
+}
+/* 设置全屏遮罩层效果 */
+ // 高度应为整个网页的宽度，通过js设置
+div.shade{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -4;
+  transition: all 0.2s linear;
+}
+div.off{
+    opacity: 0.75;
+    z-index: 4;
+}
 
 
-// // 测试元素
-// #d1{
-//     width: 300px;
-//     height: 300px;
-//     background: red;
-// }
-// #d2{
-//     width: 100px;
-//     height: 100px;
-//     background: black;
-// }
+
+// 点击后，首先为原本div框，背景纯白，再一种下拉的效果，显示发表框
+section{
+    main{
+    div.wirte{
+        height: 110px;
+        position: absolute;
+         background: transparent;
+            a:nth-of-type(1){
+                width: 110px;
+                  background: transparent;
+                img{
+                    width: 64px;
+                }
+            }
+             a~a{
+                 opacity: 0;
+           
+            }
+              
+    }
+}
+}
+section{
+    main{
+    div.wirte-one{
+           background: #fff;
+             a+a{
+                  background: #fff;
+            }
+              
+    }
+}
+}
+
+
+
+// 尝试用动画实现效果
+@keyframes change {
+    50% {     
+                     width: 110px;
+    }
+    100% {
+                        width: 64px; 
+    }
+}
+
+
+
+
+
