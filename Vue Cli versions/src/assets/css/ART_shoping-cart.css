@@ -1,0 +1,196 @@
+/* 当前网页的主体 */
+div.cart-section{
+  width: 100%;
+  height: 1143px;
+  background: #ededef;
+}
+/* 实际显示内容的区域 */
+div.cart-main{
+  width: 1200px;
+  height: 860px;
+  margin: 0 auto;
+  background: #fff;
+}
+/*购物车标题*/
+div.cart-main div.cart-title {
+  width: 1200px;
+  height: 100px;
+  box-sizing: border-box;
+  padding:40px 0 16px 30px;
+  font-size: 32px;
+  font-weight: normal;
+  border-bottom:1px #ebebeb solid ;
+}
+
+/*主要内容盒子*/
+div.product-cart{
+  width: 1200px;
+  height: 300px;
+  padding: 30px;
+}
+/*商品上方导航条信息*/
+ul.product-cart-list{
+  width: 1140px;
+  height: 46px;
+  margin-top: 3rem;
+}
+ul.product-cart-list>li{
+  float: left;
+  height: 46px;
+  background: #f2f2f3;
+  line-height: 46px;
+  text-align: center;
+  margin-left: 1px;
+}
+/*此页面公用的ul列表的宽度属性*/
+ul.ul-public>li:nth-of-type(1){
+  text-align: left;
+  width: 140px;
+  margin-left: 0;
+}
+ul.ul-public>li:nth-of-type(2){
+  width: 260px;
+  margin-left: 0;
+}
+ul.ul-public>li:nth-of-type(3){
+  width: 275px;
+}
+ul.ul-public>li:nth-of-type(4){
+  width: 170px;
+}
+ul.ul-public>li:nth-of-type(5){
+  width: 170px;
+}
+ul.ul-public>li:nth-of-type(6){
+  width: 118px;
+}
+
+
+
+
+/*购物车内商品列表，*/
+
+/*每个商品都占一个ul */
+ul.product-describe{
+  height: 140px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  border-bottom: 1px #ebebeb solid;
+}
+/* 设置其中li的属性 */
+ul.product-describe>li{
+  float: left;
+  text-align: center;
+}
+/* 最左侧的选择框 */
+ul.product-describe>li:last-child>span{
+  display: inline-block;
+  width: 58px;
+  height: 24px;
+  color: #fff;
+  background: #aaaaaa;
+  text-align: center;
+  cursor: pointer;
+}
+/*两个勾选框，暂用元素选择器，后期再改*/
+input{
+  margin-right: 10px;
+  margin-left: 16px;
+}
+
+/*下方结算条样式*/
+div.settle-accounts{
+  margin-top: 20px;
+  padding: 20px;
+  width: 1140px;
+  height:80px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+div.settle-accounts>a{
+  display: inline-block;
+  width: 104px;
+  height: 40px;
+  color: #fff;
+  background-image:linear-gradient(to bottom,#84af00,#79a300);
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 20px;
+}
+/* 结算金额条下的3个span分别加样式 */
+div.settle-accounts>span:nth-of-type(1){
+  display: inline-block;
+  width: 17px;
+}
+div.settle-accounts>span:nth-of-type(3){
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  width: 50px;
+  padding-right:10px; 
+}
+div.settle-accounts>span:nth-of-type(2){
+  margin-left: 10px;
+}
+/* 结算按钮的鼠标悬停样式 */
+div.settle-accounts>a:hover{
+  background: #9cbf00;
+}
+/* 调整两个+-按钮的样式 */
+li.amend{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li.amend>button{
+  width: 28px;
+  height: 28px;
+  border: 1px #e6e6e6 solid;
+  outline:none;
+  cursor: pointer;
+  background: url(http://127.0.0.1:5000/img/amend.png);
+  margin: 0;
+}
+li.amend>button:nth-of-type(1){
+  background-position: 7px 12px;
+}
+li.amend>button:nth-of-type(2){
+  background-position: 7px -13px;
+}
+/* 添加悬停样式 */
+li.amend>button:nth-of-type(1):hover{
+  background-position: 7px -39px;
+}
+li.amend>button:nth-of-type(2):hover{
+  background-position: 7px -69px;
+}
+/* 调整中间数字的变化 */
+
+li.amend>span{
+  margin: 0;
+  display: inline-block;
+  width: 42px;
+  height: 28px;
+  border: 1px #e6e6e6 solid;
+}
+
+li.product-name>p{
+  margin: 0;
+}
+li.product-name>p:nth-of-type(1){
+  font-size: 14px;
+}
+li.product-name>p:nth-of-type(2){
+  color: #888;
+  font-size: 12px;
+}
+
+
+
+
+

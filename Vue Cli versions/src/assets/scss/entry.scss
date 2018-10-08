@@ -1,0 +1,672 @@
+//声明几个常用的辅助变量
+$my-border:1px red solid;
+
+//$my-font:12px #888 family;
+// 网页登录主页面
+nav {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    overflow: hidden;
+    margin-bottom: 40px;
+
+    // z-index: 0;
+    div.wrap {
+        position: relative;
+        width: 999999px;
+        overflow: hidden;
+        left: 0px;
+        transition: all 0.4s linear;
+
+        img {
+            width: 2560px;
+            float: left;
+            margin-top: -200px;
+        }
+    }
+
+    .low-right {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        cursor: pointer;
+
+        a {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        position: absolute;
+        right: 1%;
+        bottom:1.5%;
+
+        a:nth-of-type(1) {
+            color: #fff;
+            font-size: 12px;
+
+        }
+
+        .arrow {
+
+            width: 22px;
+            height: 17px;
+            background: url(http://127.0.0.1:5000/img/btn.png);
+
+        }
+
+        .arrow_left {
+            // left: 96.5%;
+            background-position: -406px -781px;
+        }
+
+        .arrow_right {
+            background-position: -429px -781px;
+        }
+    }
+
+    // 轮播图按钮
+    // .arrow {
+    //     background: url(http://127.0.0.1:5000/img/btn.png);
+    //     display: inline-block;
+    //     width:24px;
+    //     height: 24px;
+    //     position: absolute;
+    //     top: 94%;
+    //     color: #fff;
+    //     padding: 0px 6px;
+    //     border: 1px #fff solid;
+    //     border-radius: 50%;
+    //     z-index: 99;
+    //     text-align: center;
+    //     line-height: 24px;
+    // }
+    // .arrow_left {
+    //     background-position: -406px,-781px;
+    //     left: 92%;
+    // }
+    // .arrow_right {
+    //     background-position: -429px,-781px;
+    //     right: 3%;
+    // }
+    // &:hover .arrow {
+    //     display: block;
+    // }
+    // 主内容模块
+    #center1 {
+        position: absolute;
+        width: 100%;
+        height: 670px;
+        z-index: 10;
+        left: 0;
+        top: 200px;
+
+        // 大logo
+        #logo {
+            width: 342px;
+            height: 130px;
+            margin: 0 auto 66px;
+        }
+
+        .inp_text {
+            width: 584px;
+            height: 60px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: flex-start;
+            text-align: center;
+
+            a {
+                display: block;
+                width: 194.6px;
+                height: 60px;
+                color: #898a8f;
+                line-height: 40px;
+                border-radius: 0;
+                font-size: 18px;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                &.active {
+                    background: #fff;
+                    color: #444;
+                }
+            }
+        }
+
+        // 登录主框模块
+        #login {
+            width: 584px;
+            //height: 380px;
+            background-color: rgba(255, 255, 255, 1);
+            margin: 0 auto;
+            position: relative;
+
+            //左侧注册模块
+            #login_left {
+                width: 584px;
+                height: 260px;
+                background-color: rgba(255, 255, 255, 1);
+
+
+                // 左侧输入框模块
+                .inp_left {
+                    width: 400px;
+                    height: 240px;
+                    margin-top: 16px;
+                    padding: 10px 30px 30px;
+                    float: left;
+
+                    input {
+                        margin: 0
+                    }
+
+                    div {
+                        width: 300px;
+                        height: 40px;
+                        border: 1px #888 solid;
+                    }
+                }
+
+                .wire {
+                    width: 1px;
+                    height: 201px;
+                    background: #e7e7e7;
+                    float: left;
+                    position: relative;
+                    left: -33px;
+                    top: 28px;
+                }
+
+                .wiretext {
+                    width: 10px;
+                    height: 50px;
+                    display: block;
+                    background: #fff;
+                    float: left;
+                    position: relative;
+                    left: -39px;
+                    top: 100px;
+                    line-height: 50px;
+                }
+
+                // 输入框宽高调整
+                .regbox {
+                    width: 300px;
+                    height: 40px;
+                    padding-left: 14px;
+                }
+
+                // 模块p标签位置调整
+                .regbox_text {
+                    margin-top: 14px;
+
+                    // 模块p标签文字样式调整
+                    a {
+                        color: #666;
+                        font-size: 12px;
+                        text-decoration: none;
+                        margin-right: 24px;
+                    }
+
+                    .wangyi {
+                        margin: 0;
+                    }
+                }
+            }
+
+            // 中间登录模块
+            #login_center {
+                width: 584px;
+                height: 320px;
+                background-color: rgba(255, 255, 255, 1);
+
+                // 左侧输入框模块
+                .inp_left {
+                    width: 400px;
+                    height: 240px;
+                    margin-top: 16px;
+                    padding: 10px 30px 30px;
+                    float: left;
+
+                    input {
+                        margin: 0
+                    }
+
+                    div {
+                        width: 300px;
+                        height: 40px;
+                        border: 1px #888 solid;
+                    }
+                }
+
+                //细线模块
+                .wire {
+                    width: 1px;
+                    height: 201px;
+                    background: #e7e7e7;
+                    float: left;
+                    position: relative;
+                    left: -33px;
+                    top: 28px;
+                }
+
+                .wiretext {
+                    width: 10px;
+                    height: 50px;
+                    display: block;
+                    background: #fff;
+                    float: left;
+                    position: relative;
+                    left: -39px;
+                    top: 100px;
+                    line-height: 50px;
+                }
+
+                // 输入框宽高调整
+                .regbox {
+                    width: 300px;
+                    height: 40px;
+                    padding-left: 14px;
+                }
+
+                // 模块p标签位置调整
+                .regbox_text {
+                    margin-top: 14px;
+
+                    // 模块p标签文字样式调整
+                    a {
+                        color: #666;
+                        font-size: 12px;
+                        text-decoration: none;
+                        margin-right: 24px;
+                    }
+
+                    .wangyi {
+                        margin: 0;
+                    }
+                }
+            }
+
+            //    右侧APP二维码页面
+            #login_right {
+                width: 584px;
+                height: 224px;
+                background-color: rgba(255, 255, 255, 1);
+                padding: 30px 0 0 75px;
+
+                div {
+                    float: left;
+                }
+
+                .r_text {
+                    width: 86px;
+                    height: 150px;
+                    padding-top: 30px;
+
+                    p {
+                        width: 84px;
+                        font-size: 12px;
+                        color: #888;
+                        margin-bottom: 32px;
+                    }
+                }
+
+                .r_btn {
+                    width: 135px;
+                    height: 150px;
+                    padding-top: 20px;
+                    margin-right: 64px;
+
+                    a {
+                        display: block;
+                        width: 135px;
+                        height: 40px;
+                        position: relative;
+                        background-image: url("http://127.0.0.1:5000/img/btn.png");
+                        margin-bottom: 10px;
+                    }
+
+                    a:nth-child(1) {
+                        background-position: -467px -587px;
+                    }
+
+                    a:nth-child(2) {
+                        background-position: -467px -587px;
+                    }
+
+                    a:nth-child(3) {
+                        background-position: -467px -707px;
+                    }
+                }
+
+                .lg_icon {
+                    margin-top: 0.5rem;
+                    width: 164px;
+                    height: 164px;
+                    background-image: url("http://127.0.0.1:5000/img/erweima.png");
+                }
+            }
+        }
+    }
+
+    .inp_right {
+        padding: 10px 10px 10px;
+        float: left;
+        width: 140px;
+        height: 210px;
+        margin-top: 16px;
+        margin-left: -16px;
+
+        a {
+            display: block;
+            background: url(http://127.0.0.1:5000/img/entrypage/btn.png) no-repeat;
+            position: relative;
+            width: 150px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            color: #fff;
+            padding-left: 46px;
+            margin-bottom: 14px;
+        }
+
+        // 右侧四个按钮图标定位
+        .inp_a1 {
+            background-position: -1px -651px;
+        }
+
+        .inp_a2 {
+            background-position: -1px -600px;
+        }
+
+        .inp_a3 {
+            background-position: -1px -651px;
+        }
+
+        .inp_a4 {
+            background-position: -213px -1191px;
+        }
+    }
+}
+
+// 全局模块页面二级标题
+.htwo {
+    font-size: 48px;
+    font-weight: 600;
+    color: #444444;
+    text-align: center;
+}
+
+// 全局模块页面描述内容
+.p6 {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 12px;
+    color: #444444;
+}
+
+// 全局六个小图标模块
+.six {
+    width: 928px;
+    height: 320px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    // 设定显示框大小
+    .six_a {
+        width: 380px;
+        height: 320px;
+
+        // 引入大背景图
+        div {
+            background: url(http://127.0.0.1:5000/img/entrypage/icon.png) no-repeat;
+            position: relative;
+        }
+
+        // 框内标题
+        .six_h {
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        // 框内文字
+        .p7 {
+            font-size: 14px;
+            text-align: center;
+            color: #444444;
+            margin-bottom: 5px;
+        }
+
+        // 给每个单独模块做背景定位
+        div {
+            width: 100px;
+            height: 92px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .six_icon1 {
+            background-position: -110px 0;
+        }
+
+        .six_icon2 {
+            background-position: -228px 0;
+        }
+
+        .six_icon3 {
+            background-position: -450px 0;
+        }
+
+        .six_icon4 {
+            background-position: -560px 0;
+        }
+
+        .six_icon5 {
+            background-position: -668px 0;
+        }
+
+        .six_icon6 {
+            background-position: -780px 0;
+        }
+    }
+}
+
+// 底部第三方按钮条
+div.bottom_strip {
+    width: 100%;
+    height: 262px;
+    background-color: #fff;
+    padding-top: 48px;
+
+    // 标题文字
+    h2 {
+        font-size: 48px;
+        font-weight: 600;
+        color: #444444;
+        text-align: center;
+    }
+
+    div {
+        width: 1000px;
+        height: 106px;
+        margin: 0 auto;
+    }
+
+    // 调整文字显示区域大小和位置
+    p {
+        width: 820px;
+        margin: 68px auto 0;
+    }
+
+    // 给a标签引入大背景图
+    a {
+        background: url(http://127.0.0.1:5000/img/entrypage/btn.png) no-repeat;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        padding-left: 20px;
+
+    }
+
+    // 添加悬停效果
+    a:hover {
+        opacity: 0.7;
+    }
+
+    // 给每个单独的按钮做定位
+    a:nth-of-type(1) {
+        background-position: -1px -880px;
+    }
+
+    a:nth-of-type(2) {
+        background-position: -210px -880px;
+    }
+
+    a:nth-of-type(3) {
+        background-position: -421px -880px;
+    }
+
+    a:nth-of-type(4) {
+        background-position: 0 -1190px;
+    }
+}
+
+// 悬浮样式
+div.suspend {
+    position: fixed;
+    bottom: -93px;
+    box-shadow: 0 -2px 2px #c6c6c6;
+    height: 93px;
+    padding: 26px 0;
+    transition: all 0.3s linear;
+
+    p {
+        width: 660px;
+        margin: 0 auto;
+    }
+
+    a {
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    a:nth-of-type(1) {
+        background-position: -310px -461px;
+    }
+
+    a:nth-of-type(2) {
+        background-position: -1px -601px;
+    }
+
+    a:nth-of-type(3) {
+        background-position: -1px -651px;
+    }
+
+    a:nth-of-type(4) {
+        background-position: -213px -1191px;
+    }
+}
+
+// 显示样式，注意样式优先级
+div.show-strip {
+    position: fixed;
+    bottom: 0px;
+}
+
+//    单独几个大块的内容
+/* CSS Document */
+* {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+
+body {
+    height: auto;
+}
+
+
+#sec {
+    width: 100%;
+    height: 1120px;
+    padding-top: 60px;
+}
+
+.sec_img {
+    margin: 0 auto;
+    width: 928px;
+    height: 498px;
+    margin-top: 80px;
+}
+
+
+#d3 {
+    width: 100%;
+    height: 1220px;
+    background-color: #f7f7f7;
+    padding-top: 60px;
+}
+
+.d3_img {
+    margin: 0 auto;
+    width: 1334px;
+    height: 630px;
+}
+
+#d4 {
+    // width: 3000px;
+    // height: 840px;
+    background-color: #fff;
+    padding-top: 60px;
+    overflow: hidden;
+
+    div {
+        display: flex;
+        justify-content: flex-start;
+
+        >img:nth-of-type(1) {
+            margin-left: -200px;
+        }
+
+        img {
+            width: 720px;
+            margin-right: 20px;
+        }
+    }
+
+}
+
+#d5 {
+    width: 100%;
+    height: 1200px;
+    background-color: #f7f7f7;
+    padding-top: 60px;
+
+    >p>a {
+        color: #7594b3;
+
+        &:hover {
+            color: #5a8dcd;
+        }
+    }
+}
+
+.d5_img {
+    width: 956px;
+    height: 635px;
+    margin: 0 auto;
+}

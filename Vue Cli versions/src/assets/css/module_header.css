@@ -1,0 +1,173 @@
+div.mynav {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  background-color: #24292c; }
+  div.mynav a:nth-of-type(1) {
+    align-self: center; }
+  div.mynav .logo {
+    height: 82px;
+    width: 944px;
+    margin: 0 auto;
+    display: flex; }
+    div.mynav .logo a:nth-of-type(1) > img {
+      position: relative;
+      width: 220px;
+      height: 48px; }
+      div.mynav .logo a:nth-of-type(1) > img:active {
+        top: 2px;
+        left: 2px; }
+    div.mynav .logo ul {
+      margin: 16px 0 0;
+      width: 500px; }
+      div.mynav .logo ul li {
+        float: left;
+        position: relative; }
+    div.mynav .logo div {
+      float: left; }
+    div.mynav .logo .input {
+      width: 220px;
+      height: 30px;
+      align-self: center;
+      border-radius: 16px;
+      background: #000;
+      margin-top: 16px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      padding-left: 10px; }
+      div.mynav .logo .input input {
+        background: transparent;
+        border: 0;
+        outline: none;
+        width: 150px;
+        height: 24px;
+        font-size: 12px; }
+      div.mynav .logo .input .icon1 {
+        display: inline-block;
+        background: url("../css/icon4.png");
+        background-position: 0;
+        width: 18px;
+        height: 24px;
+        padding: 0;
+        margin-left: 6px;
+        margin-right: 6px; }
+        div.mynav .logo .input .icon1:hover {
+          background-position: -62px; }
+      div.mynav .logo .input .icon2 {
+        display: inline-block;
+        background: url("http://127.0.0.1:5000/img/homepage/icon1.png");
+        background-position: 0 -41px;
+        width: 28px;
+        height: 24px;
+        padding: 0;
+        margin-left: 6px;
+        margin-right: 6px; }
+
+a.text1 {
+  color: #999999;
+  font-size: 16px;
+  margin-left: 30px;
+  float: left;
+  line-height: 72px;
+  text-decoration: none; }
+  s a.text1:hover {
+    color: #fff; }
+
+.dropdown {
+  background: #191919;
+  width: 227px;
+  overflow: hidden;
+  position: absolute;
+  top: 58px;
+  left: -40px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  z-index: 30; }
+  .dropdown ul.pull_list {
+    width: 227px;
+    list-style: none;
+    margin: 0; }
+    .dropdown ul.pull_list li {
+      width: 227px;
+      height: 40px;
+      padding: 0 40px 0 20px;
+      display: flex;
+      align-items: center;
+      color: #bcbcbc; }
+      .dropdown ul.pull_list li:hover a:nth-of-type(2):visited {
+        color: #fff; }
+      .dropdown ul.pull_list li a:nth-of-type(1) {
+        display: inline-block;
+        background: url("http://127.0.0.1:5000/img/icon4-24.png");
+        background-position: 0px -307px;
+        width: 20px;
+        height: 25px;
+        padding-left: 20px;
+        line-height: 25px; }
+      .dropdown ul.pull_list li a:nth-of-type(2) {
+        font-size: 12px; }
+        .dropdown ul.pull_list li a:nth-of-type(2):visited {
+          color: #bcbcbc; }
+
+div.search-box {
+  color: #bcbcbc;
+  font-size: 14px;
+  top: 38px;
+  left: -10px; }
+  div.search-box > p {
+    width: 227px;
+    padding: 5px 9px 5px 17px;
+    margin: 0; }
+  div.search-box > div {
+    position: relative;
+    float: left;
+    width: 227px;
+    border: 1px black solid;
+    padding: 7px 0 9px 42px; }
+    div.search-box > div:hover {
+      color: #fff;
+      background: #333333; }
+    div.search-box > div span {
+      display: inline-block;
+      position: absolute;
+      left: 15px;
+      width: 18px;
+      height: 18px;
+      background: url("http://127.0.0.1:5000/img/icon4-24.png");
+      background-position: 0px -111px; }
+    div.search-box > div div:nth-of-type(1) {
+      height: 40px;
+      width: 100px;
+      border: 0; }
+      div.search-box > div div:nth-of-type(1) p {
+        margin: 0;
+        width: 100px;
+        float: left; }
+    div.search-box > div img {
+      width: 34px;
+      position: absolute;
+      right: 8px;
+      top: 8px; }
+
+.hide {
+  height: 0;
+  opacity: 0; }
+
+div.logo div.show {
+  height: 320px;
+  opacity: 1; }
+
+div.input > div.show {
+  height: 553px;
+  opacity: 1; }
+
+.pull_list a:nth-child(1) {
+  background-position: 0px -307px; }
+
+.pull_list li:hover {
+  background: #333333; }
+
+.pull_list > li:hover a {
+  color: #fff;
+  background-position: 20px -307px; }

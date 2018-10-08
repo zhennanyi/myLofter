@@ -1,0 +1,617 @@
+@charset "UTF-8";
+li {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 100%;
+  background-color: #ededef;
+  margin: 0; }
+
+#qwe {
+  width: 944px; }
+
+/*主要内容显示主体 */
+section {
+  width: 944px;
+  margin: 30px auto 0;
+  overflow: hidden; }
+  section main {
+    width: 674px;
+    float: left;
+    position: relative; }
+    section main div.publishbar {
+      width: 674px;
+      height: 114px;
+      background: #fff;
+      z-index: 10;
+      position: relative;
+      padding-left: 110px; }
+      section main div.publishbar a + a {
+        background: url(http://127.0.0.1:5000/img/homelogo.png);
+        position: relative;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 108px;
+        height: 110px; }
+      section main div.publishbar a:nth-of-type(1) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.5s linear; }
+        section main div.publishbar a:nth-of-type(1) img {
+          width: 110px;
+          vertical-align: top;
+          transition: all 0.2s linear; }
+      section main div.publishbar a:nth-of-type(2) {
+        background-position: -112px -133px; }
+      section main div.publishbar a:nth-of-type(3) {
+        background-position: -224px 0; }
+        section main div.publishbar a:nth-of-type(3):hover {
+          background-position: -224px -133px; }
+      section main div.publishbar a:nth-of-type(4) {
+        background-position: -336px 0; }
+        section main div.publishbar a:nth-of-type(4):hover {
+          background-position: -336px -133px; }
+      section main div.publishbar a:nth-of-type(5) {
+        background-position: -448px 0; }
+        section main div.publishbar a:nth-of-type(5):hover {
+          background-position: -448px -133px; }
+      section main div.publishbar a:nth-of-type(6) {
+        background-position: -560px 0; }
+        section main div.publishbar a:nth-of-type(6):hover {
+          background-position: -560px -133px; }
+  section div.user-flow {
+    height: auto;
+    width: 674px;
+    margin-top: 24px;
+    position: relative;
+    margin-bottom: 46px;
+    /*左侧放头像的框*/
+    /*图片信息流大框*/ }
+    section div.user-flow:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both; }
+    section div.user-flow > div.head-img {
+      width: 64px;
+      height: 64px;
+      float: left; }
+    section div.user-flow div.angle {
+      width: 585px;
+      height: 24px;
+      background: url(http://127.0.0.1:5000/img/homepage/angle.png);
+      background-position: 2px 0;
+      overflow: hidden;
+      float: right;
+      position: relative;
+      top: 2px; }
+      section div.user-flow div.angle div {
+        width: 21px;
+        height: 21px;
+        float: right;
+        background: url(http://127.0.0.1:5000/img/homepage/angle.png);
+        background-position: -668px 0; }
+      section div.user-flow div.angle div.angle-a {
+        background-position: -786px 0; }
+    section div.user-flow div.image-flow {
+      box-shadow: 0px 3px 5px #d8d8da;
+      width: 560px;
+      color: #929BA3;
+      font-size: 14px;
+      padding: 8px 30px 0;
+      background: #fff;
+      float: right;
+      /*上方图片标题文字*/
+      /*放图片流的框*/
+      /*右侧文字的框*/
+      /* 底部操作按钮框 */ }
+      section div.user-flow div.image-flow div {
+        float: left; }
+      section div.user-flow div.image-flow div.pinter_2 {
+        width: 540px;
+        height: 20px; }
+        section div.user-flow div.image-flow div.pinter_2 a {
+          color: #929BA3; }
+      section div.user-flow div.image-flow div:nth-of-type(1) p a {
+        position: relative;
+        display: inline-block; }
+      section div.user-flow div.image-flow div.left_img {
+        width: 186px;
+        height: 360px;
+        margin-top: 16px;
+        overflow: hidden; }
+        section div.user-flow div.image-flow div.left_img img ~ img {
+          display: none; }
+        section div.user-flow div.image-flow div.left_img span ~ span {
+          display: none; }
+        section div.user-flow div.image-flow div.left_img img.iimg {
+          width: 180px; }
+      section div.user-flow div.image-flow div.imgbig span {
+        display: inline-block;
+        width: 65px;
+        height: 15px;
+        background: url(http://127.0.0.1:5000/img/homepage/icon8.png);
+        background-position: 0 -1016px;
+        padding-left: 15px;
+        font-size: 12px;
+        cursor: pointer; }
+      section div.user-flow div.image-flow div.imgbig > img {
+        width: 476px; }
+      section div.user-flow div.image-flow div.right_text {
+        width: 240px;
+        margin-left: 30px; }
+        section div.user-flow div.image-flow div.right_text a {
+          color: #929BA3; }
+      section div.user-flow div.image-flow div.right_text-one {
+        clear: both;
+        margin-left: 8px; }
+      section div.user-flow div.image-flow div.bom-button {
+        width: 498px;
+        height: 20px;
+        margin-top: 11px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        /* 按钮的不变样式 */
+        /* 按钮需要根据不同状态被选择的样式 */ }
+        section div.user-flow div.image-flow div.bom-button > div {
+          display: flex;
+          align-items: center; }
+          section div.user-flow div.image-flow div.bom-button > div a {
+            position: relative;
+            line-height: 20px;
+            margin-left: 10px;
+            font-size: 12px;
+            color: #aaa; }
+        section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) {
+          width: 200px;
+          text-align: left;
+          position: relative; }
+          section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) > span {
+            display: inline-block;
+            width: 20px;
+            height: 18px;
+            background: url(http://127.0.0.1:5000/img/iconbig.png);
+            background-position: 0 -103px; }
+        section div.user-flow div.image-flow div.bom-button button.heart {
+          display: inline-block;
+          width: 20px;
+          height: 18px;
+          border: 0;
+          outline: none;
+          margin-left: 10px;
+          background: url(http://127.0.0.1:5000/img/iconbig.png); }
+        section div.user-flow div.image-flow div.bom-button button.like {
+          background-position: -80px -2790px; }
+        section div.user-flow div.image-flow div.bom-button button.nlike {
+          background-position: -80px -2759px; }
+
+div.comment {
+  position: relative;
+  margin-top: -150px;
+  width: 560px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  background: #fafafa;
+  float: right;
+  box-shadow: 0px -3px 0px #c8c8c8;
+  font-size: 12px;
+  transition: all 0.3s linear;
+  z-index: -1;
+  opacity: 0; }
+  div.comment div {
+    width: 560px; }
+  div.comment div:nth-of-type(1) {
+    padding: 18px 15px 0px;
+    height: 58px;
+    text-align: center;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center; }
+    div.comment div:nth-of-type(1) input {
+      width: 390px;
+      height: 40px;
+      padding: 9px;
+      border: 1px #cececf solid; }
+    div.comment div:nth-of-type(1) a {
+      display: inline-block;
+      width: 104px;
+      height: 40px;
+      background-image: linear-gradient(to bottom, #84af00, #79a300);
+      border-radius: 3px;
+      text-align: center;
+      line-height: 40px;
+      color: #fff; }
+      div.comment div:nth-of-type(1) a:hover {
+        color: #fff;
+        background: #9cbf00; }
+  div.comment div ~ div {
+    height: 44px;
+    padding: 10px 30px;
+    border-bottom: 1px #cececf solid;
+    position: relative; }
+    div.comment div ~ div a {
+      color: #7594B3; }
+    div.comment div ~ div a:last-child {
+      position: absolute;
+      right: 50px; }
+    div.comment div ~ div span {
+      color: #444; }
+  div.comment div:last-child {
+    height: 40px;
+    display: flex;
+    align-items: center; }
+    div.comment div:last-child span:nth-of-type(1) {
+      font-size: 12px;
+      cursor: pointer;
+      color: #888; }
+      div.comment div:last-child span:nth-of-type(1):hover {
+        color: #7594B3; }
+    div.comment div:last-child span:nth-of-type(2) {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: url(http://127.0.0.1:5000/img/icon24.png);
+      background-position: right -932px; }
+
+div.user-flow div.show {
+  opacity: 1;
+  margin-top: 2px; }
+
+ul.last-icon {
+  width: 560px;
+  transition: all 0.3s linear;
+  box-shadow: 0px -3px 0px #c8c8c8;
+  float: right;
+  padding: 0 0 0 29px;
+  background: #fff;
+  height: 113px;
+  position: relative;
+  opacity: 0;
+  z-index: -2;
+  margin-top: -150px;
+  margin-bottom: 0; }
+  ul.last-icon > li {
+    width: 84px;
+    height: 80px;
+    padding: 0 12px;
+    text-align: center;
+    margin-top: 23px; }
+    ul.last-icon > li a {
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      background: url(http://127.0.0.1:5000/img/homepage/i24.png);
+      margin: 0 7px; }
+      ul.last-icon > li a > div {
+        width: 156px;
+        height: 180px;
+        position: relative;
+        top: -196px;
+        left: -64px;
+        background: #000;
+        display: none;
+        text-align: center;
+        padding-top: 30px;
+        float: left; }
+        ul.last-icon > li a > div p {
+          font-size: 14px;
+          color: #888;
+          margin-top: 4px; }
+    ul.last-icon > li span {
+      font-size: 12px;
+      color: #aaa; }
+  ul.last-icon li:nth-of-type(1) a {
+    background-position: 1px 1px; }
+    ul.last-icon li:nth-of-type(1) a:hover > div {
+      display: block; }
+  ul.last-icon li:nth-of-type(2) a {
+    background-position: -99px 1px; }
+    ul.last-icon li:nth-of-type(2) a:hover > div {
+      display: block; }
+  ul.last-icon li:nth-of-type(3) a {
+    background-position: -199px -86px; }
+  ul.last-icon li:nth-of-type(4) a {
+    background-position: -299px 1px; }
+  ul.last-icon li:nth-of-type(5) a {
+    background-position: -498px 2px; }
+  ul.last-icon li:nth-of-type(6) a {
+    background-position: -399px 1px; }
+
+div.user-flow ul.show {
+  margin-top: 2px;
+  opacity: 1; }
+
+aside {
+  width: 240px;
+  margin-left: 28px;
+  float: left; }
+  aside div.email {
+    width: 171px;
+    height: 53px;
+    border: solid #b2b2b2 1px;
+    float: left;
+    margin: 0;
+    padding: 5px 0 7px 16px; }
+    aside div.email p {
+      margin: 0; }
+    aside div.email p:nth-of-type(1) {
+      font-size: 18px;
+      font-weight: bold; }
+    aside div.email p:nth-of-type(2) {
+      font-size: 12px; }
+  aside div.pull {
+    width: 53px;
+    height: 53px;
+    border: solid #b2b2b2 1px;
+    float: left; }
+  aside ul.ul_one {
+    margin-bottom: 0px; }
+    aside ul.ul_one:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both; }
+    aside ul.ul_one li {
+      width: 226px;
+      height: 40px;
+      clear: both;
+      border: solid #b2b2b2 1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: #f3f3f3; }
+    aside ul.ul_one li:nth-of-type(2) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+    aside ul.ul_one li:nth-of-type(3) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+    aside ul.ul_one li:nth-of-type(4) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+    aside ul.ul_one li:nth-of-type(5) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+    aside ul.ul_one li:nth-of-type(6) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+    aside ul.ul_one li:nth-of-type(7) > a > span:nth-of-type(1) {
+      background-position: 0 -1688px; }
+  aside .ul_icon {
+    background: url(http://127.0.0.1:5000/img/homepage/icon24.png);
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 2px;
+    margin-left: 14px;
+    background-position: 16px -3339px; }
+  aside span.ul_a {
+    height: 18px;
+    width: 140px;
+    font-size: 14px;
+    color: #999999; }
+  aside div.inset_img img {
+    width: 226px;
+    margin-bottom: 24px; }
+  aside div.aside-three {
+    width: 226px;
+    border: solid #b2b2b2 1px;
+    box-shadow: 0px 1px 1px #888;
+    margin-bottom: 24px; }
+  aside div.aside-three img {
+    width: 226px; }
+  aside div.aside-three > a:nth-of-type(1) {
+    display: block;
+    width: 230px;
+    height: 98px; }
+  aside div.aside-three > a:nth-of-type(2) {
+    display: block;
+    width: 230px;
+    height: 34px;
+    background: #e7e7e7; }
+  aside div.zhuanti {
+    display: flex;
+    width: 226px;
+    align-items: center;
+    background: #e7e7e7;
+    height: 34px;
+    margin: 0;
+    box-shadow: 0px 1px 1px #888; }
+
+div.aside-four {
+  width: 226px;
+  background: #fff;
+  padding: 12px 0 12px 12px;
+  margin: 0 0 2px 0;
+  box-shadow: 0px 1px 1px #888; }
+  div.aside-four div {
+    width: 214px; }
+  div.aside-four p:nth-of-type(1) {
+    color: #333;
+    font-size: 15px;
+    margin: 0; }
+  div.aside-four p:nth-of-type(2) {
+    font-size: 13px;
+    color: #929BA3;
+    margin-bottom: 8px; }
+  div.aside-four > div:nth-of-type(1) {
+    height: 220px;
+    margin: 0; }
+    div.aside-four > div:nth-of-type(1) img {
+      width: 98px;
+      margin: 0 5px 5px 0;
+      float: left; }
+
+div.lable-one {
+  width: 430px;
+  height: 170px;
+  opacity: 0;
+  overflow: hidden;
+  background: #191919;
+  position: absolute;
+  z-index: -1;
+  top: -200px;
+  left: -100px;
+  transition: all 0.2s linear; }
+  div.lable-one > div > img {
+    width: 125px; }
+  div.lable-one div:first-child {
+    padding: 20px; }
+  div.lable-one div:last-child {
+    width: 430px;
+    border-top: 2px #0c0c0c solid;
+    padding: 10px;
+    display: flex;
+    align-items: center; }
+    div.lable-one div:last-child span:nth-child(1) {
+      display: inline-block;
+      width: 20px;
+      height: 18px;
+      background: url(http://127.0.0.1:5000/img/iconbig.png);
+      background-position: 0 -103px; }
+    div.lable-one div:last-child span:nth-child(2) {
+      color: #ccccc1; }
+
+div.lable-a {
+  opacity: 1;
+  top: -184px;
+  z-index: 3; }
+
+div.picture {
+  position: relative;
+  z-index: -1;
+  height: 110px;
+  margin-top: -110px;
+  overflow: hidden;
+  width: 674px;
+  opacity: 0;
+  transition: all 0.4s linear; }
+  div.picture:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  div.picture > div.head-img {
+    width: 64px;
+    height: 64px;
+    float: left; }
+    div.picture > div.head-img img {
+      width: 64px; }
+  div.picture div.angle {
+    width: 585px;
+    height: 24px;
+    background: url(http://127.0.0.1:5000/img/homepage/angle.png);
+    background-position: 2px 0;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    top: 2px; }
+    div.picture div.angle div {
+      width: 21px;
+      height: 21px;
+      float: right;
+      background: url(http://127.0.0.1:5000/img/homepage/angle.png);
+      background-position: -668px 0; }
+    div.picture div.angle div.angle-a {
+      background-position: -786px 0; }
+  div.picture .picture-box {
+    width: 560px;
+    color: #929BA3;
+    font-size: 14px;
+    padding: 8px 30px 0;
+    background: #fff;
+    float: right; }
+    div.picture .picture-box div.pinter_2 {
+      width: 540px;
+      height: 20px; }
+      div.picture .picture-box div.pinter_2 a {
+        color: #929BA3; }
+  div.picture div.dashed {
+    width: 500px;
+    height: 312px;
+    border: 1px dashed #dfdfdf;
+    margin-top: 16px; }
+    div.picture div.dashed textarea {
+      width: 498px;
+      height: 310px;
+      border: 0;
+      outline: none; }
+  div.picture div.three-btn {
+    width: 500px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between; }
+    div.picture div.three-btn button {
+      width: 100px;
+      height: 36px;
+      color: #888;
+      text-align: center;
+      border: 0;
+      border-radius: 2px;
+      letter-spacing: 10px;
+      padding-left: 6px;
+      background: url(http://127.0.0.1:5000/img/homepage/icon.png);
+      outline: none;
+      cursor: pointer; }
+      div.picture div.three-btn button:hover {
+        opacity: 0.7; }
+    div.picture div.three-btn button:nth-of-type(2) {
+      position: relative;
+      left: 70px; }
+    div.picture div.three-btn button:nth-of-type(3) {
+      background-position: 0px -383px;
+      position: relative;
+      left: 56px;
+      color: #fff; }
+    div.picture div.three-btn button:nth-of-type(4) {
+      background-position: -109px -383px;
+      width: 31px;
+      border-left: 1px #fff solid;
+      opacity: 0.7; }
+      div.picture div.three-btn button:nth-of-type(4) select {
+        width: 21px; }
+
+main > div.picture-on {
+  height: 456px;
+  opacity: 1;
+  z-index: 5;
+  margin-top: 0px; }
+
+/* 设置全屏遮罩层效果 */
+div.shade {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -4;
+  transition: all 0.2s linear; }
+
+div.off {
+  opacity: 0.75;
+  z-index: 4; }
+
+section main div.wirte {
+  height: 110px;
+  position: absolute;
+  background: transparent; }
+  section main div.wirte a:nth-of-type(1) {
+    width: 110px;
+    background: transparent; }
+    section main div.wirte a:nth-of-type(1) img {
+      width: 64px; }
+  section main div.wirte a ~ a {
+    opacity: 0; }
+
+section main div.wirte-one {
+  background: #fff; }
+  section main div.wirte-one a + a {
+    background: #fff; }
+
+@keyframes change {
+  50% {
+    width: 110px; }
+  100% {
+    width: 64px; } }

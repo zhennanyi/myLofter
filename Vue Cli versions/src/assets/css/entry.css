@@ -1,0 +1,413 @@
+nav {
+  position: relative;
+  width: 100%;
+  height: 1100px;
+  overflow: hidden;
+  margin-bottom: 40px; }
+  nav div.wrap {
+    position: relative;
+    width: 999999px;
+    overflow: hidden;
+    left: 0px;
+    transition: all 0.4s linear; }
+    nav div.wrap img {
+      width: 2560px;
+      float: left;
+      margin-top: -200px; }
+  nav .low-right {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    position: absolute;
+    right: 1%;
+    bottom: 1.5%; }
+    nav .low-right a {
+      display: inline-block;
+      margin-right: 5px; }
+    nav .low-right a:nth-of-type(1) {
+      color: #fff;
+      font-size: 12px; }
+    nav .low-right .arrow {
+      width: 22px;
+      height: 17px;
+      background: url(http://127.0.0.1:5000/img/btn.png); }
+    nav .low-right .arrow_left {
+      background-position: -406px -781px; }
+    nav .low-right .arrow_right {
+      background-position: -429px -781px; }
+  nav #center1 {
+    position: absolute;
+    width: 100%;
+    height: 670px;
+    z-index: 10;
+    left: 0;
+    top: 200px; }
+    nav #center1 #logo {
+      width: 342px;
+      height: 130px;
+      margin: 0 auto 66px; }
+    nav #center1 .inp_text {
+      width: 584px;
+      height: 60px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: flex-start;
+      text-align: center; }
+      nav #center1 .inp_text a {
+        display: block;
+        width: 194.6px;
+        height: 60px;
+        color: #898a8f;
+        line-height: 40px;
+        border-radius: 0;
+        font-size: 18px; }
+        nav #center1 .inp_text a:hover {
+          color: #fff; }
+        nav #center1 .inp_text a.active {
+          background: #fff;
+          color: #444; }
+    nav #center1 #login {
+      width: 584px;
+      background-color: white;
+      margin: 0 auto;
+      position: relative; }
+      nav #center1 #login #login_left {
+        width: 584px;
+        height: 260px;
+        background-color: white; }
+        nav #center1 #login #login_left .inp_left {
+          width: 400px;
+          height: 240px;
+          margin-top: 16px;
+          padding: 10px 30px 30px;
+          float: left; }
+          nav #center1 #login #login_left .inp_left input {
+            margin: 0; }
+          nav #center1 #login #login_left .inp_left div {
+            width: 300px;
+            height: 40px;
+            border: 1px #888 solid; }
+        nav #center1 #login #login_left .wire {
+          width: 1px;
+          height: 201px;
+          background: #e7e7e7;
+          float: left;
+          position: relative;
+          left: -33px;
+          top: 28px; }
+        nav #center1 #login #login_left .wiretext {
+          width: 10px;
+          height: 50px;
+          display: block;
+          background: #fff;
+          float: left;
+          position: relative;
+          left: -39px;
+          top: 100px;
+          line-height: 50px; }
+        nav #center1 #login #login_left .regbox {
+          width: 300px;
+          height: 40px;
+          padding-left: 14px; }
+        nav #center1 #login #login_left .regbox_text {
+          margin-top: 14px; }
+          nav #center1 #login #login_left .regbox_text a {
+            color: #666;
+            font-size: 12px;
+            text-decoration: none;
+            margin-right: 24px; }
+          nav #center1 #login #login_left .regbox_text .wangyi {
+            margin: 0; }
+      nav #center1 #login #login_center {
+        width: 584px;
+        height: 320px;
+        background-color: white; }
+        nav #center1 #login #login_center .inp_left {
+          width: 400px;
+          height: 240px;
+          margin-top: 16px;
+          padding: 10px 30px 30px;
+          float: left; }
+          nav #center1 #login #login_center .inp_left input {
+            margin: 0; }
+          nav #center1 #login #login_center .inp_left div {
+            width: 300px;
+            height: 40px;
+            border: 1px #888 solid; }
+        nav #center1 #login #login_center .wire {
+          width: 1px;
+          height: 201px;
+          background: #e7e7e7;
+          float: left;
+          position: relative;
+          left: -33px;
+          top: 28px; }
+        nav #center1 #login #login_center .wiretext {
+          width: 10px;
+          height: 50px;
+          display: block;
+          background: #fff;
+          float: left;
+          position: relative;
+          left: -39px;
+          top: 100px;
+          line-height: 50px; }
+        nav #center1 #login #login_center .regbox {
+          width: 300px;
+          height: 40px;
+          padding-left: 14px; }
+        nav #center1 #login #login_center .regbox_text {
+          margin-top: 14px; }
+          nav #center1 #login #login_center .regbox_text a {
+            color: #666;
+            font-size: 12px;
+            text-decoration: none;
+            margin-right: 24px; }
+          nav #center1 #login #login_center .regbox_text .wangyi {
+            margin: 0; }
+      nav #center1 #login #login_right {
+        width: 584px;
+        height: 224px;
+        background-color: white;
+        padding: 30px 0 0 75px; }
+        nav #center1 #login #login_right div {
+          float: left; }
+        nav #center1 #login #login_right .r_text {
+          width: 86px;
+          height: 150px;
+          padding-top: 30px; }
+          nav #center1 #login #login_right .r_text p {
+            width: 84px;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 32px; }
+        nav #center1 #login #login_right .r_btn {
+          width: 135px;
+          height: 150px;
+          padding-top: 20px;
+          margin-right: 64px; }
+          nav #center1 #login #login_right .r_btn a {
+            display: block;
+            width: 135px;
+            height: 40px;
+            position: relative;
+            background-image: url("http://127.0.0.1:5000/img/btn.png");
+            margin-bottom: 10px; }
+          nav #center1 #login #login_right .r_btn a:nth-child(1) {
+            background-position: -467px -587px; }
+          nav #center1 #login #login_right .r_btn a:nth-child(2) {
+            background-position: -467px -587px; }
+          nav #center1 #login #login_right .r_btn a:nth-child(3) {
+            background-position: -467px -707px; }
+        nav #center1 #login #login_right .lg_icon {
+          margin-top: 0.5rem;
+          width: 164px;
+          height: 164px;
+          background-image: url("http://127.0.0.1:5000/img/erweima.png"); }
+  nav .inp_right {
+    padding: 10px 10px 10px;
+    float: left;
+    width: 140px;
+    height: 210px;
+    margin-top: 16px;
+    margin-left: -16px; }
+    nav .inp_right a {
+      display: block;
+      background: url(http://127.0.0.1:5000/img/entrypage/btn.png) no-repeat;
+      position: relative;
+      width: 150px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 40px;
+      color: #fff;
+      padding-left: 46px;
+      margin-bottom: 14px; }
+    nav .inp_right .inp_a1 {
+      background-position: -1px -651px; }
+    nav .inp_right .inp_a2 {
+      background-position: -1px -600px; }
+    nav .inp_right .inp_a3 {
+      background-position: -1px -651px; }
+    nav .inp_right .inp_a4 {
+      background-position: -213px -1191px; }
+
+.htwo {
+  font-size: 48px;
+  font-weight: 600;
+  color: #444444;
+  text-align: center; }
+
+.p6 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 12px;
+  color: #444444; }
+
+.six {
+  width: 928px;
+  height: 320px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around; }
+  .six .six_a {
+    width: 380px;
+    height: 320px; }
+    .six .six_a div {
+      background: url(http://127.0.0.1:5000/img/entrypage/icon.png) no-repeat;
+      position: relative; }
+    .six .six_a .six_h {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 36px;
+      text-align: center;
+      margin-bottom: 20px; }
+    .six .six_a .p7 {
+      font-size: 14px;
+      text-align: center;
+      color: #444444;
+      margin-bottom: 5px; }
+    .six .six_a div {
+      width: 100px;
+      height: 92px;
+      margin: 0 auto;
+      margin-top: 50px; }
+    .six .six_a .six_icon1 {
+      background-position: -110px 0; }
+    .six .six_a .six_icon2 {
+      background-position: -228px 0; }
+    .six .six_a .six_icon3 {
+      background-position: -450px 0; }
+    .six .six_a .six_icon4 {
+      background-position: -560px 0; }
+    .six .six_a .six_icon5 {
+      background-position: -668px 0; }
+    .six .six_a .six_icon6 {
+      background-position: -780px 0; }
+
+div.bottom_strip {
+  width: 100%;
+  height: 262px;
+  background-color: #fff;
+  padding-top: 48px; }
+  div.bottom_strip h2 {
+    font-size: 48px;
+    font-weight: 600;
+    color: #444444;
+    text-align: center; }
+  div.bottom_strip div {
+    width: 1000px;
+    height: 106px;
+    margin: 0 auto; }
+  div.bottom_strip p {
+    width: 820px;
+    margin: 68px auto 0; }
+  div.bottom_strip a {
+    background: url(http://127.0.0.1:5000/img/entrypage/btn.png) no-repeat;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    padding-left: 20px; }
+  div.bottom_strip a:hover {
+    opacity: 0.7; }
+  div.bottom_strip a:nth-of-type(1) {
+    background-position: -1px -880px; }
+  div.bottom_strip a:nth-of-type(2) {
+    background-position: -210px -880px; }
+  div.bottom_strip a:nth-of-type(3) {
+    background-position: -421px -880px; }
+  div.bottom_strip a:nth-of-type(4) {
+    background-position: 0 -1190px; }
+
+div.suspend {
+  position: fixed;
+  bottom: -93px;
+  box-shadow: 0 -2px 2px #c6c6c6;
+  height: 93px;
+  padding: 26px 0;
+  transition: all 0.3s linear; }
+  div.suspend p {
+    width: 660px;
+    margin: 0 auto; }
+  div.suspend a {
+    width: 160px;
+    height: 40px;
+    line-height: 40px; }
+  div.suspend a:nth-of-type(1) {
+    background-position: -310px -461px; }
+  div.suspend a:nth-of-type(2) {
+    background-position: -1px -601px; }
+  div.suspend a:nth-of-type(3) {
+    background-position: -1px -651px; }
+  div.suspend a:nth-of-type(4) {
+    background-position: -213px -1191px; }
+
+div.show-strip {
+  position: fixed;
+  bottom: 0px; }
+
+/* CSS Document */
+* {
+  margin: 0;
+  text-decoration: none;
+  padding: 0; }
+
+body {
+  height: auto; }
+
+#sec {
+  width: 100%;
+  height: 1120px;
+  padding-top: 60px; }
+
+.sec_img {
+  margin: 0 auto;
+  width: 928px;
+  height: 498px;
+  margin-top: 80px; }
+
+#d3 {
+  width: 100%;
+  height: 1220px;
+  background-color: #f7f7f7;
+  padding-top: 60px; }
+
+.d3_img {
+  margin: 0 auto;
+  width: 1334px;
+  height: 630px; }
+
+#d4 {
+  background-color: #fff;
+  padding-top: 60px;
+  overflow: hidden; }
+  #d4 div {
+    display: flex;
+    justify-content: flex-start; }
+    #d4 div > img:nth-of-type(1) {
+      margin-left: -200px; }
+    #d4 div img {
+      width: 720px;
+      margin-right: 20px; }
+
+#d5 {
+  width: 100%;
+  height: 1200px;
+  background-color: #f7f7f7;
+  padding-top: 60px; }
+  #d5 > p > a {
+    color: #7594b3; }
+    #d5 > p > a:hover {
+      color: #5a8dcd; }
+
+.d5_img {
+  width: 956px;
+  height: 635px;
+  margin: 0 auto; }
