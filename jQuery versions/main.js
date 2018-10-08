@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const user = require('./routes/user.js');//引入用户模块
 var app = express();
-app.listen(5000,()=>{
+app.listen(5500,()=>{
 	console.log("服务器创建成功")
 });
 
