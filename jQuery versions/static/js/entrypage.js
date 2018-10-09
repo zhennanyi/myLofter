@@ -66,7 +66,7 @@ function login() {
   })
 }
 
-// clearInterval(timer);  //清除周期性定时器
+
 
 
 // 自写轮播图
@@ -122,7 +122,7 @@ $("nav").hover(
 
 
 
-// 设置登录胶囊导航状态的实现
+
 
 // 设置底部导航栏根据页面高度显示和隐藏
 $(window).scroll(function(){

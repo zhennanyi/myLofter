@@ -1,19 +1,17 @@
 <template>
     <div id="entrypage">
         <!-- 网页登录主页面 -->
-        <nav>
+        <!-- 添加移入移出事件，设定鼠标悬停后停止定时器 -->
+        <nav @mouseleave="mouse()" @mouseenter="enter()">
             <!-- 背景轮播图模块 -->
             <div class="wrap" id="aa">
-                <img src="http://127.0.0.1:5000/img/entrypage/2.jpg" alt="">
-                <img src="http://127.0.0.1:5000/img/entrypage/9.jpg" alt="">
-                <img src="http://127.0.0.1:5000/img/entrypage/1.jpg" alt="">
-                <img src="http://127.0.0.1:5000/img/entrypage/7.jpg" alt="">
-                <img src="http://127.0.0.1:5000/img/entrypage/4.jpg" alt="">
+                <!-- 通过后台请求图片来完成图片轮播，实现黑色淡入淡出效果 -->
+                <img :src="bannerView" alt="图片加载失败" :class="shade">
             </div>
             <div class="low-right">
                 <a href="">背景作品来自：oneDay</a>
-                <a class="arrow arrow_left" data-toggle="banner"></a>
-                <a class="arrow arrow_right" data-toggle="banner"></a>
+                <a class="arrow arrow_left" @click="next(1)"></a>
+                <a class="arrow arrow_right" @click="next()"></a>
             </div>
             <!-- 主内容模块 -->
             <div id="center1">
@@ -51,10 +49,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                						</span>
+                                                                                						</span>
                             <span class="wiretext">
-                                                							或
-                                                						</span>
+                                                                                							或
+                                                                                						</span>
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
                                 <a href="#" class="inp_a2">微博账号登录</a>
@@ -87,10 +85,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                						</span>
+                                                                                						</span>
                             <span class="wiretext">
-                                                							或
-                                                						</span>
+                                                                                							或
+                                                                                						</span>
                             <!-- 右侧第三方社交按钮 -->
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
@@ -211,7 +209,7 @@
                 </p>
             </div>
         </div>
-        <div class="bottom_strip suspend">
+        <div class="bottom_strip suspend" :class="strips">
             <p>
                 <a href="#">手机注册</a>
                 <a href="#">新浪微博注册</a>
@@ -227,21 +225,58 @@
             return {
                 //获取用户账号密码
                 uname: "",
-                upwd: ""
-                // 获取输入框内容的两种方法  ref  v-model   
+                upwd: "",
+                // 获取输入框内容的两种方法  ref  v-model  
+                // 保存轮播图数据
+                banner: [
+                    "http://127.0.0.1:5000/img/entrypage/2.jpg",
+                    "http://127.0.0.1:5000/img/entrypage/9.jpg",
+                    "http://127.0.0.1:5000/img/entrypage/1.jpg",
+                    "http://127.0.0.1:5000/img/entrypage/7.jpg",
+                    "http://127.0.0.1:5000/img/entrypage/4.jpg",
+                ],
+                // 创建一个唯一数据用来扎实轮播图页
+                bannerView: "",
+                x: "",
+                shade: {
+                    // 图片的淡入淡出效果
+                    shades: true,
+                },
+                strips: {
+                    // 新增一个切换底部导航条的值
+                    strips: false
+                },
+                // 初始化两个定时器
+                t: null,
+                m: null
             };
         },
         props: ["oop"],
         mounted() {
-            console.log(this.$root)
+            // 添加一个滚动事件
+            window.addEventListener('scroll', this.handleScroll)
+            // console.log(this.$root)
         },
         methods: {
+            handleScroll() {
+                // 获取当前总页面高度
+                var height = document.body.scrollHeight
+                // document.documentElement.scrollTop;    document.body.scrollTop;  此方法获取不到页面高度
+                // 获取当前已经滚动的高度
+                var scrollTop = window.pageYOffset;
+                if (scrollTop > 1090&&scrollTop<height-1200) {
+                    this.strips.strips = true;
+                } else {
+                    this.strips.strips = false;
+                }
+            },
             // 进行非空验证
             // blue失去焦点事件
+            // foucs  获取焦点事件
             // 绑定共用清除函数，在点击登录或者注册跳转时，清除框中内容
-            clear(){
-                this.uname="";
-                this.upwd="";
+            clear() {
+                this.uname = "";
+                this.upwd = "";
             },
             check(i) {
                 if (i == 0) {
@@ -298,12 +333,12 @@
                         upwd: this.upwd
                     }
                 }).then(response => {
-                    if(response.data=="1"){
+                    if (response.data == "1") {
                         //登录成功后，进行页面跳转
                         this.goto();
-                    }else{
+                    } else {
                         // 提示用户账号或密码错误
-                          this.$toast(response.data)
+                        this.$toast(response.data)
                     }
                 })
                 // 错误捕获
@@ -311,10 +346,52 @@
                 //     console.log(error);
                 // });
             },
-            // 
-            // 
-        }
-        //  foucs  获取焦点事件
+            // 通过参数进行重载执行不同的操作
+            next(i) {
+                this.shade.shades = false;
+                if (i) { //执行切换上一张
+                    if (this.x == 0) {
+                        this.x = 4
+                    } else {
+                        this.x--
+                    }
+                    this.bannerView = this.banner[this.x]
+                } else { //执行切下一张
+                    if (this.x == 4) {
+                        this.x = 0
+                    } else {
+                        this.x++
+                    }
+                    this.bannerView = this.banner[this.x]
+                }
+                this.shade.shades = true;
+            },
+            // mouseleave  鼠标移出事件   此方法不会冒泡到父元素
+            // mouseout会触发冒泡事件
+            mouse() {
+                this.m = setInterval(() => {
+                    this.next();
+                }, 3500)
+            },
+            // mouseenter  鼠标移入事件
+            enter() {
+                clearInterval(this.m)
+            }
+        },
+        // 创建钩子函数确定轮播图第一张显示的图片
+        created() {
+            // 将所有轮播图的第一张赋给当前视图轮播图
+            this.x = 0
+            this.bannerView = this.banner[this.x]
+            // this.banner[index]
+            //每隔2s清除图片样式，确保下次点击时是淡入淡出效果
+            this.t = setInterval(() => {
+                this.shade.shades = false;
+            }, 2000)
+            this.m = setInterval(() => {
+                this.next();
+            }, 3500)
+        },
     };
 </script>
 

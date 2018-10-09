@@ -11,7 +11,7 @@ Vue.prototype.$qs = qs;
 import Mint from 'mint-ui';
 
 Vue.use(Mint);
-//引入自己写的头部
+//引入自己写的头尾部组件
 import artheader from "@/components/artheader.vue";
 import artfooter from "@/components/artfooter.vue";
 import myheader from "@/components/header.vue";
@@ -42,9 +42,12 @@ Vue.filter("title", function (val, len) {
     return val.slice(0, len) + "...";
   }
 })
-
+// 使用vue自带ajax请求，目前已不推荐
 // import VueResource from "vue-resource"
 // Vue.use(VueResource)
+
+
+// 设置ajax请求默认请求地址前缀
 // Vue.http.options.root = "http://127.0.0.1:5000/";
 new Vue({
   data:{

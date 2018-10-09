@@ -14,11 +14,12 @@
 </template>
 
 <script>
+// vuex可以解决问题
   export default {
     // 如何将此数据，传递到页头组件
     data() {
       return {
-         art:1
+         art:5
       };
     }
   };

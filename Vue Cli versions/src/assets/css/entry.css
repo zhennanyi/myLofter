@@ -1,3 +1,9 @@
+@keyframes change {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
+
 nav {
   position: relative;
   width: 100%;
@@ -6,14 +12,20 @@ nav {
   margin-bottom: 40px; }
   nav div.wrap {
     position: relative;
-    width: 999999px;
     overflow: hidden;
     left: 0px;
-    transition: all 0.4s linear; }
+    transition: all 0.4s linear;
+    width: 2560px;
+    background: #000;
+    height: 1500px; }
     nav div.wrap img {
       width: 2560px;
       float: left;
-      margin-top: -200px; }
+      margin-top: -200px;
+      z-index: 1;
+      transition: opacity 2s linear; }
+    nav div.wrap img.shades {
+      animation: change 2000ms linear; }
   nav .low-right {
     display: flex;
     align-items: center;
@@ -314,7 +326,8 @@ div.bottom_strip {
     line-height: 50px;
     text-align: center;
     color: #fff;
-    padding-left: 20px; }
+    padding-left: 20px;
+    margin-right: 3px; }
   div.bottom_strip a:hover {
     opacity: 0.7; }
   div.bottom_strip a:nth-of-type(1) {
@@ -349,7 +362,7 @@ div.suspend {
   div.suspend a:nth-of-type(4) {
     background-position: -213px -1191px; }
 
-div.show-strip {
+div.strips {
   position: fixed;
   bottom: 0px; }
 
@@ -365,7 +378,8 @@ body {
 #sec {
   width: 100%;
   height: 1120px;
-  padding-top: 60px; }
+  padding-top: 60px;
+  background: #fff; }
 
 .sec_img {
   margin: 0 auto;
