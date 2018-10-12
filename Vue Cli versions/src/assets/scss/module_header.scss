@@ -36,6 +36,7 @@ div.mynav {
       li {
         float: left;
         position: relative;
+        // border:1px solid red;
       }
     }
 
@@ -114,6 +115,9 @@ a.text1 {
   }
 }
 
+ul.list-unstyled {
+  position: relative;
+}
 
 // 下拉菜单样式
 .dropdown {
@@ -132,6 +136,14 @@ a.text1 {
     list-style: none;
     margin: 0;
 
+    &:after {
+      content: "";
+      display: block;
+      // visibility，仍然占据空间，只是不可见，DOM树仍然会渲染
+      visibility: hidden;
+      clear: both;
+    }
+
     li {
       width: 227px;
       height: 40px;
@@ -139,6 +151,8 @@ a.text1 {
       display: flex;
       align-items: center;
       color: #bcbcbc;
+      clear: both;
+      
 
       // 伪类下可以连接子元素的其他伪类
       &:hover {
@@ -238,7 +252,7 @@ div.search-box {
 // 第一个下拉栏需要显示时候的样式
 // 避免影响到其他元素
 div.logo div.show {
-  height: 320px;
+  height: 336px;
   opacity: 1;
 }
 

@@ -10,6 +10,9 @@ body {
   background-color: #ededef;
   margin: 0; }
 
+* {
+  outline: none; }
+
 #qwe {
   width: 944px; }
 
@@ -63,6 +66,101 @@ section {
         background-position: -560px 0; }
         section main div.publishbar a:nth-of-type(6):hover {
           background-position: -560px -133px; }
+  section div.image-flow {
+    position: relative;
+    box-shadow: 0px 3px 5px #d8d8da;
+    width: 560px;
+    color: #929BA3;
+    font-size: 14px;
+    padding: 8px 30px 0;
+    background: #fff;
+    float: right;
+    z-index: 3;
+    /*上方图片标题文字*/
+    /*放图片流的框*/
+    /*右侧文字的框*/
+    /* 底部操作按钮框 */ }
+    section div.image-flow div {
+      float: left; }
+    section div.image-flow div.pinter_2 {
+      width: 540px;
+      height: 20px; }
+      section div.image-flow div.pinter_2 a {
+        color: #929BA3; }
+    section div.image-flow div:nth-of-type(1) p a {
+      position: relative;
+      display: inline-block; }
+    section div.image-flow div.left_img {
+      width: 186px;
+      height: auto;
+      max-height: 360px;
+      margin-top: 16px;
+      overflow: hidden; }
+      section div.image-flow div.left_img img ~ img {
+        display: none; }
+      section div.image-flow div.left_img span ~ span {
+        display: none; }
+      section div.image-flow div.left_img img.iimg {
+        width: 180px; }
+    section div.image-flow div.imgbig span {
+      display: inline-block;
+      width: 65px;
+      height: 15px;
+      background: url(http://127.0.0.1:5000/img/homepage/icon8.png);
+      background-position: 0 -1016px;
+      padding-left: 15px;
+      font-size: 12px;
+      cursor: pointer; }
+    section div.image-flow div.imgbig > img {
+      width: 476px; }
+    section div.image-flow div.right_text {
+      width: 240px;
+      margin-left: 30px; }
+      section div.image-flow div.right_text a {
+        color: #929BA3; }
+    section div.image-flow div.right_texts {
+      clear: both;
+      margin-left: 8px; }
+    section div.image-flow div.bom-button {
+      width: 498px;
+      height: 20px;
+      margin-top: 11px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      /* 按钮的不变样式 */
+      /* 按钮需要根据不同状态被选择的样式 */ }
+      section div.image-flow div.bom-button > div {
+        display: flex;
+        align-items: center; }
+        section div.image-flow div.bom-button > div a {
+          position: relative;
+          line-height: 20px;
+          margin-left: 10px;
+          font-size: 12px;
+          color: #aaa;
+          cursor: pointer; }
+      section div.image-flow div.bom-button > div:nth-of-type(1) {
+        width: 200px;
+        text-align: left;
+        position: relative; }
+        section div.image-flow div.bom-button > div:nth-of-type(1) > span {
+          display: inline-block;
+          width: 20px;
+          height: 18px;
+          background: url(http://127.0.0.1:5000/img/iconbig.png);
+          background-position: 0 -103px; }
+      section div.image-flow div.bom-button button.heart {
+        display: inline-block;
+        width: 20px;
+        height: 18px;
+        border: 0;
+        margin-left: 10px;
+        background: url(http://127.0.0.1:5000/img/iconbig.png);
+        background-position: -80px -2759px;
+        outline: none; }
+      section div.image-flow div.bom-button button.like {
+        background-position: -80px -2790px; }
   section div.user-flow {
     height: auto;
     width: 674px;
@@ -97,98 +195,6 @@ section {
         background-position: -668px 0; }
       section div.user-flow div.angle div.angle-a {
         background-position: -786px 0; }
-    section div.user-flow div.image-flow {
-      box-shadow: 0px 3px 5px #d8d8da;
-      width: 560px;
-      color: #929BA3;
-      font-size: 14px;
-      padding: 8px 30px 0;
-      background: #fff;
-      float: right;
-      /*上方图片标题文字*/
-      /*放图片流的框*/
-      /*右侧文字的框*/
-      /* 底部操作按钮框 */ }
-      section div.user-flow div.image-flow div {
-        float: left; }
-      section div.user-flow div.image-flow div.pinter_2 {
-        width: 540px;
-        height: 20px; }
-        section div.user-flow div.image-flow div.pinter_2 a {
-          color: #929BA3; }
-      section div.user-flow div.image-flow div:nth-of-type(1) p a {
-        position: relative;
-        display: inline-block; }
-      section div.user-flow div.image-flow div.left_img {
-        width: 186px;
-        height: 360px;
-        margin-top: 16px;
-        overflow: hidden; }
-        section div.user-flow div.image-flow div.left_img img ~ img {
-          display: none; }
-        section div.user-flow div.image-flow div.left_img span ~ span {
-          display: none; }
-        section div.user-flow div.image-flow div.left_img img.iimg {
-          width: 180px; }
-      section div.user-flow div.image-flow div.imgbig span {
-        display: inline-block;
-        width: 65px;
-        height: 15px;
-        background: url(http://127.0.0.1:5000/img/homepage/icon8.png);
-        background-position: 0 -1016px;
-        padding-left: 15px;
-        font-size: 12px;
-        cursor: pointer; }
-      section div.user-flow div.image-flow div.imgbig > img {
-        width: 476px; }
-      section div.user-flow div.image-flow div.right_text {
-        width: 240px;
-        margin-left: 30px; }
-        section div.user-flow div.image-flow div.right_text a {
-          color: #929BA3; }
-      section div.user-flow div.image-flow div.right_text-one {
-        clear: both;
-        margin-left: 8px; }
-      section div.user-flow div.image-flow div.bom-button {
-        width: 498px;
-        height: 20px;
-        margin-top: 11px;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        /* 按钮的不变样式 */
-        /* 按钮需要根据不同状态被选择的样式 */ }
-        section div.user-flow div.image-flow div.bom-button > div {
-          display: flex;
-          align-items: center; }
-          section div.user-flow div.image-flow div.bom-button > div a {
-            position: relative;
-            line-height: 20px;
-            margin-left: 10px;
-            font-size: 12px;
-            color: #aaa; }
-        section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) {
-          width: 200px;
-          text-align: left;
-          position: relative; }
-          section div.user-flow div.image-flow div.bom-button > div:nth-of-type(1) > span {
-            display: inline-block;
-            width: 20px;
-            height: 18px;
-            background: url(http://127.0.0.1:5000/img/iconbig.png);
-            background-position: 0 -103px; }
-        section div.user-flow div.image-flow div.bom-button button.heart {
-          display: inline-block;
-          width: 20px;
-          height: 18px;
-          border: 0;
-          outline: none;
-          margin-left: 10px;
-          background: url(http://127.0.0.1:5000/img/iconbig.png); }
-        section div.user-flow div.image-flow div.bom-button button.like {
-          background-position: -80px -2790px; }
-        section div.user-flow div.image-flow div.bom-button button.nlike {
-          background-position: -80px -2759px; }
 
 div.comment {
   position: relative;
@@ -260,7 +266,8 @@ div.comment {
 
 div.user-flow div.show {
   opacity: 1;
-  margin-top: 2px; }
+  margin-top: 2px;
+  z-index: 1; }
 
 ul.last-icon {
   width: 560px;
@@ -324,7 +331,8 @@ ul.last-icon {
 
 div.user-flow ul.show {
   margin-top: 2px;
-  opacity: 1; }
+  opacity: 1;
+  z-index: 1; }
 
 aside {
   width: 240px;
@@ -472,7 +480,7 @@ div.lable-one {
     div.lable-one div:last-child span:nth-child(2) {
       color: #ccccc1; }
 
-div.lable-a {
+div.lablea {
   opacity: 1;
   top: -184px;
   z-index: 3; }
@@ -527,21 +535,80 @@ div.picture {
       div.picture .picture-box div.pinter_2 a {
         color: #929BA3; }
   div.picture div.dashed {
+    position: relative;
     width: 500px;
     height: 312px;
     border: 1px dashed #dfdfdf;
-    margin-top: 16px; }
-    div.picture div.dashed textarea {
-      width: 498px;
-      height: 310px;
-      border: 0;
-      outline: none; }
+    margin-top: 16px;
+    display: flex;
+    align-items: center; }
+    div.picture div.dashed input {
+      display: none; }
+    div.picture div.dashed div.addfile {
+      width: 95px;
+      height: 82px;
+      margin: 0 auto;
+      background: url(http://127.0.0.1:5000/img/homepage/pic.png); }
+    div.picture div.dashed img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 500px; }
+    div.picture div.dashed span {
+      position: absolute;
+      top: 0;
+      background: url(http://127.0.0.1:5000/img/homepage/pbicon.png);
+      width: 30px;
+      height: 30px;
+      opacity: 0.5;
+      display: none;
+      cursor: pointer; }
+    div.picture div.dashed span.rotate {
+      left: 87%;
+      background-position: -1px -400px; }
+    div.picture div.dashed span.del {
+      right: 0;
+      background-position: -1px -208px; }
+    div.picture div.dashed span.show {
+      display: block; }
+  div.picture div.dashedborder {
+    border: none; }
+  div.picture div.dashedown {
+    height: 0;
+    opacity: 0; }
+    div.picture div.dashedown div:first-child {
+      width: 500px;
+      height: 62px;
+      margin-bottom: 15px;
+      border: 1px dashed #dfdfdf;
+      display: flex;
+      align-items: center; }
+      div.picture div.dashedown div:first-child div {
+        border: none;
+        width: 96px;
+        height: 25px;
+        margin: 0 auto;
+        background: url(http://127.0.0.1:5000/img/homepage/add.png);
+        background-size: 100%；; }
+    div.picture div.dashedown textarea.inputtext {
+      resize: none;
+      outline: none;
+      border: 1px solid #dfdfdf;
+      margin: 0;
+      width: 500px;
+      height: 160px; }
+    div.picture div.dashedown input {
+      margin: 0; }
+  div.picture div.dashedownshow {
+    height: auto;
+    opacity: 1; }
   div.picture div.three-btn {
     width: 500px;
     padding: 20px 0;
     display: flex;
     justify-content: space-between; }
     div.picture div.three-btn button {
+      position: relative;
       width: 100px;
       height: 36px;
       color: #888;
@@ -551,8 +618,9 @@ div.picture {
       letter-spacing: 10px;
       padding-left: 6px;
       background: url(http://127.0.0.1:5000/img/homepage/icon.png);
+      cursor: pointer;
       outline: none;
-      cursor: pointer; }
+      z-index: 3; }
       div.picture div.three-btn button:hover {
         opacity: 0.7; }
     div.picture div.three-btn button:nth-of-type(2) {
@@ -571,14 +639,15 @@ div.picture {
       div.picture div.three-btn button:nth-of-type(4) select {
         width: 21px; }
 
-main > div.picture-on {
-  height: 456px;
+main > div.pictureon {
+  position: relative;
+  height: auto;
   opacity: 1;
-  z-index: 5;
+  z-index: 50;
   margin-top: 0px; }
 
 /* 设置全屏遮罩层效果 */
-div.shade {
+div.shades {
   width: 100%;
   height: 100%;
   background: black;
@@ -589,7 +658,7 @@ div.shade {
   z-index: -4;
   transition: all 0.2s linear; }
 
-div.off {
+div.issueoff {
   opacity: 0.75;
   z-index: 4; }
 
@@ -605,9 +674,9 @@ section main div.wirte {
   section main div.wirte a ~ a {
     opacity: 0; }
 
-section main div.wirte-one {
+section main div.issuetext {
   background: #fff; }
-  section main div.wirte-one a + a {
+  section main div.issuetext a + a {
     background: #fff; }
 
 @keyframes change {

@@ -227,7 +227,7 @@
                 uname: "",
                 upwd: "",
                 // 获取输入框内容的两种方法  ref  v-model  
-                // 保存轮播图数据
+                // 保存轮播图数据  图片中要带有作者的信息，并且带有作者主页链接
                 banner: [
                     "http://127.0.0.1:5000/img/entrypage/2.jpg",
                     "http://127.0.0.1:5000/img/entrypage/9.jpg",
@@ -367,7 +367,7 @@
                 this.shade.shades = true;
             },
             // mouseleave  鼠标移出事件   此方法不会冒泡到父元素
-            // mouseout会触发冒泡事件
+            // mouseout，mouseover会触发冒泡事件
             mouse() {
                 this.m = setInterval(() => {
                     this.next();

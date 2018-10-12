@@ -11,9 +11,15 @@ body {
     background-color: #ededef;
     margin: 0;
 }
-#qwe{
+
+* {
+    outline: none;
+}
+
+#qwe {
     width: 944px;
 }
+
 /*主要内容显示主体 */
 section {
     width: 944px;
@@ -98,6 +104,154 @@ section {
     }
 
     // 每个用户单独的盒子
+    // 放在外边作为公共样式
+    div.image-flow {
+        //暂时存在问题：用overflow: hidden设置溢出隐藏会导致边框阴影不可见
+        position: relative;
+        box-shadow: 0px 3px 5px #d8d8da;
+        width: 560px;
+        color: #929BA3;
+        font-size: 14px;
+        padding: 8px 30px 0;
+        background: #fff;
+        float: right;
+        z-index: 3;
+
+        div {
+            float: left;
+        }
+
+        /*上方图片标题文字*/
+        div.pinter_2 {
+            width: 540px;
+            height: 20px;
+
+            a {
+                color: #929BA3;
+            }
+        }
+
+        div:nth-of-type(1) {
+            p {
+                a {
+                    position: relative;
+                    display: inline-block;
+                }
+            }
+        }
+
+        /*放图片流的框*/
+        div.left_img {
+            width: 186px;
+            // 此高度应该根据图片的高度动态生成，直接写死会导致框的高度不能跟随图片动态变化
+            height: auto;
+            // 设置图片最大高度
+            max-height: 360px;
+            margin-top: 16px;
+            overflow: hidden;
+
+            img~img {
+                display: none;
+            }
+
+            span~span {
+                display: none;
+            }
+
+            img.iimg {
+                width: 180px;
+            }
+        }
+
+        //图片放大后的样式
+        div.imgbig {
+            span {
+                display: inline-block;
+                width: 65px;
+                height: 15px;
+                background: url(http://127.0.0.1:5000/img/homepage/icon8.png);
+                background-position: 0 -1016px;
+                padding-left: 15px;
+                font-size: 12px;
+                cursor: pointer;
+            }
+
+            >img {
+                width: 476px;
+            }
+        }
+
+        /*右侧文字的框*/
+        div.right_text {
+            width: 240px;
+            margin-left: 30px;
+
+            a {
+                color: #929BA3;
+            }
+        }
+
+        // 右侧文字第二种样式，设定图片展开后隐藏
+        div.right_texts {
+            clear: both;
+            margin-left: 8px;
+        }
+
+        /* 底部操作按钮框 */
+        div.bom-button {
+            width: 498px;
+            height: 20px;
+            margin-top: 11px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            >div {
+                display: flex;
+                align-items: center;
+
+                a {
+                    position: relative;
+                    line-height: 20px;
+                    margin-left: 10px;
+                    font-size: 12px;
+                    color: #aaa;
+                      cursor: pointer;
+                }
+            }
+
+            >div:nth-of-type(1) {
+                width: 200px;
+                text-align: left;
+                position: relative;
+
+                >span {
+                    display: inline-block;
+                    width: 20px;
+                    height: 18px;
+                    background: url(http://127.0.0.1:5000/img/iconbig.png);
+                    background-position: 0 -103px;
+                }
+            }
+
+            /* 按钮的不变样式 */
+            button.heart {
+                display: inline-block;
+                width: 20px;
+                height: 18px;
+                border: 0;
+                margin-left: 10px;
+                background: url(http://127.0.0.1:5000/img/iconbig.png);
+                background-position: -80px -2759px;
+                outline: none;
+            }
+
+            /* 按钮需要根据不同状态被选择的样式 */
+            button.like {
+                background-position: -80px -2790px;
+            }
+        }
+    }
 
     div.user-flow {
         // overflow: hidden;
@@ -152,152 +306,6 @@ section {
 
         // 悬停样式
 
-        div.image-flow {
-            //暂时存在问题：用overflow: hidden设置溢出隐藏会导致边框阴影不可见
-            box-shadow: 0px 3px 5px #d8d8da;
-            width: 560px;
-            color: #929BA3;
-            font-size: 14px;
-            padding: 8px 30px 0;
-            background: #fff;
-            float: right;
-
-            div {
-                float: left;
-            }
-
-            /*上方图片标题文字*/
-            div.pinter_2 {
-                width: 540px;
-                height: 20px;
-
-                a {
-                    color: #929BA3;
-                }
-            }
-
-            div:nth-of-type(1) {
-                p {
-                    a {
-                        position: relative;
-                        display: inline-block;
-                    }
-                }
-            }
-
-            /*放图片流的框*/
-            div.left_img {
-                width: 186px;
-                // 此高度应该根据图片的高度动态生成，直接写死会导致框的高度不能跟随图片动态变化
-                height: 360px;
-                margin-top: 16px;
-                overflow: hidden;
-
-                img~img {
-                    display: none;
-                }
-
-                span~span {
-                    display: none;
-                }
-
-                img.iimg {
-                    width: 180px;
-                }
-            }
-
-            //图片放大后的样式
-            div.imgbig {
-                span {
-                    display: inline-block;
-                    width: 65px;
-                    height: 15px;
-                    background: url(http://127.0.0.1:5000/img/homepage/icon8.png);
-                    background-position: 0 -1016px;
-                    padding-left: 15px;
-                    font-size: 12px;
-                    cursor: pointer;
-                }
-
-                >img {
-                    width: 476px;
-                }
-            }
-
-            /*右侧文字的框*/
-            div.right_text {
-                width: 240px;
-                margin-left: 30px;
-
-                a {
-                    color: #929BA3;
-                }
-            }
-
-            // 右侧文字第二种样式，设定图片展开后隐藏
-            div.right_text-one {
-                clear: both;
-                margin-left: 8px;
-            }
-
-            /* 底部操作按钮框 */
-            div.bom-button {
-                width: 498px;
-                height: 20px;
-                margin-top: 11px;
-                margin-bottom: 20px;
-                display: flex;
-                justify-content: space-between;
-
-                >div {
-                    display: flex;
-                    align-items: center;
-
-                    a {
-                        position: relative;
-                        line-height: 20px;
-                        margin-left: 10px;
-                        font-size: 12px;
-                        color: #aaa;
-                    }
-                }
-
-                >div:nth-of-type(1) {
-                    width: 200px;
-                    text-align: left;
-                    position: relative;
-
-                    >span {
-                        display: inline-block;
-                        width: 20px;
-                        height: 18px;
-                        background: url(http://127.0.0.1:5000/img/iconbig.png);
-                        background-position: 0 -103px;
-                    }
-                }
-
-                /* 按钮的不变样式 */
-                button.heart {
-                    display: inline-block;
-                    width: 20px;
-                    height: 18px;
-                    border: 0;
-                    outline: none;
-                    margin-left: 10px;
-                    background: url(http://127.0.0.1:5000/img/iconbig.png);
-                }
-
-                /* 按钮需要根据不同状态被选择的样式 */
-                button.like {
-                    background-position: -80px -2790px;
-                }
-
-                button.nlike {
-                    background-position: -80px -2759px;
-                    ;
-                }
-            }
-        }
 
         // main  sec括号
     }
@@ -403,6 +411,7 @@ div.comment {
 div.user-flow div.show {
     opacity: 1;
     margin-top: 2px;
+    z-index: 1;
 }
 
 // 用户分享模块
@@ -510,6 +519,7 @@ ul.last-icon {
 div.user-flow ul.show {
     margin-top: 2px;
     opacity: 1;
+    z-index: 1;
 }
 
 
@@ -743,7 +753,7 @@ div.lable-one {
 }
 
 // 设置显示和隐藏
-div.lable-a {
+div.lablea {
     opacity: 1;
     top: -184px;
     z-index: 3;
@@ -753,10 +763,9 @@ div.lable-a {
 div.picture {
     position: relative;
     z-index: -1;
+    // 此高度在用户点击发布框后进行更改
     height: 110px;
     margin-top: -110px;
-    // top: 0;
-    // left: 0;
     overflow: hidden;
     width: 674px;
     opacity: 0;
@@ -826,17 +835,117 @@ div.picture {
 
     // 悬停样式
     div.dashed {
+        position: relative;
         width: 500px;
         height: 312px;
+
+        // 在图片加载后将虚线边框删除
         border: 1px dashed #dfdfdf;
         margin-top: 16px;
+        display: flex;
+        align-items: center;
 
-        textarea {
-            width: 498px;
-            height: 310px;
-            border: 0;
-            outline: none;
+        input {
+            display: none;
+
         }
+
+        div.addfile {
+            width: 95px;
+            height: 82px;
+            margin: 0 auto;
+            background: url(http://127.0.0.1:5000/img/homepage/pic.png);
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            // transform-origin:(center,center);
+            // transform:rotate(20deg);
+            //  border: 1px solid red;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            background: url(http://127.0.0.1:5000/img/homepage/pbicon.png);
+            width: 30px;
+            height: 30px;
+            opacity: 0.5;
+            display: none;
+            cursor: pointer;
+        }
+
+        span.rotate {
+            left: 87%;
+            background-position: -1px -400px;
+        }
+
+        span.del {
+            right: 0;
+            background-position: -1px -208px;
+        }
+        span.show{
+            display: block;
+        }
+
+
+        // textarea {
+        //     width: 498px;
+        //     height: 310px;
+        //     border: 0;
+        // }
+    }
+
+    // 删除虚线边框
+    div.dashedborder {
+        border: none
+    }
+
+    // 隐藏框，上传图片后进行显示，用作输入文字
+    div.dashedown {
+        height: 0;
+        opacity: 0;
+
+        div:first-child {
+            width: 500px;
+            height: 62px;
+            margin-bottom: 15px;
+            border: 1px dashed #dfdfdf;
+            display: flex;
+            align-items: center;
+
+            div {
+                border: none;
+                width: 96px;
+                height: 25px;
+                margin: 0 auto;
+                background: url(http://127.0.0.1:5000/img/homepage/add.png);
+                // 背景尺寸
+                background-size: 100%；
+            }
+        }
+
+        textarea.inputtext {
+            resize: none;
+            outline: none;
+            border: 1px solid #dfdfdf;
+            margin: 0;
+            width: 500px;
+            height: 160px;
+        }
+
+        input {
+            margin: 0
+        }
+    }
+
+    // 设置选择图片后进行显示
+    div.dashedownshow {
+        height: auto;
+        opacity: 1;
     }
 
     div.three-btn {
@@ -846,6 +955,7 @@ div.picture {
         justify-content: space-between;
 
         button {
+            position: relative;
             width: 100px;
             height: 36px;
             color: #888;
@@ -855,8 +965,9 @@ div.picture {
             letter-spacing: 10px;
             padding-left: 6px;
             background: url(http://127.0.0.1:5000/img/homepage/icon.png);
-            outline: none;
             cursor: pointer;
+            outline: none;
+            z-index: 3;
 
             &:hover {
                 opacity: 0.7;
@@ -891,16 +1002,18 @@ div.picture {
 }
 
 //设置模态框打开的样式
-main>div.picture-on {
-    height: 456px;
+main>div.pictureon {
+    position: relative;
+    // 此高度要动态改变
+    height: auto;
     opacity: 1;
-    z-index: 5;
+    z-index: 50;
     margin-top: 0px;
 }
 
 /* 设置全屏遮罩层效果 */
 // 高度应为整个网页的宽度，通过js设置
-div.shade {
+div.shades {
     width: 100%;
     height: 100%;
     background: black;
@@ -912,7 +1025,7 @@ div.shade {
     transition: all 0.2s linear;
 }
 
-div.off {
+div.issueoff {
     opacity: 0.75;
     z-index: 4;
 }
@@ -947,7 +1060,7 @@ section {
 
 section {
     main {
-        div.wirte-one {
+        div.issuetext {
             background: #fff;
 
             a+a {

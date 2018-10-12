@@ -74,6 +74,9 @@ a.text1 {
   s a.text1:hover {
     color: #fff; }
 
+ul.list-unstyled {
+  position: relative; }
+
 .dropdown {
   background: #191919;
   width: 227px;
@@ -88,13 +91,19 @@ a.text1 {
     width: 227px;
     list-style: none;
     margin: 0; }
+    .dropdown ul.pull_list:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both; }
     .dropdown ul.pull_list li {
       width: 227px;
       height: 40px;
       padding: 0 40px 0 20px;
       display: flex;
       align-items: center;
-      color: #bcbcbc; }
+      color: #bcbcbc;
+      clear: both; }
       .dropdown ul.pull_list li:hover a:nth-of-type(2):visited {
         color: #fff; }
       .dropdown ul.pull_list li a:nth-of-type(1) {
@@ -155,7 +164,7 @@ div.search-box {
   opacity: 0; }
 
 div.logo div.show {
-  height: 320px;
+  height: 336px;
   opacity: 1; }
 
 div.input > div.show {

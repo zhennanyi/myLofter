@@ -8,11 +8,16 @@
 <script>
 // @ is an alias to /src
 import userflow from '@/components/home/userflow.vue'
+import state from '@/components/home/state.vue'
 
 export default {
   name: 'header',
   components: {
-    userflow
+    userflow,
+    state
+  },
+  created(){
+    console.log(12)
   }
 }
 </script>
