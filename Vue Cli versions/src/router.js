@@ -6,6 +6,8 @@ import ArtHome from './views/ArtHome'
 import ArtCart from './views/ArtCart'
 import ArtDetails from './views/ArtDetails'
 import entrypage from './views/entrypage'
+import ArtDraw from './views/ArtDraw'
+import ArtCard from './views/ArtPostcard'
 
 // 使用Router功能
 Vue.use(Router)
@@ -47,6 +49,18 @@ export default new Router({
       name: 'entrypage',
       component: entrypage
     },
+    {
+      path: '/ArtDraw',
+      // 路径别名
+      name: 'Drawlist',
+      component: ArtDraw
+    },
+        {
+          path: '/ArtCard',
+          // 路径别名
+          name: 'Cardlist',
+          component: ArtCard
+        },
     {
       path: '/about',
       name: 'about',

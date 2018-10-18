@@ -4,7 +4,7 @@
         <h2 class="text-center pt-4 border-top mb-3">明信片</h2>
         <colcard> </colcard>
         <div class="col-sm-12 mt-4 mb-4">
-            <a href="" class="more">查看更多&gt&gt</a>
+              <router-link to="/ArtCard" class="nav_text">查看更多&gt&gt</router-link>
         </div>
     </div>
 </template>

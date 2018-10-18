@@ -9,7 +9,8 @@ import func from '../../../vue-temp/vue-editor-bridge';
                 <li class="checks">
                     <!-- checked存在任何值，都是选中状态 -->
                     <!-- 点击子元素复选框的时候，触发绑定在标签上的自定义函数，通过自定义函数，直接改变父元素当中的值 -->
-                    <input type="checkbox" v-model="checked[i]" @click="check(i)">
+                    <!--  -->
+                    <input type="checkbox"  @click="check(i)" class="testcheck">
                     <a :href="pro.details"><img :src="pro.smpic" alt=""></a>
                 </li>
                 <li class="product-name">
@@ -34,6 +35,7 @@ import func from '../../../vue-temp/vue-editor-bridge';
     export default {
         data() {
             return {
+                num7: 9,
                 // 此数据对应当前购物车有多少商品
                 arr: [{
                         smpic: "http://127.0.0.1:5000/img/ART/cart01.jpg",
@@ -66,14 +68,18 @@ import func from '../../../vue-temp/vue-editor-bridge';
             };
         },
         // props: ["checked", "i"],
-        // 得到i值后，通过lid查询数据库得到对应商品的信息，将其push进arr数组
-        props: ["checked","spec","product"],
-        created(){
-            console.log(this.checked)
+        // 购物车步骤，加入时，将信息插入到数据库中，购物车加载为从数据库请求
+        props: ["spec", "product"],
+        created() {
+
         },
+   
         computed: {
             // 为计算属性值，可直接绑定在页面中
             total() {
+                //在前面加上一个框是否选中的判断，即chedcked的布尔值判断，为true，则进行计算
+                // if(){
+                // }
                 // 其中prev初始为reduce传递进来的第二个参数，执行计算后，为上一次返回的值
                 return this.arr.reduce((prev, i) => prev + i.price * i.count, 0);
             },
@@ -82,17 +88,15 @@ import func from '../../../vue-temp/vue-editor-bridge';
             }
         },
         methods: {
-     
             test(e) {
                 // 利用冒泡
-                if (e.target.nodeName == "BUTTON") {
+                if (e.target.nodeName === "BUTTON") {
                     console.log(123);
                 } else {
                     console.log(e.target);
                 }
             },
             // 设置按钮的加减功能
-            // 此处修改元素内的值页面会跟随改变，轮播图的active状态暂未实现，待解决
             // 实现在页面刷新时调用一次
             alter(i, handle, e) {
                 console.log(e.target);
@@ -111,9 +115,9 @@ import func from '../../../vue-temp/vue-editor-bridge';
                 if (confirm("是否继续删除当前商品?")) this.arr.splice(i, 1);
             },
             check(i) {
-                //    想办法改变父元素的值
+                // 实现父元素全选功能，想办法改变父元素的值
                 this.$emit("change", i);
-            },
+            }
         },
         // 设置商品添加侦听器
         watch: {

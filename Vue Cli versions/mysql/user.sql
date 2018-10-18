@@ -13,6 +13,13 @@ CREATE TABLE lofteruser(
 	  email VARCHAR(32),
 	  upwd  VARCHAR(16)
 );
+CREATE TABLE lof(
+	  lid INT PRIMARY KEY AUTO_INCREMENT,
+	  uname VARCHAR(16),#括号必须加值
+	  phone VARCHAR(16),
+	  email VARCHAR(32),
+	  upwd  VARCHAR(16)
+);
 
 CREATE TABLE xm_index_product(
   pid INT PRIMARY KEY AUTO_INCREMENT,

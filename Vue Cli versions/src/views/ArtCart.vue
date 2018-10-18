@@ -42,12 +42,13 @@
                 counts: 0,
                 // 通过数组下标值判断
                 checked: [false, false, false],
+                // 上方全选按钮
                 checked$: [false],
                 // 商品详情获取到的数据
-                spec:'',
+                spec: '',
                 // 需要其中的尺寸规格和单价，即
                 // spec.size  中两个  spec.sum
-                product:""
+                product: ""
                 // 需要标题和作者
                 // product.title  .author
             }
@@ -63,15 +64,20 @@
         created() {
             this.bus.$on("addlist", this.handler)
         },
+        mounted() {
+            var testcheck = document.querySelectorAll(".testcheck");
+            console.log(testcheck[0].checked);
+            testcheck[0].checked = true
+        },
         methods: {
             // 获取加入购物车事件传递进来的参数
             // 加入一个商品时需要做的操作
-            handler(res1,res2,i) {
+            handler(res1, res2, i) {
                 this.checked.push(true);
                 console.log(this.checked)
-                this.spec=res1;
-                this.product=res2[i]
-                console.log(this.spec,this.product)
+                this.spec = res1;
+                this.product = res2[i]
+                console.log(this.spec, this.product)
             },
             //点击加减框时，调用一次，想办法在页面刷新时执行一次，
             add(total, counts) {

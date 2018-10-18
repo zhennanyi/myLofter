@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const user = require('./routes/user.js'); //引入用户模块
+const draw = require('./routes/draw.js'); //引入用户模块
 const session = require("express-session"); //引入session
 var app = express();
 
@@ -30,3 +31,4 @@ app.use(bodyparser.urlencoded({
 }));
 //管理路由,把用户模块挂载到某一个url下面
 app.use('/user', user);
+app.use('/draw', draw);

@@ -1,166 +1,74 @@
-section{
-  width: 100%;
-  height: 1143px;
-  background: #ededef;
-}
-main{
+div#draw {
   width: 1200px;
   margin: 0 auto;
+  padding: 0 30px;
   background: #fff;
+  height: auto;
+  padding-bottom:10px; 
+
 }
-main ul{
-  height: 100px;
-  margin: 0 auto;
-  position: relative;
-  width: 1140px;
-  border-bottom: 1px #ebebeb solid;
-  padding-bottom: -1rem;
+
+div.drawnav {
+  width: 100%;
+  height: 80px;
+ 
+  display: flex;
+  align-items: center;
 }
-main ul li{
-  margin-right: 1rem;
-}
-main ul li:nth-child(1){
+div.drawnav a{
   font-size: 32px;
-  font-weight: normal;
+  height: 36px;
+      color: #333;
+      font-weight: normal;
+      margin-right: 30px;
+      line-height: 32px;
 }
-main .nav .nav-item .nav-link.active{
-  background: #ececec;
-  border-radius:0; 
+div.drawnav span {
+  width: 100px;
+  height: 36px;
+  float: left;
+  margin: 0 10px 0 0;
+  border: 1px solid #ECECEE;
+  border-radius: 2px;
   color: #333;
+  font-size: 18px;
+  text-align: center;
+  line-height: 36px;
 }
-main .nav .nav-item .nav-link{
-  border: 1px #ececec solid;
-  border-radius:0; 
-  color: #333;
+
+span.active {
+  background: #ECECEE;
 }
-main .nav .nav-item:hover .nav-link{
-  color: #7594d3;
+
+div.paging {
+  position: relative;
+  width: 240px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
 }
-main ul li:nth-child(4) a{
-  font-size: 14px;
-  color: #333;
+div.paging ul {
   position: absolute;
-  right: 10px;
+  top: -130px;
+  height: 200px;
+  max-height: 252px;
+  /* border: 1px solid red; */
 }
-
-
-div.art-barpattern{
-  width: 1140px;
-  height: 840px;
-  margin: 0 auto;
-  background: #fff;
+div.paging ul li{
+  width: 52px;
+  height: 25px;
+  clear: both;
+    border: 1px solid red;
+    background: #fff;
+    text-align: center;
 }
-#market-rocord{
-  width: 1140px;
+div.paging button{
+  width: 88px;
+  height: 30px;
+  /* background: url(http://127.0.0.1:5000/img/ART/icn3.png);
+      background-position: -22px -103px */
+  /* background-position: -43px -540px;  中间小箭头 */
 }
-div.rocord-bar{
-  width: 1140px;
-  height: 140px;
-  background: #f7f7f7;
-}
-div.rocord-bar>div{
-  text-align: center;
-  width: 380px;
-  border-bottom: 8px solid #fff;
-}
-div.rocord-bar>div:nth-of-type(1){
-  border-color: #75a9dc;
-}
-div.rocord-bar>div:nth-of-type(2){
-  border-color: #9ac600;
-}
-div.rocord-bar>div:nth-of-type(3){
-  border-color: #ff7c2e;
-}
-div.rocord-bar>div>p:nth-child(1){
-  margin-top: 40px;
-  margin-bottom: 0;
-}
-div.rocord-bar>div>p:nth-child(2){
-    font-size: 30px;
-    font-weight: bold;
-}
-
-div.rocord-box>p{
-  height: 34px;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 0;
-}
-ul.rocord-list{
-  width: 1140px;
-  height: 46px;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
-}
-ul.rocord-list>li{
-  float: left;
-  width: 200px;
-  height: 46px;
-  background: #f2f2f3;
-  margin-right: 0;
-  line-height: 46px;
-  text-align: center;
-  margin-left: 1px;
-}
-ul.rocord-list>li:nth-of-type(1){
-  width: 336px;
-  /*text-align: left;*/
-  margin-left: 0;
-}
-/*商品管理页面*/
-#product-manage{
-  width: 1140px;
-}
-ul.product-list{
-  width: 1140px;
-  height: 46px;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
-}
-ul.product-list>li{
-  float: left;
-  height: 46px;
-  background: #f2f2f3;
-  margin-right: 0;
-  line-height: 46px;
-  text-align: center;
-  margin-left: 1px;
-}
-ul.product-list>li:nth-of-type(1){
-  width: 750px;
-  margin-left: 0;
-}
-ul.product-list>li:nth-of-type(2){
-  width: 388px;
-  margin-left:1px ;
-}
-div.product-box>p{
-  height: 34px;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 0;
-}
-.product-add{
-  display: block;
-  margin: 0 auto;
-  width: 124px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  background-image:linear-gradient(to bottom,#83ae01,#759d00);
-  color: #fff;
-  border-radius: 3px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
+/* 设定页数显示的下拉栏 */

@@ -2,7 +2,7 @@
 <template id="tplcoldraw">
     <div class="row m-auto">
         <!-- 进行遍历循环生成标签 -->
-        <div class="col-sm-3 p-1" v-for="(score,i) in draw">
+        <div class="col-sm-3 p-1" v-for="(score,i) in homedraw">
             <div class="img_box  aa">
                 <!-- 图片为动态加载 -->
                 <!-- <router-link to="/details"></router-link> 采用函数形式跳转 -->
@@ -23,37 +23,10 @@
             return {
                 //假设为请求回来的三个商品对象
                 // 只请求需要显示的内容，不同页面需要不同的内容，发送不同的请求获取即可
-                draw: [{
-                        lid: 1,
-                        pic: "http://127.0.0.1:5000/img/8888.jpg",
-                        title: "陪伴是最长情的告白",
-                        author: "儿童插画师-MO",
-                    },
-                    {
-                        lid: 2,
-                        pic: "http://127.0.0.1:5000/img/box-drawing/01.jpg",
-                        title: "陪伴是告白",
-                        author: "儿童插画师-MO",
-                    },
-                    {
-                        lid: 3,
-                        pic: "http://127.0.0.1:5000/img/box-drawing/04.jpg",
-                        title: "陪伴是最长情的告白",
-                        author: "儿童插画师-MO",
-                    },
-                    {
-                        lid: 3,
-                        pic: "http://127.0.0.1:5000/img/box-drawing/04.jpg",
-                        title: "陪伴是最长情的告白",
-                        author: "儿童插画师-MO",
-                    },
-                    {
-                        lid: 3,
-                        pic: "http://127.0.0.1:5000/img/box-drawing/04.jpg",
-                        title: "陪伴是最长情的告白",
-                        author: "儿童插画师-MO",
-                    }
-                ]
+                // 此为请求回来的全部数据
+                draw: [],
+                // 创建一个数组，只存放8条数据，为首页内容
+                homedraw:[]
             }
         },
         // 在此处接住父组件中的值
@@ -66,8 +39,22 @@
                 // 有错误，原因在于，a元素触发事件的时候，b元素的事件还未创建
                 // this.bus.$emit("add",this.draw[lid])
             },
-         
-
         },
+        created(){
+			//发送ajax请求
+				var url = "http://127.0.0.1:5000/draw/drawlist";
+				this.$http
+					.get(url, {
+						params: {
+							page: 1,
+							pageSize: 8
+						}
+					})
+					.then(response => {
+                        console.log(response.data)
+						this.homedraw=response.data.msg.data;
+                    });
+                console.log(12342)
+        }
     }
 </script>

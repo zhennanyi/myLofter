@@ -137,15 +137,15 @@
 					<!--添加底栏，用户操作按钮 -->
 					<div class="bom-button">
 						<!-- 左侧标签 -->
-						<!-- 此处应该隐藏几个div块，使用mouseenter移入事件，通过改变css样式，达到动画过度的效果 -->
+						<!-- 此处应该隐藏几个div块，使用mouseenter移入事件，通过改变css样式，达到动画过渡的效果 -->
 						<div>
 							<!-- 新建一个div用于循环生成标签 -->
 							<div v-for="(lable,z) in item.tallys">
 								<!-- <span></span> -->
-								<a href="#" @mouseleave="mouselable(z,0)" @mouseenter="enterlable(i,0)">{{lable.tally1}}</a>
+								<a href="#" @mouseenter="enterlable(i,z)" @mouseleave="mouselable(i,z)">{{lable.tally1}}</a>
 								<!-- 用户悬浮框模板 -->
 								<!-- 位置永远为相对位置，对应a标签后第一个元素 -->
-								<div class="lable-one" :class="item.lablea[0]">
+								<div class="lable-one" :class="item.lablea[z]">
 									<div>
 										<img :src="pic" alt="" v-for="pic in lable.pics">
 									</div>
@@ -157,18 +157,6 @@
 									</div>
 								</div>
 							</div>
-							<!-- <a href="#" @mouseleave="mouselable(i,1)" @mouseenter="enterlable(i,1)">{{item.tally2}}</a>
-												<div class="lable-one" :class="item.lablea[1]">
-													<div>
-														<img src="http://127.0.0.1:5000/img/homepage/01.jpg" alt="">
-													</div>
-													<div>
-													
-														<span></span>
-														<span class="t">{{item.tally2}}
-																																							</span>
-													</div>
-												</div> -->
 						</div>
 						<!-- 右侧操作按钮 -->
 						<div>
@@ -363,7 +351,7 @@
 									"http://127.0.0.1:5000/img/homepage/01.jpg",
 									"http://127.0.0.1:5000/img/homepage/01.jpg",
 									"http://127.0.0.1:5000/img/homepage/01.jpg",
-								]
+								],
 							},
 							{
 								tally1: "色彩",
@@ -606,29 +594,29 @@
 			enterlable(i, z) { //z的作用为定位当前悬停的标签，用作函数的重载
 				if (z == 0) {
 					// 悬停的是第一个标签
+	
 					this.state[i].lablea = []
 					this.state[i].lablea[z] = {};
 					this.state[i].lablea[z].lablea = true
 				} else if (z == 1) {
 					// 悬停的是第二个标签
+
 					this.state[i].lablea = []
 					this.state[i].lablea[z] = {};
 					this.state[i].lablea[z].lablea = true
 				}
-				console.log(23)
+	
 			},
 			mouselable(i) {
 				this.state[i].lablea = []
-				console.log(8989)
+
 			},
 			// 设置发布框图片移入移出显示操作按钮事件
 			showpic() {
 				this.delpic = "show";
-				console.log(234)
 			},
 			clearpic() {
 				this.delpic = "";
-				console.log(234)
 			},
 			//设置清除图片
 			delpics(i){
@@ -637,13 +625,11 @@
 					this.issue[4].dashedborder = false;
 				}else{
 					// 进行图片旋转
-						
 				}
 			} ,
 			// 设置动态的删除事件
 			deluser(i){
 				// 在删除前进行一个确认操作
-			
 				this.user.splice(i,1)
 			}
 		},

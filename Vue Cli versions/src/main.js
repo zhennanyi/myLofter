@@ -1,14 +1,20 @@
 // 引入或设置全局所需要的模块和组件
-import Vue from 'vue'
+// import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+// import store from './store'
+// import vuex from 'vuex'
+// Vue.use(vuex);
 // 使用axios进行ajax请求
 import axios from 'axios'
 // 引入qs模块并注册为Vue的原型对象方法
 import qs from 'qs';
 Vue.prototype.$qs = qs;
 import Mint from 'mint-ui';
+// 引入element
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 Vue.use(Mint);
 //引入自己写的头尾部组件
@@ -42,18 +48,35 @@ Vue.filter("title", function (val, len) {
     return val.slice(0, len) + "...";
   }
 })
+import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: { count: 1 },
+  mutations: {
+    change(state,i){
+        state.count = i 
+    }
+  }
+})
+
+
 // 使用vue自带ajax请求，目前已不推荐
 // import VueResource from "vue-resource"
 // Vue.use(VueResource)
-
 
 // 设置ajax请求默认请求地址前缀
 // Vue.http.options.root = "http://127.0.0.1:5000/";
 new Vue({
   data:{
-    online:true,
+    // online:true,
   },
   router,
-  store,
-  render: h => h(App)
+  store,//使用store
+  render: h => h(App),
+  mounted(){
+    console.log(232)
+    console.log(store.state.count)
+  }
 }).$mount('#app')

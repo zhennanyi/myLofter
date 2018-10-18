@@ -17,6 +17,7 @@ export default {
     state
   },
   created(){
+      this.$store.commit('change',2)
     console.log(12)
   }
 }

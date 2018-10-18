@@ -174,8 +174,7 @@ div.img_box {
     width: 262px;
     transition: all 700ms ease-in-out; }
   div.img_box:hover {
-    outline: 10px black solid;
-    animation: change 700ms ease alternate; }
+    outline: 10px black solid; }
     div.img_box:hover > img {
       width: 85%; }
 

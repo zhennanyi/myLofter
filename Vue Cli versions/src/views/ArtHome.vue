@@ -13,27 +13,25 @@
   </div>
 </template>
 <script>
-  //引入头部
-  import artheader from "@/components/artheader.vue";
-  // 引入轮播图
-  import banner from "@/components/arthome/banner.vue";
-  // 引入商品
-  import drawing from "@/components/arthome/drawing.vue";
-  import postcard from "@/components/arthome/postcard.vue";
-  export default {
-    name: "Arthome",
-    components: {
-      // 挂载三个子组件
-      banner,
-      drawing,
-      postcard,
-      artheader
-    },
-    mounted() {
-    }
-  };
+// 引入轮播图
+import banner from "@/components/arthome/banner.vue";
+// 引入商品
+import drawing from "@/components/arthome/drawing.vue";
+import postcard from "@/components/arthome/postcard.vue";
+export default {
+  name: "Arthome",
+  components: {
+    // 挂载三个子组件
+    banner,
+    drawing,
+    postcard,
+  },
+  mounted() {
+      this.$store.commit('change',1)
+  }
+};
 </script>
 <!--在当前view视图主页，引入当前页面需要的css-->
 <style scoped>
-  @import "../assets/css/ART-home.css";
-</style>
+@import "../assets/css/ART-home.css";
+</style> 

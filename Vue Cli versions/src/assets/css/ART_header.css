@@ -28,14 +28,14 @@ div.art_nav>div>div:nth-of-type(3)>a{
     margin-right: 30px;
 }
 /*中间两个文字按钮样式*/
-a.nav_text {
+div.art_nav a.nav_text {
   font-size: 1.5rem;
   color: #7f7f7f;
   line-height: 69px;
   transition: all .3s ease;
   text-decoration: none;
 }
-a.nav_text:hover {
+div.art_nav a.nav_text:hover {
   color: #fff;
 }
 /*悬停下拉菜单功能*/

@@ -49,10 +49,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                                                						</span>
+                                                                                    						</span>
                             <span class="wiretext">
-                                                                                							或
-                                                                                						</span>
+                                                                                    							或
+                                                                                    						</span>
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
                                 <a href="#" class="inp_a2">微博账号登录</a>
@@ -85,10 +85,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                                                						</span>
+                                                                                    						</span>
                             <span class="wiretext">
-                                                                                							或
-                                                                                						</span>
+                                                                                    							或
+                                                                                    						</span>
                             <!-- 右侧第三方社交按钮 -->
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
@@ -248,23 +248,31 @@
                 },
                 // 初始化两个定时器
                 t: null,
-                m: null
+                m: null,
+                // 创建一个对象用来保存验证状态状态
+                pass: {
+                    uname:false,
+                    upwd:false
+                }
             };
         },
         props: ["oop"],
         mounted() {
+            this.$store.commit('change', 8)
             // 添加一个滚动事件
-            window.addEventListener('scroll', this.handleScroll)
+            window.addEventListener('scroll', this.handleScroll);
             // console.log(this.$root)
         },
         methods: {
             handleScroll() {
                 // 获取当前总页面高度
                 var height = document.body.scrollHeight
-                // document.documentElement.scrollTop;    document.body.scrollTop;  此方法获取不到页面高度
+                // document.documentElement.scrollTop;    document.body.scrollTop;  多个方法用于检测不同浏览器的兼容性
                 // 获取当前已经滚动的高度
                 var scrollTop = window.pageYOffset;
-                if (scrollTop > 1090&&scrollTop<height-1200) {
+                console.log(scrollTop)
+                // 已经滑动的高度   有bug，需要考虑不同分辨率屏幕下滑时的屏幕高度
+                if (scrollTop > 1090 && scrollTop < height - 1200) {
                     this.strips.strips = true;
                 } else {
                     this.strips.strips = false;
@@ -283,41 +291,55 @@
                     // 进行正则表达式验证，必须输入邮箱或者合法手机号码
                     var phonereg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
                     var emailreg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    // 如果密码等于空
                     if (this.uname == "") {
                         this.$toast({
                             message: "用户名不能为空", //提示框显示消息
                             position: "center", //位置
-                            duration: 1500, //持续时间(毫秒)
+                            duration: 1000, //持续时间(毫秒)
                             // className:"mytoast",//自定义样式
                             // iconClass:"mytip"   //自定义图标
                         });
+                        // 如果没有通过正则表达式验证
                     } else if (!phonereg.test(this.uname) && !emailreg.test(this.uname)) {
                         this.$toast("邮箱或手机号码格式不正确")
+                    }else{ //说明密码验证通过
+                        this.pass.uname=true
                     }
+                // 进行用户密码正则判断，
                 } else {
-                    // 进行用户密码正则判断，
                     var pwdreg = /^[A-Za-z0-9\.\-\_]{8,16}$/;
+                    // 如果密码为空
                     if (this.upwd == "") {
                         this.$toast("用户密码不能为为空")
+                        // 如果没有通过正则
                     } else if (!pwdreg.test(this.upwd)) {
                         this.$toast("用户密码不能小于8位或大于16位")
+                    }else{
+                        this.pass.upwd=true
                     }
                 }
             },
             // 进行注册
             register() {
-                var url = 'http://127.0.0.1:5000/user/register'
-                console.log(123)
-                this.$http.post(url,
-                    this.$qs.stringify({
-                        uname: this.uname,
-                        upwd: this.upwd
+                // 如果账号或者密码不满足规范，则阻止注册
+                if (this.pass.uname == true&&this.pass.upwd==true) {
+                    var url = 'http://127.0.0.1:5000/user/register'
+                    console.log(123)
+                    this.$http.post(url,
+                        this.$qs.stringify({
+                            uname: this.uname,
+                            upwd: this.upwd
+                        })
+                    ).then(response => {
+                        console.log(response.data);
                     })
-                ).then(response => {
-                    console.log(response.data);
-                })
-                this.uname = "",
-                    this.upwd = ""
+                    this.uname = "",
+                    this.upwd = "",
+                     this.$toast("注册成功")
+                }else{
+                    this.$toast("用户密码不能小于8位或大于16位")
+                }
             },
             // 进行登录
             // 定义登录成功后跳转函数
@@ -325,7 +347,6 @@
                 this.$router.push("/myhome")
             },
             login() {
-                console.log(this.uname)
                 var url = 'http://127.0.0.1:5000/user/login'
                 this.$http.get(url, {
                     params: {
@@ -335,7 +356,14 @@
                 }).then(response => {
                     if (response.data == "1") {
                         //登录成功后，进行页面跳转
-                        this.goto();
+                             this.$toast({
+                            message: "登录成功", 
+                            position: "center", //位置
+                            duration: 700, //持续时间(毫秒)
+                        });
+                        setTimeout(()=>{
+                            this.goto();
+                        },800)
                     } else {
                         // 提示用户账号或密码错误
                         this.$toast(response.data)
