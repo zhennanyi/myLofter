@@ -49,10 +49,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                                                    						</span>
+                                                                                        						</span>
                             <span class="wiretext">
-                                                                                    							或
-                                                                                    						</span>
+                                                                                        							或
+                                                                                        						</span>
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
                                 <a href="#" class="inp_a2">微博账号登录</a>
@@ -85,10 +85,10 @@
                                 </p>
                             </div>
                             <span class="wire">
-                                                                                    						</span>
+                                                                                        						</span>
                             <span class="wiretext">
-                                                                                    							或
-                                                                                    						</span>
+                                                                                        							或
+                                                                                        						</span>
                             <!-- 右侧第三方社交按钮 -->
                             <div class="inp_right">
                                 <a href="#" class="inp_a1">手机账号登录</a>
@@ -251,8 +251,8 @@
                 m: null,
                 // 创建一个对象用来保存验证状态状态
                 pass: {
-                    uname:false,
-                    upwd:false
+                    uname: false,
+                    upwd: false
                 }
             };
         },
@@ -262,6 +262,11 @@
             // 添加一个滚动事件
             window.addEventListener('scroll', this.handleScroll);
             // console.log(this.$root)
+            var url = 'http://127.0.0.1:5000/user/tests';
+            (async() => {
+                var res = await this.$http.get(url)
+                console.log(res.data)
+            })()
         },
         methods: {
             handleScroll() {
@@ -303,10 +308,10 @@
                         // 如果没有通过正则表达式验证
                     } else if (!phonereg.test(this.uname) && !emailreg.test(this.uname)) {
                         this.$toast("邮箱或手机号码格式不正确")
-                    }else{ //说明密码验证通过
-                        this.pass.uname=true
+                    } else { //说明密码验证通过
+                        this.pass.uname = true
                     }
-                // 进行用户密码正则判断，
+                    // 进行用户密码正则判断，
                 } else {
                     var pwdreg = /^[A-Za-z0-9\.\-\_]{8,16}$/;
                     // 如果密码为空
@@ -315,15 +320,15 @@
                         // 如果没有通过正则
                     } else if (!pwdreg.test(this.upwd)) {
                         this.$toast("用户密码不能小于8位或大于16位")
-                    }else{
-                        this.pass.upwd=true
+                    } else {
+                        this.pass.upwd = true
                     }
                 }
             },
             // 进行注册
             register() {
                 // 如果账号或者密码不满足规范，则阻止注册
-                if (this.pass.uname == true&&this.pass.upwd==true) {
+                if (this.pass.uname == true && this.pass.upwd == true) {
                     var url = 'http://127.0.0.1:5000/user/register'
                     console.log(123)
                     this.$http.post(url,
@@ -335,9 +340,9 @@
                         console.log(response.data);
                     })
                     this.uname = "",
-                    this.upwd = "",
-                     this.$toast("注册成功")
-                }else{
+                        this.upwd = "",
+                        this.$toast("注册成功")
+                } else {
                     this.$toast("用户密码不能小于8位或大于16位")
                 }
             },
@@ -356,14 +361,14 @@
                 }).then(response => {
                     if (response.data == "1") {
                         //登录成功后，进行页面跳转
-                             this.$toast({
-                            message: "登录成功", 
+                        this.$toast({
+                            message: "登录成功",
                             position: "center", //位置
                             duration: 700, //持续时间(毫秒)
                         });
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             this.goto();
-                        },800)
+                        }, 800)
                     } else {
                         // 提示用户账号或密码错误
                         this.$toast(response.data)

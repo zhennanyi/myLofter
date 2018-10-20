@@ -190,7 +190,7 @@
 				</div>
 				<!-- 此处为用户分享页面 -->
 				<ul class="last-icon" :class="item.share">
-					<li>
+					<li v-for="i in 2">
 						<a href="">
 							<div class="aa">
 								<img src="http://127.0.0.1:5000/img/erweima.png" alt="">
@@ -199,22 +199,16 @@
 						</a>
 						<span>微信</span>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="">
 							<div class="aa">
 								<img src="http://127.0.0.1:5000/img/erweima.png" alt="">
 								<p>打开易信扫一扫</p>
 							</div>
 						</a>
-						<span>易信</span></li>
-					<li>
+						<span>易信</span></li> -->
+					<li v-for="i in 4">
 						<a href=""></a><span>新浪微博</span></li>
-					<li>
-						<a href=""></a><span>QQ空间</span></li>
-					<li>
-						<a href=""></a><span>百度贴吧</span></li>
-					<li>
-						<a href=""></a><span>我的主页</span></li>
 				</ul>
 			</div>
 		</main>
@@ -222,46 +216,18 @@
 			<!--<div class="aside-one">-->
 			<ul class="ul_one">
 				<div class="email">
-					<p>One Day</p>
-					<p>OneDaykk.Lofter.com</p>
+					<!-- 此处为经过session传递回来的值 -->
+					<p>{{login}}</p>
+					<p>{{login}}.Lofter.com</p>
 				</div>
 				<div class="pull"></div>
-				<li>
+				<li v-for="i in 6">
 					<a href="">
 						<span class="ul_icon"></span>
 						<span class="ul_a">文章</span>
 					</a>
 				</li>
-				<li>
-					<a href="">
-						<span class="ul_icon"></span>
-						<span class="ul_a">喜欢</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="ul_icon"></span>
-						<span class="ul_a">关注</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="ul_icon"></span>
-						<span class="ul_a">通知</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="ul_icon"></span>
-						<span class="ul_a">私信</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="ul_icon"></span>
-						<span class="ul_a">个人主页设置</span>
-					</a>
-				</li>
+				<!-- 喜欢  关注  通知  私信  个人主页设置 -->
 			</ul>
 			<!--</div>-->
 			<div class="inset_img">
@@ -280,10 +246,7 @@
 				<p>写给空气的标签</p>
 				<p>2652参与</p>
 				<div>
-					<img src="http://127.0.0.1:5000/img/homepage/aside1.jpg" alt="">
-					<img src="http://127.0.0.1:5000/img/homepage/aside1.jpg" alt="">
-					<img src="http://127.0.0.1:5000/img/homepage/aside1.jpg" alt="">
-					<img src="http://127.0.0.1:5000/img/homepage/aside1.jpg" alt="">
+					<img src="http://127.0.0.1:5000/img/homepage/aside1.jpg" alt="" v-for="i in 4">
 				</div>
 			</div>
 			<div class="zhuanti">
@@ -309,6 +272,8 @@
 				delpic: "",
 				// 此为首页刷新所显示的内容，为后台请求回来的数据
 				// 此表为动态表，跟用户个人动态表有所区别
+				// 用户状态值存储
+				login:"",
 				state: [{
 						head: "http://127.0.0.1:5000/img/homepage/header1.jpg",
 						tally: "摄影精选：转载自:",
@@ -633,7 +598,14 @@
 				this.user.splice(i,1)
 			}
 		},
-		mounted() {}
+		mounted() {
+			var url ='http://127.0.0.1:5000/user/test';
+			(async ()=>{
+				var res =await   this.$http.get(url)
+				console.log(res.data[0].email)
+				this.login=res.data[0].email
+			})()
+		}
 	};
 </script>
 

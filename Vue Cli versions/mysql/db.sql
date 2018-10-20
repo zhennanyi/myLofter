@@ -103,6 +103,21 @@ INSERT INTO picurl VALUES(null,'http://127.0.0.1:5000/img/8888.jpg','陪伴是�
 INSERT INTO picurl VALUES(null,'http://127.0.0.1:5000/img/8888.jpg','陪伴是最长情的告白', '儿童插画师-MO');
 INSERT INTO picurl VALUES(null,'http://127.0.0.1:5000/img/8888.jpg','陪伴是最长情的告白', '儿童插画师-MO');
 
+
+
+CREATE TABLE addproduct(
+ lid INT PRIMARY KEY AUTO_INCREMENT,
+ pic VARCHAR(255),
+ title VARCHAR(70),
+author VARCHAR(70),
+spec VARCHAR(70),
+price VARCHAR(20)
+
+);
+
+INSERT INTO addproduct VALUES(null,'http://127.0.0.1:5000/img/8888.jpg','陪伴是最长情的告白', '儿童插画师-MO','黑色','140');
+INSERT INTO addproduct VALUES(null,'http://127.0.0.1:5000/img/8888.jpg','陪伴是最长情的告白', '儿童插画师-MO','黑色','140');
+
 CREATE TABLE xz_news(
  id INT PRIMARY KEY AUTO_INCREMENT,
  title VARCHAR(255),

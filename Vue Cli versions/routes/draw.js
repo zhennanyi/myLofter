@@ -10,7 +10,33 @@ router.get("/details",(req,res)=>{
 			res.send(result)
 	})
 })
-
+router.post("/addproduct",(req,res)=>{
+	var id=req.body.id;
+	var pic=req.body.pic;
+	var title =req. body.title;
+	var author=req.body.author;
+	var spec=req.body.spec;
+	var price=req.body.price;
+	var sql = `INSERT INTO addproduct VALUES(?,?, ?,?,?,?);`;
+	console.log(id, pic, title, author, spec, price)
+	pool.query(sql,[id,pic,title,author,spec,price],(err,result)=>{
+		if(err) throw err;
+		console.log(result);
+			if (result.affectedRows > 0) {
+				res.send("添加成功");
+			} else {
+				res.send("添加失败")
+			}
+	})
+})
+// 获取购物车参数表
+router.get("/cartlist",(req,res)=>{
+	var sql="SELECT * FROM addproduct";
+	pool.query(sql,(err,result)=>{
+			if (err) throw err;
+			res.send(result);
+	})
+})
 router.get("/drawlist", (req, res) => {
 //1参数 pno pageSize
 var pno = req.query.pno; //当前页面

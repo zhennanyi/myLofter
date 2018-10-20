@@ -25,14 +25,13 @@ div.cart-main div.cart-title {
 /*主要内容盒子*/
 div.product-cart{
   width: 1200px;
-  height: 300px;
+  height: auto; 
   padding: 30px;
 }
 /*商品上方导航条信息*/
 ul.product-cart-list{
   width: 1140px;
   height: 46px;
-  margin-top: 3rem;
 }
 ul.product-cart-list>li{
   float: left;
@@ -93,11 +92,6 @@ ul.product-describe>li:last-child>span{
   background: #aaaaaa;
   text-align: center;
   cursor: pointer;
-}
-/*两个勾选框，暂用元素选择器，后期再改*/
-input{
-  margin-right: 10px;
-  margin-left: 16px;
 }
 
 /*下方结算条样式*/
@@ -189,8 +183,23 @@ li.product-name>p:nth-of-type(2){
   color: #888;
   font-size: 12px;
 }
-
-
-
+/* 购物车复选框样式 */
+.testcheck,.checkall{
+  margin-left: 10px;
+  margin-right:16px; 
+}
+/* 左侧图片 */
+img.smpic{
+  width: 100px;
+}
+/* 设置一个放大镜效果 */
+div.lens img{
+    width: 300px;
+}
+div.lens{
+  position: absolute;
+  border: 1px solid red;
+  top: 30px;
+}
 
 

@@ -20,9 +20,8 @@ div.my-product {
   /* 左侧商品显示图片 */
   /* 右侧内容显示模块 */ }
   div.my-product div.abbr-box {
-    float: left;
     width: 700px;
-    height: 700px;
+    height: 675px;
     /* 左侧图片框 */ }
     div.my-product div.abbr-box div.abbr {
       width: 590px;
@@ -30,23 +29,26 @@ div.my-product {
       height: 446px;
       margin-top: 80px;
       text-align: center;
-      background-position: 0 -588px; }
+      background-position: 0 -588px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       div.my-product div.abbr-box div.abbr img {
         width: 381px;
-        height: 254px;
-        line-height: 446px;
-        margin-top: 80px; }
+        height: 254px; }
     div.my-product div.abbr-box div.bordera {
       background-position: -610px -588px; }
   div.my-product div.abbr-text {
     float: left;
     width: 420px;
-    height: 735px;
+    height: 640px;
     padding: 95px 0 0 0px; }
     div.my-product div.abbr-text h5 {
       display: block;
       margin-top: 20px;
       margin-bottom: 20px; }
+    div.my-product div.abbr-text p {
+      margin-bottom: 14px; }
     div.my-product div.abbr-text p:nth-of-type(1) {
       font-size: 32px; }
     div.my-product div.abbr-text p:nth-of-type(3),

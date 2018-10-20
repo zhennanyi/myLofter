@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../pool.js');
+// 引入mokc数据
 const router = express.Router();
 // 验证用户名是否可以注册
 router.get('/checkedemail', (req, res) => {
@@ -61,16 +62,28 @@ router.get('/login', (req, res) => {
 	})
 });
 // 写一个新的路由测试sission的用处
-router.get("/test",(req,res)=>{
+router.get("/test", (req, res) => {
 	// 此req.session被存储在客户端的cookie中，在当前页面没有被注销的情况下，下次访问时，值会被保存
-	if(!req.session.lid==""){
-		var lid=req.session.lid;
-		var sql='select email FROM lofteruser WHERE lid=?';
-		pool.query(sql,[lid],(err,result)=>{
-			if(result.length>0){
-				res.send("测试成功")
+	if (!req.session.lid == "") {
+		var lid = req.session.lid;
+		console.log(lid)
+		var sql = 'select email FROM lofteruser WHERE lid=?';
+		pool.query(sql, [lid], (err, result) => {
+			if (result.length > 0) {
+				res.send(result)
 			}
 		})
+	} else {
+		res.send("用户尚未登录")
+	}
+})
+router.get("/tests", (req, res) => {
+	// 此req.session被存储在客户端的cookie中，在当前页面没有被注销的情况下，下次访问时，值会被保存
+	if(!req.session.lid==undefined){
+		res.send("用户未登陆")
+	}else{
+		req.session.lid="";
+		res.send("注销成功")
 	}
 })
 

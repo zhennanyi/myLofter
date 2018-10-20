@@ -3,6 +3,15 @@ import func from '../../../vue-temp/vue-editor-bridge';
 <template id="tplproduct">
     <!-- 套一个空div，下方的商品组件需要用到循环生成 -->
     <div>
+                 <!-- 商品的导航信息 -->
+                    <ul class="list-unstyled product-cart-list ul-public">
+                        <li class="checkparent"><input type="checkbox" @click="checkedAll(),alter()" class="checkall">全选</li>
+                        <li>作品</li>
+                        <li>商品信息</li>
+                        <li>单价</li>
+                        <li>数量</li>
+                        <li>操作</li>
+                    </ul>
         <!-- 遍历出来的pro本身就是一个元素，不需要通过i继续向下定位 -->
         <div class="product-box" v-for="(pro,i) in arr">
             <ul class="list-unstyled product-describe ul-public" @click="test($event)">
@@ -10,21 +19,19 @@ import func from '../../../vue-temp/vue-editor-bridge';
                     <!-- checked存在任何值，都是选中状态 -->
                     <!-- 点击子元素复选框的时候，触发绑定在标签上的自定义函数，通过自定义函数，直接改变父元素当中的值 -->
                     <!--  -->
-                    <input type="checkbox"  @click="check(i)" class="testcheck">
-                    <a :href="pro.details"><img :src="pro.smpic" alt=""></a>
+                    <input type="checkbox" @click="check(i),alter(i)" class="testcheck">
+                    <!-- <el-checkbox class="testcheck"></el-checkbox> -->
+                    <a href="#"><img :src="pro.pic" alt="图片加载失败" class="smpic"></a>
                 </li>
                 <li class="product-name">
-                    <p>{{pro.name}}</p>
+                    <p>{{pro.title}}</p>
                     <p>{{pro.author}}</p>
                 </li>
                 <li>{{pro.spec}}</li>
                 <li>{{pro.price}}</li>
                 <li class="amend">
                     <!-- 设置数量加减事件 -->
-                    <!-- 设置按钮的disabled属性，只有当dis的值为flase时，按钮才会移除disabled属性 -->
-                    <button @click="alter(i,0,$event)"></button>
-                    <span data-toggle="count">{{pro.count}}</span>
-                    <button @click="alter(i,1,$event)"></button>
+                    <el-input-number @change="alter(i)" controls-position="center" size="mini" v-model="pro.lid" :min=min></el-input-number>
                 </li>
                 <li><span class="delete" @click="del(i)">删除</span></li>
             </ul>
@@ -35,88 +42,84 @@ import func from '../../../vue-temp/vue-editor-bridge';
     export default {
         data() {
             return {
-                num7: 9,
                 // 此数据对应当前购物车有多少商品
-                arr: [{
-                        smpic: "http://127.0.0.1:5000/img/ART/cart01.jpg",
-                        details: "ART_productdetails.html",
-                        name: "情绪集",
-                        author: "倮生",
-                        spec: "明信片(8张)",
-                        price: 20,
-                        count: 2
-                    },
-                    {
-                        smpic: "http://127.0.0.1:5000/img/ART/cart01.jpg",
-                        details: "ART_productdetails.html",
-                        name: "情绪集",
-                        author: "倮生",
-                        spec: "明信片(8张)",
-                        price: 30,
-                        count: 5
-                    },
-                    {
-                        smpic: "http://127.0.0.1:5000/img/ART/cart01.jpg",
-                        details: "ART_productdetails.html",
-                        name: "情绪集",
-                        author: "倮生",
-                        spec: "明信片(8张)",
-                        price: 60,
-                        count: 2
-                    }
-                ]
+                arr: [],
+                // 用于暂存选中的商品
+                newarr: [],
+                min:1
             };
         },
-        // props: ["checked", "i"],
         // 购物车步骤，加入时，将信息插入到数据库中，购物车加载为从数据库请求
         props: ["spec", "product"],
-        created() {
-
+        mounted() {
         },
-   
         computed: {
-            // 为计算属性值，可直接绑定在页面中
+            // 为计算属性值，可直接绑定在页面中  当内部需要计算的值改变后，会自动更新
             total() {
-                //在前面加上一个框是否选中的判断，即chedcked的布尔值判断，为true，则进行计算
-                // if(){
-                // }
-                // 其中prev初始为reduce传递进来的第二个参数，执行计算后，为上一次返回的值
-                return this.arr.reduce((prev, i) => prev + i.price * i.count, 0);
+                return this.newarr.reduce((prev, i) => prev + i.price *  i.lid, 0);
             },
             counts() {
-                return this.arr.reduce((prev, i) => prev + i.count, 0);
+                return this.newarr.reduce((prev, i) => prev + i.lid, 0);
             }
         },
         methods: {
+                   //控制全选
+            checkedAll() {
+                var checkall = document.querySelector(".checkall");
+                //获取所有的多选框  
+                var testcheck = document.querySelectorAll(".testcheck");
+                for (var val of testcheck) {
+                    //设置全选
+                    val.checked = checkall.checked
+                }
+            },
             test(e) {
                 // 利用冒泡
                 if (e.target.nodeName === "BUTTON") {
-                    console.log(123);
+                    // console.log(123);
                 } else {
                     console.log(e.target);
                 }
             },
             // 设置按钮的加减功能
             // 实现在页面刷新时调用一次
-            alter(i, handle, e) {
-                console.log(e.target);
-                if (handle == 0) {
-                    this.arr[i].count--;
-                } else if (handle == 1) {
-                    this.arr[i].count++;
+            alter() {
+                // 每次提交前，将存储被选中商品的数组清空
+                this.newarr = []
+                console.log(this.newarr)
+                var testcheck = document.querySelectorAll(".testcheck");
+                for (var i in testcheck) {
+                    //设置全选
+                    if (testcheck[i].checked == true) {
+                        // 每次点击时，检测当前已经被选中的商品，将其push进一个新数组
+                        this.newarr.push(this.arr[i])
+                    }
                 }
                 // 数量加减的同时，触发子元素的自定义处理事件，并通过传递需要传递给父组件的值，商品单价及数量
                 this.$emit("add", this.total, this.counts);
                 // 进行DOM操作通过布尔值判断按钮是否禁用   实现方法一，通过给每个商品设定单独dis值
-                e.target.toggleAttribute("disabled", this.arr[i].count < 2);
+                // e.target.toggleAttribute("disabled", this.arr[i].count < 2);
             },
             //添加商品删除功能
             del(i) {
                 if (confirm("是否继续删除当前商品?")) this.arr.splice(i, 1);
             },
             check(i) {
-                // 实现父元素全选功能，想办法改变父元素的值
-                this.$emit("change", i);
+                // 设置一个值用于计算是否全选
+                var i = 0;
+                var checkall = document.querySelector(".checkall");
+                var testcheck = document.querySelectorAll(".testcheck");
+                for (var val of testcheck) {
+                    //设置全选
+                    if (val.checked == false) {
+                        checkall.checked = false
+                    } else {
+                        i++;
+                    }
+                    if (i == testcheck.length) {
+                        checkall.checked = true
+                    }
+                }
             }
         },
         // 设置商品添加侦听器
@@ -125,12 +128,11 @@ import func from '../../../vue-temp/vue-editor-bridge';
             i: function() {}
         },
         mounted() {
-            // if (this.i) {
-            //     console.log(98)
-            //     var newly = this.arr.slice(-1);
-            //     // 由于截取出来的是一个数组，需要将数组的第一个值push进原数组
-            //     this.arr.push(newly[0]);
-            // }
-        }
-    };
+            //发送ajax请求
+            var url = "http://127.0.0.1:5000/draw/cartlist";
+            this.$http.get(url).then(response => {
+                    this.arr = response.data;
+                })
+            }
+        };
 </script>
