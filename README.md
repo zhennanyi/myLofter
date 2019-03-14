@@ -1,1 +1,1 @@
-这是使用Vue框架结合cli脚手架工具完成的一个个人Vue项目
+This is a personal Vue project using the Vue framework in conjunction with the cli scaffolding tool
